@@ -1,0 +1,1495 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>环球风云排行榜</title>
+    <link rel="icon" href="../favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/Real.Suplist.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function () {
+
+			$("#rl_fyb").ImagesList({time:6000});
+
+			$("#rl_zx").ImagesList({time:5000});
+			$(".rich_nav").ItemShow({});
+			$(".super_nav").ItemShow({});
+			$(".renqi>h2>span").ItemShow({});
+			$(".rank>h3").each(function () {
+				$(this).ItemShow({});
+			});
+		});
+    </script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .all_top {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px #ccc solid;
+        }
+
+            .all_top a {
+                color: #333;
+                text-decoration: none;
+            }
+
+                .all_top a:hover {
+                    text-decoration: underline;
+                }
+
+            .all_top .area {
+                margin: 0 auto;
+                padding: 5px 0;
+                width: 980px;
+                height: 40px;
+            }
+
+                .all_top .area img {
+                    float: left;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                }
+
+                .all_top .area h2 {
+                    float: left;
+                    margin: 0;
+                    padding: 15px 0 0 0;
+                    text-align: left;
+                    font-size: 12px;
+                    font-weight: lighter;
+                    color: #4a4a4a;
+                    width: 240px;
+                }
+
+                .all_top .area h3 {
+                    float: right;
+                    margin: 0;
+                    padding: 15px 0 0 6px;
+                    text-align: right;
+                    font-size: 12px;
+                    font-weight: lighter;
+                    color: #4a4a4a;
+                    width: 500px;
+                }
+
+        .area {
+            margin: 0 auto;
+            padding: 0;
+            width: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+        <!--<a href="/download.aspx" title="我要参加" target="_blank" class="eve" onclick="alert('如未安装客户端，请先下载安装客户端。');" onfocus="blur();"></a>-->
+    </div>
+
+
+    <div class="nav">
+        <div class="playStep" style="background:url(img/menu_def.jpg) no-repeat;">
+            <a href="#lp1" class="link1" title="环球导弹榜" onfocus="blur()"></a>
+            <a href="#lp2" class="link2" title="风云榜" onfocus="blur()"></a>
+            <a href="#lp3" class="link3" title="上周之星" onfocus="blur()"></a>
+            <a href="#lp4" class="link4" title="房间消费榜 " onfocus="blur()"></a>
+            <a href="#lp5" class="link5" title="消费积分榜 " onfocus="blur()"></a>
+            <a href="#lp6" class="link6" title="礼物排行榜 " onfocus="blur()"></a>
+        </div>
+    </div>
+    <div class="content">
+
+
+
+        <div class="no1 no1_511">
+            <div class="no1_toplist" >
+                <img  class="top_img sites_img" width="146" height="118" >
+                <div class="text" id="no1_toplist">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：<span class="yellow" title=""></span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDX：<span></span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：<span></span></p>
+                    <p>上榜时间：<span></span></p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="con">
+            <div class="zhizao zhizao_511">
+                <h2><span><a id="lp1"></a></span></h2>
+                <table width="85%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="14%">排名</td>
+                            <td width="42%">昵称</td>
+                            <td width="24%">IDX</td>
+                            <td width="20%">数量</td>
+                            <!--<td width="15%">所属平台</td>-->
+                        </tr>
+                    </thead>
+                    <tbody id="zhizhao">
+                        
+                        <tr>
+                            <td valign="top" height="28"><img alt="1" src="img/01.gif"></td>
+                            <td class="orange" title="神">神</td>
+                            <td class="orange">999</td>
+                            <td class="orange">1033</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="2" src="img/02.gif"></td>
+                            <td class="orange" title="666">666</td>
+                            <td class="orange">666</td>
+                            <td class="orange">387</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="3" src="img/03.gif"></td>
+                            <td class="orange" title="东方一良">东方一良</td>
+                            <td class="orange">15</td>
+                            <td class="orange">151</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="4" src="img/04.gif"></td>
+                            <td class="orange" title="63">63</td>
+                            <td class="orange">63</td>
+                            <td class="orange">129</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="5" src="img/05.gif"></td>
+                            <td class="orange" title="左左团长">左左团长</td>
+                            <td class="orange">6525</td>
+                            <td class="orange">121</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="6" src="img/06.gif"></td>
+                            <td class="orange" title="扯蛋~！">扯蛋~！</td>
+                            <td class="orange">10</td>
+                            <td class="orange">101</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="7" src="img/07.gif"></td>
+                            <td class="orange" title="伊♬.✿静听">伊♬.✿静听</td>
+                            <td class="orange">27000</td>
+                            <td class="orange">97</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="8" src="img/08.gif"></td>
+                            <td class="orange" title="┼浪漫ッ">┼浪漫ッ</td>
+                            <td class="orange">111111</td>
+                            <td class="orange">65</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="9" src="img/09.gif"></td>
+                            <td class="orange" title="企划">企划</td>
+                            <td class="orange">152</td>
+                            <td class="orange">63</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="10" src="img/010.gif"></td>
+                            <td class="orange" title="●︶ㄣ 鬼 子 伍 ">●︶ㄣ 鬼 子 伍 </td>
+                            <td class="orange">587</td>
+                            <td class="orange">48</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="shoucang shoucang_511">
+                <h2><span></span></h2>
+              
+                <table width="85%" cellspacing="0" border="0">
+                    <thead>
+                    <tr class="grey">
+                    <td width="14%">排名</td>
+                    <td width="42%">昵称</td>
+                    <td width="24%">IDX</td>
+                    <td width="20%">数量</td>
+                    </tr>
+                    </thead>
+                    <tbody id="shouchang">
+                        <tr>
+                            <td valign="top" height="28"><img alt="1" src="img/01.gif"></td>
+                            <td class="orange" title="猫咋这么性感呢">猫咋这么性感呢</td>
+                            <td class="orange">29200</td>
+                            <td class="orange">1057</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="2" src="img/02.gif"></td>
+                            <td class="orange" title="伊♬.✿枫叶">伊♬.✿枫叶</td>
+                            <td class="orange">21280</td>
+                            <td class="orange">97</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="3" src="img/03.gif"></td>
+                            <td class="orange" title="┼小月月ッ">┼小月月ッ</td>
+                            <td class="orange">29215</td>
+                            <td class="orange">77</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="4" src="img/04.gif"></td>
+                            <td class="orange" title="伊♬.✿琳琳">伊♬.✿琳琳</td>
+                            <td class="orange">22199</td>
+                            <td class="orange">67</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="5" src="img/05.gif"></td>
+                            <td class="orange" title="伊♬.✿泡沫">伊♬.✿泡沫</td>
+                            <td class="orange">20010</td>
+                            <td class="orange">63</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="6" src="img/06.gif"></td>
+                            <td class="orange" title="*゛张  影〆">*゛张  影〆</td>
+                            <td class="orange">11516</td>
+                            <td class="orange">51</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="7" src="img/07.gif"></td>
+                            <td class="orange" title="┼谜一样的二傻ッ">┼谜一样的二傻ッ</td>
+                            <td class="orange">22777</td>
+                            <td class="orange">43</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="8" src="img/08.gif"></td>
+                            <td class="orange" title="┼浪漫ッ">┼浪漫ッ</td>
+                            <td class="orange">111111</td>
+                            <td class="orange">36</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="9" src="img/09.gif"></td>
+                            <td class="orange" title="-┼言熙ッ">-┼言熙ッ</td>
+                            <td class="orange">22825</td>
+                            <td class="orange">35</td>
+                        </tr>
+
+                        <tr>
+                            <td valign="top" height="28"><img alt="10" src="img/010.gif"></td>
+                            <td class="orange" title="┼绵绵ッ">┼绵绵ッ</td>
+                            <td class="orange">23777</td>
+                            <td class="orange">34</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+        <a id="lp2"></a>
+        <div class="blh" style="background:url('img/fyb_def.gif?v1') no-repeat;">
+            <div class="star_top"><a id="lp3"></a></div>
+            <div id="rl_fyb" style="position:relative;z-index:999;overflow:hidden;width:948px">
+                <ul id="fengyun" style="position: relative; z-index: 99; width: 10000px;">
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+
+
+        <div class="star">
+            <div class="star_top">--每位周星将获得500元的现金奖励--<a id="lp3"></a></div>
+            <div id="rl_zx" style="position:relative;z-index:999;overflow:hidden;width:948px">
+                <ul id="stars" style="position: relative; z-index: 99; width: 10000px;">
+
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">玫瑰之星</span>IDX：20026</p>
+                            <p>昵称：<span title="╰☆╮刘小昕充值">╰☆╮刘小昕充值</span></p>
+                            <p>数量：1330</p>
+                        </div>
+                    </li>
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">香吻之星</span>IDX：751118</p>
+                            <p>昵称：<span title="しovの琳琳上卡处☆">しovの琳琳上卡处☆</span></p>
+                            <p>数量：1248</p>
+                        </div>
+                    </li>
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">跑车之星</span>IDX：771314</p>
+                            <p>昵称：<span title="夜﹎゛小老虎 °">夜﹎゛小老虎 °</span></p>
+                            <p>数量：23</p>
+                        </div>
+                    </li>
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">香水之星</span>IDX：2345</p>
+                            <p>昵称：<span title="蕞緈褔の侽朲">蕞緈褔の侽朲</span></p>
+                            <p>数量：3</p>
+                        </div>
+                    </li>
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">钻戒之星</span>IDX：20015</p>
+                            <p>昵称：<span title="99">99</span></p>
+                            <p>数量：34</p>
+                        </div>
+                    </li>
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">啤酒之星</span>IDX：20265</p>
+                            <p>昵称：<span title="┼呆呆ッ">┼呆呆ッ</span></p>
+                            <p>数量：19340</p>
+                        </div>
+                    </li>
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">猪头之星</span>IDX：726080</p>
+                            <p>昵称：<span title="ゞ小の雨ゞ">ゞ小の雨ゞ</span></p>
+                            <p>数量：8130</p>
+                        </div>
+                    </li>
+                    <li style="float: left; display: inline; margin-left: 0px;">
+                        <div class="star_fy"><img  width="230" height="174" class="sites_img"></div>
+                        <div class="fy_bottom">
+                            <p><img src="img/star.gif"><span class="big">飞机之星</span>IDX：722818</p>
+                            <p>昵称：<span title="●︶ㄣ小灵儿。">●︶ㄣ小灵儿。</span></p>
+                            <p>数量：1</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="clear"> <a id="lp4"></a></div>
+
+        <div class="three">
+            <div class="room_area2">
+                <div class="room" id="wang_room">
+                    <ul>
+                        <li><img src="img/room.gif"><p>房间号：10027</p><p title="1002">房间名：1002 </p><p title="">数量：5370449</p></li>
+                        <li><img  width="158" height="131"><p>代理号：10027 </p><p title="你媚长点心吧">昵称：你媚长点心吧</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="xiaofei xiaofei2">
+                <table width="86%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="16%" height="28">排名<a id="A1"></a></td>
+                            <td width="53%" height="28">昵称</td>
+                            <td width="31%" height="28">数量（万）</td>
+                        </tr>
+                    </thead>
+                    <tbody id="xiaofei">
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="房间号：12222 房间名：●︶ㄣ夜">●︶ㄣ夜</td>
+                            <td class="orange">1543.6035</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="房间号：111111 房间名： 111"> 111</td>
+                            <td class="orange">655.1443</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="房间号：188888 房间名：←═╬∞">←═╬∞</td>
+                            <td class="orange">329.9846</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="房间号：10068 房间名：不眠之夜">不眠之夜</td>
+                            <td class="orange">130.9803</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="房间号：10516 房间名：*晶晶佳">*晶晶佳</td>
+                            <td class="orange">125.7794</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="renqi renqi2">
+                <h2><span><a href="javascript:;" class="">月</a> <a class="on" href="javascript:;">周</a></span></h2>
+                <table style="display:none;" width="86%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="18%" height="28">排名</td>
+                            <td width="51%" height="28">昵称</td>
+                            <td width="31%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="renqi">
+                      <!--   <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="房间号：12222 房间名：●︶ㄣ夜">●︶ㄣ夜</td>
+                            <td class="orange">1543.6035</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="房间号：111111 房间名： 111"> 111</td>
+                            <td class="orange">655.1443</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="房间号：188888 房间名：←═╬∞">←═╬∞</td>
+                            <td class="orange">329.9846</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="房间号：10068 房间名：不眠之夜">不眠之夜</td>
+                            <td class="orange">130.9803</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="房间号：10516 房间名：*晶晶佳">*晶晶佳</td>
+                            <td class="orange">125.7794</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <table width="86%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="18%" height="28">排名</td>
+                            <td width="51%" height="28">昵称</td>
+                            <td width="31%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="renqi_week">
+                      <!--   <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="房间号：12222 房间名：●︶ㄣ夜">●︶ㄣ夜</td>
+                            <td class="orange">1543.6035</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="房间号：111111 房间名： 111"> 111</td>
+                            <td class="orange">655.1443</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="房间号：188888 房间名：←═╬∞">←═╬∞</td>
+                            <td class="orange">329.9846</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="房间号：10068 房间名：不眠之夜">不眠之夜</td>
+                            <td class="orange">130.9803</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="房间号：10516 房间名：*晶晶佳">*晶晶佳</td>
+                            <td class="orange">125.7794</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+        <div class="all_toplist">
+            <a id="lp5"></a>
+            <div class="rich">
+                <div class="rich_left">
+                    <div class="rich_nav"><a href="javascript:;" class="on">周排行</a> <a href="javascript:;">月排行</a></div>
+                </div>
+                <table width="73%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="10%" height="37">排名</td>
+                            <td width="40%" height="37">昵称</td>
+                            <td width="22%" height="37">IDX</td>
+                            <td width="28%" height="37">数量(万)</td>
+                        </tr>
+                    </thead>
+                    <tbody id="fuhao_week">
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="←═╬∞魅力嗨吧℡">←═╬∞魅力嗨吧℡1</td>
+                            <td class="orange">188888</td>
+                            <td class="orange">543708.0061</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="╰┾☆ 潘金莲">╰┾☆ 潘金莲</td>
+                            <td class="orange">10088</td>
+                            <td class="orange">497097.9119</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="＊﹏迷 恋、">＊﹏迷 恋、</td>
+                            <td class="orange">19988</td>
+                            <td class="orange">370377.0748</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="伊♬.✿懂..懂">伊♬.✿懂..懂</td>
+                            <td class="orange">17000</td>
+                            <td class="orange">333425.3859</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="〆〝漫步＊小旭">〆〝漫步＊小旭</td>
+                            <td class="orange">15888</td>
+                            <td class="orange">306788.5709</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="06" src="img/06.gif"></td>
+                            <td class="orange" title="┼浪漫ッ">┼浪漫ッ</td>
+                            <td class="orange">111111</td>
+                            <td class="orange">268123.0697</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="07" src="img/07.gif"></td>
+                            <td class="orange" title="°天籁丶子嫣">°天籁丶子嫣</td>
+                            <td class="orange">158888</td>
+                            <td class="orange">263128.7818</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="08" src="img/08.gif"></td>
+                            <td class="orange" title="*゛晶晶〆">*゛晶晶〆</td>
+                            <td class="orange">10516</td>
+                            <td class="orange">244922.8303</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="09" src="img/09.gif"></td>
+                            <td class="orange" title="无 敌  劫后余生戒">无 敌  劫后余生戒</td>
+                            <td class="orange">20068</td>
+                            <td class="orange">232228.4025</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="010" src="img/010.gif"></td>
+                            <td class="orange" title="╰☆╮ 海之琳不借卡">╰☆╮ 海之琳不借卡</td>
+                            <td class="orange">10016</td>
+                            <td class="orange">195465.1854</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="display:none;" width="73%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="10%" height="37">排名</td>
+                            <td width="40%" height="37">昵称</td>
+                            <td width="22%" height="37">IDX</td>
+                            <td width="28%" height="37">数量(万)</td>
+                        </tr>
+                    </thead>
+                    <tbody id="fuhao">
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="←═╬∞魅力嗨吧℡">←═╬∞魅力嗨吧℡2</td>
+                            <td class="orange">188888</td>
+                            <td class="orange">543708.0061</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="╰┾☆ 潘金莲">╰┾☆ 潘金莲</td>
+                            <td class="orange">10088</td>
+                            <td class="orange">497097.9119</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="＊﹏迷 恋、">＊﹏迷 恋、</td>
+                            <td class="orange">19988</td>
+                            <td class="orange">370377.0748</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="伊♬.✿懂..懂">伊♬.✿懂..懂</td>
+                            <td class="orange">17000</td>
+                            <td class="orange">333425.3859</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="〆〝漫步＊小旭">〆〝漫步＊小旭</td>
+                            <td class="orange">15888</td>
+                            <td class="orange">306788.5709</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="06" src="img/06.gif"></td>
+                            <td class="orange" title="┼浪漫ッ">┼浪漫ッ</td>
+                            <td class="orange">111111</td>
+                            <td class="orange">268123.0697</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="07" src="img/07.gif"></td>
+                            <td class="orange" title="°天籁丶子嫣">°天籁丶子嫣</td>
+                            <td class="orange">158888</td>
+                            <td class="orange">263128.7818</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="08" src="img/08.gif"></td>
+                            <td class="orange" title="*゛晶晶〆">*゛晶晶〆</td>
+                            <td class="orange">10516</td>
+                            <td class="orange">244922.8303</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="09" src="img/09.gif"></td>
+                            <td class="orange" title="无 敌  劫后余生戒">无 敌  劫后余生戒</td>
+                            <td class="orange">20068</td>
+                            <td class="orange">232228.4025</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="010" src="img/010.gif"></td>
+                            <td class="orange" title="╰☆╮ 海之琳不借卡">╰☆╮ 海之琳不借卡</td>
+                            <td class="orange">10016</td>
+                            <td class="orange">195465.1854</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="super">
+                <div class="super_left">
+                    <div class="super_nav"><a href="javascript:;" class="on">周排行</a> <a href="javascript:;">月排行</a></div>
+                </div>
+                <table width="70%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="10%" height="37">排名</td>
+                            <td width="40%" height="37">昵称</td>
+                            <td width="22%" height="37">IDX</td>
+                            <td width="28%" height="37">数量(万)</td>
+                        </tr>
+                    </thead>
+                    <tbody id="start_week">
+                         <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="←═╬∞魅力嗨吧℡">←═╬∞魅力嗨吧℡1</td>
+                            <td class="orange">188888</td>
+                            <td class="orange">543708.0061</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="╰┾☆ 潘金莲">╰┾☆ 潘金莲</td>
+                            <td class="orange">10088</td>
+                            <td class="orange">497097.9119</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="＊﹏迷 恋、">＊﹏迷 恋、</td>
+                            <td class="orange">19988</td>
+                            <td class="orange">370377.0748</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="伊♬.✿懂..懂">伊♬.✿懂..懂</td>
+                            <td class="orange">17000</td>
+                            <td class="orange">333425.3859</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="〆〝漫步＊小旭">〆〝漫步＊小旭</td>
+                            <td class="orange">15888</td>
+                            <td class="orange">306788.5709</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="06" src="img/06.gif"></td>
+                            <td class="orange" title="┼浪漫ッ">┼浪漫ッ</td>
+                            <td class="orange">111111</td>
+                            <td class="orange">268123.0697</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="07" src="img/07.gif"></td>
+                            <td class="orange" title="°天籁丶子嫣">°天籁丶子嫣</td>
+                            <td class="orange">158888</td>
+                            <td class="orange">263128.7818</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="08" src="img/08.gif"></td>
+                            <td class="orange" title="*゛晶晶〆">*゛晶晶〆</td>
+                            <td class="orange">10516</td>
+                            <td class="orange">244922.8303</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="09" src="img/09.gif"></td>
+                            <td class="orange" title="无 敌  劫后余生戒">无 敌  劫后余生戒</td>
+                            <td class="orange">20068</td>
+                            <td class="orange">232228.4025</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="010" src="img/010.gif"></td>
+                            <td class="orange" title="╰☆╮ 海之琳不借卡">╰☆╮ 海之琳不借卡</td>
+                            <td class="orange">10016</td>
+                            <td class="orange">195465.1854</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="display:none;" width="70%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="10%" height="37">排名</td>
+                            <td width="40%" height="37">昵称</td>
+                            <td width="22%" height="37">IDX</td>
+                            <td width="28%" height="37">数量(万)</td>
+                        </tr>
+                    </thead>
+                    <tbody id="start">
+                       
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="←═╬∞魅力嗨吧℡">←═╬∞魅力嗨吧℡</td>
+                            <td class="orange">188888</td>
+                            <td class="orange">543708.0061</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="╰┾☆ 潘金莲">╰┾☆ 潘金莲</td>
+                            <td class="orange">10088</td>
+                            <td class="orange">497097.9119</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="＊﹏迷 恋、">＊﹏迷 恋、</td>
+                            <td class="orange">19988</td>
+                            <td class="orange">370377.0748</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="伊♬.✿懂..懂">伊♬.✿懂..懂</td>
+                            <td class="orange">17000</td>
+                            <td class="orange">333425.3859</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="〆〝漫步＊小旭">〆〝漫步＊小旭</td>
+                            <td class="orange">15888</td>
+                            <td class="orange">306788.5709</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="06" src="img/06.gif"></td>
+                            <td class="orange" title="┼浪漫ッ">┼浪漫ッ</td>
+                            <td class="orange">111111</td>
+                            <td class="orange">268123.0697</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="07" src="img/07.gif"></td>
+                            <td class="orange" title="°天籁丶子嫣">°天籁丶子嫣</td>
+                            <td class="orange">158888</td>
+                            <td class="orange">263128.7818</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="08" src="img/08.gif"></td>
+                            <td class="orange" title="*゛晶晶〆">*゛晶晶〆</td>
+                            <td class="orange">10516</td>
+                            <td class="orange">244922.8303</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="09" src="img/09.gif"></td>
+                            <td class="orange" title="无 敌  劫后余生戒">无 敌  劫后余生戒</td>
+                            <td class="orange">20068</td>
+                            <td class="orange">232228.4025</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="010" src="img/010.gif"></td>
+                            <td class="orange" title="╰☆╮ 海之琳不借卡">╰☆╮ 海之琳不借卡</td>
+                            <td class="orange">10016</td>
+                            <td class="orange">195465.1854</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="top_every">
+            <a id="lp6"></a>
+            <div class="rank" style="margin-right:4px;">
+                <h3 style="background: url(img/ph_101.gif) no-repeat 15px 10px;">
+                    <a href="javascript:;" class="on">周</a>
+                    <a href="javascript:;">月</a>
+                </h3>
+
+                <table width="90%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="xianhua_week">
+                          <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="Idx：11516 昵称：*゛张  影〆">*゛张  影〆1</td>
+                            <td class="orange">100604</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="Idx：777100 昵称：*゛初 遇〆">*゛初 遇〆</td>
+                            <td class="orange">100099</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="Idx：70009 昵称：*゛尐壞疍〆">*゛尐壞疍〆</td>
+                            <td class="orange">100013</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="Idx：770275 昵称：╰┾☆无聊℃">╰┾☆无聊℃</td>
+                            <td class="orange">25068</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="Idx：770273 昵称：╰┾☆幽幽℃">╰┾☆幽幽℃</td>
+                            <td class="orange">23782</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <table style="display:none;" width="90%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+
+                        </tr>
+                    </thead>
+                    <tbody id="xianhua">
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="Idx：11516 昵称：*゛张  影〆">*゛张  影〆</td>
+                            <td class="orange">100604</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="Idx：777100 昵称：*゛初 遇〆">*゛初 遇〆</td>
+                            <td class="orange">100099</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="Idx：70009 昵称：*゛尐壞疍〆">*゛尐壞疍〆</td>
+                            <td class="orange">100013</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="Idx：770275 昵称：╰┾☆无聊℃">╰┾☆无聊℃</td>
+                            <td class="orange">25068</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="Idx：770273 昵称：╰┾☆幽幽℃">╰┾☆幽幽℃</td>
+                            <td class="orange">23782</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="rank" style="margin-right:4px; ">
+                <h3 style="background: url(img/ph_102.gif) no-repeat 15px 10px;">
+                    <a href="javascript:;" class="on">周</a>
+                    <a href="javascript:;">月</a>
+                </h3>
+
+                <table width="90%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="xiangwen_week">
+                       
+                    </tbody>
+                </table>
+                <table style="display:none;" width="90%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+
+                        </tr>
+                    </thead>
+                    <tbody id="xiangwen">
+                       
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="Idx：777100 昵称：*゛初 遇〆">*゛初 遇〆</td>
+                            <td class="orange">100002</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="Idx：770289 昵称：╰┾☆ 玖亿℃">╰┾☆ 玖亿℃</td>
+                            <td class="orange">2083</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="Idx：755556 昵称：﹏微微〆">﹏微微〆</td>
+                            <td class="orange">2004</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="Idx：713999 昵称：﹏诺诺〆">﹏诺诺〆</td>
+                            <td class="orange">2000</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="Idx：22000 昵称：┼大可ッ上卡">┼大可ッ上卡</td>
+                            <td class="orange">1840</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="rank" style=" ">
+                <h3 style="background: url(img/ph_109.gif) no-repeat 15px 10px;">
+                    <a href="javascript:;" class="on">周</a>
+                    <a href="javascript:;">月</a>
+                </h3>
+
+                <table width="90%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="zhuanjie_week">
+                       
+                    </tbody>
+                </table>
+
+
+                <table style="display:none;" width="90%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+
+                        </tr>
+                    </thead>
+                    <tbody id="zhuanjie">
+                       
+
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="Idx：757523 昵称：←═╬∞小妹℡">←═╬∞小妹℡</td>
+                            <td class="orange">774</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="Idx：20017 昵称：伊♬.✿琪琪/jd6">伊♬.✿琪琪/jd6</td>
+                            <td class="orange">220</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="Idx：11118 昵称：湘☆湘☆">湘☆湘☆</td>
+                            <td class="orange">200</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="Idx：20123 昵称：＊ ℡狂野。刁蛮/割">＊ ℡狂野。刁蛮/割</td>
+                            <td class="orange">100</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="Idx：777331 昵称：︶ㄣ样样">︶ㄣ样样</td>
+                            <td class="orange">99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="rank" style="margin-right:4px; margin-top:3px;">
+                <h3 style="background: url(img/ph_512.gif) no-repeat 15px 10px;">
+                    <a href="javascript:;" class="on">周</a>
+                    <a href="javascript:;">月</a>
+                </h3>
+
+                <table width="90%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="feiji_week">
+                        
+                    </tbody>
+                </table>
+
+
+                <table style="display:none;" width="90%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+
+                        </tr>
+                    </thead>
+                    <tbody id="feiji">
+                        
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="Idx：20567 昵称：裙下三千臣">裙下三千臣</td>
+                            <td class="orange">3</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="Idx：29959 昵称：┼绿豆芽ッ">┼绿豆芽ッ</td>
+                            <td class="orange">2</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="Idx：44 昵称：福建速8酒店">福建速8酒店</td>
+                            <td class="orange">1</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="Idx：20004 昵称：王小4。闪电">王小4。闪电</td>
+                            <td class="orange">1</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="Idx：756123 昵称：じ☆ve圆梦">じ☆ve圆梦</td>
+                            <td class="orange">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="rank" style="margin-right:4px; margin-top:3px;">
+                <h3 style="background: url(img/ph_111.gif) no-repeat 15px 10px;">
+                    <a href="javascript:;" class="on">周</a>
+                    <a href="javascript:;">月</a>
+                </h3>
+
+                <table width="90%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="car_week">
+                        
+                    </tbody>
+                </table>
+
+
+                <table style="display:none;" width="90%" cellspacing="0" border="0">
+                    <thead>
+                         <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+
+                        </tr>
+                    </thead>
+                    <tbody id="car">
+                       
+
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="Idx：776288 昵称：●︶ㄣ幻影">●︶ㄣ幻影</td>
+                            <td class="orange">110</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="Idx：44333 昵称：┼  晓 杰">┼  晓 杰</td>
+                            <td class="orange">87</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="Idx：20026 昵称：╰☆╮刘小昕充值">╰☆╮刘小昕充值</td>
+                            <td class="orange">63</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="Idx：766666 昵称：李 雪 熙">李 雪 熙</td>
+                            <td class="orange">60</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="Idx：22825 昵称：-┼言熙ッ">-┼言熙ッ</td>
+                            <td class="orange">53</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="rank" style=" margin-top:3px;">
+                <h3 style="background: url(img/ph_107.gif) no-repeat 15px 10px;">
+                    <a href="javascript:;" class="on">周</a>
+                    <a href="javascript:;">月</a>
+                </h3>
+
+                <table width="90%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+                        </tr>
+                    </thead>
+                    <tbody id="xiangshui_week">
+                        
+                    </tbody>
+                </table>
+
+
+                <table style="display:none;" width="90%" cellspacing="0" border="0">
+                    <thead>
+                        <tr class="grey">
+                            <td width="12%" height="28">排名</td>
+                            <td width="55%" height="28">昵称</td>
+                            <td width="32%" height="28">数量</td>
+
+                        </tr>
+                    </thead>
+                    <tbody id="xiangshui">
+                        
+
+                        <tr>
+                            <td><img alt="01" src="img/01.gif"></td>
+                            <td class="orange" title="Idx：757523 昵称：←═╬∞小妹℡">←═╬∞小妹℡</td>
+                            <td class="orange">782</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="02" src="img/02.gif"></td>
+                            <td class="orange" title="Idx：200599 昵称：﹏酒寳〆">﹏酒寳〆</td>
+                            <td class="orange">151</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="03" src="img/03.gif"></td>
+                            <td class="orange" title="Idx：10666 昵称：╰★梵 尘ゞ♥">╰★梵 尘ゞ♥</td>
+                            <td class="orange">99</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="04" src="img/04.gif"></td>
+                            <td class="orange" title="Idx：777331 昵称：︶ㄣ样样">︶ㄣ样样</td>
+                            <td class="orange">99</td>
+                        </tr>
+
+                        <tr>
+                            <td><img alt="05" src="img/05.gif"></td>
+                            <td class="orange" title="Idx：22291 昵称：玖月">玖月</td>
+                            <td class="orange">99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+
+        <div class="top_every">
+            <a id="lp6"></a>
+
+
+        </div>
+        <div class="clear"></div>
+
+
+        <div class="yuexing">
+
+
+        </div>
+        <div class="clear"></div>
+
+    </div>
+    <div id="footer">
+
+
+
+        <br>
+        Copyright(C) 环球风云排行榜 版权所有
+    </div>
+    <div style="z-index:9;right:0;bottom:0;height:100px;width:150px;overflow:hidden;POSITION:fixed;_position:absolute; _margin-top:expression(document.documentElement.clientHeight-this.style.pixelHeight+document.documentElement.scrollTop);">
+        <div style="clear:both;margin:auto;height:30px;font-size:16px;overflow:hidden;font-weight:bold;text-align:left;"><a href="javascript:scroll(0,0)" hidefocus="true"><img  alt="" style="border: 0px;"></a></div>
+        <div style="clear:both;margin:auto;overflow:hidden;text-align:left;"></div>
+    </div>
+    <script type="text/javascript">
+
+    var rank = {};
+     $.ajax({
+        url:"https://api.fq98.com:88/get_all_rank_list",
+        data:{
+            sites:getUrl().sites
+        },
+        success:function(res){
+            console.log(res)
+           if (res.code===200)
+            { 
+                 var name = res.msg.nickname_list;
+                 var room_name = res.msg.room_name;
+                 rank = res.msg.rank_list;
+                  var Star = [
+                 {
+                    name:'鲜花之星',
+                    str:rank.last_week_flower_send
+                 },
+                 {
+                    name:'飞机之星',
+                    str:rank.last_week_plane_send
+                 },
+                 {
+                    name:'跑车之星',
+                    str:rank.last_week_car_send
+                 },
+                 {
+                    name:'香水之星',
+                    str:rank.last_week_perfume_send
+                 },
+                 {
+                    name:'香吻之星',
+                    str:rank.last_week_kiss_send
+                 },
+                 {
+                    name:'钻戒之星',
+                    str:rank.last_week_ring_send
+                 }
+                ]
+                var StarMonth = [
+                 {
+                    name:'鲜花之星',
+                    str:rank.this_month_flower_send
+                 },
+                 {
+                    name:'飞机之星',
+                    str:rank.this_month_plane_send
+                 },
+                 {
+                    name:'跑车之星',
+                    str:rank.this_month_car_send
+                 },
+                 {
+                    name:'香水之星',
+                    str:rank.this_month_perfume_send
+                 },
+                 {
+                    name:'香吻之星',
+                    str:rank.this_month_kiss_send
+                 },
+                 {
+                    name:'钻戒之星',
+                    str:rank.this_month_ring_send
+                 }
+                ]
+
+                 no_1(name,rank.this_month_missile_send[0],$('#no1_toplist'))
+                 getDates(name,rank.this_month_missile_send,$('#zhizhao'))
+                 getDates(name,rank.this_month_missile_get,$('#shouchang'))
+                 setStart(name,Star,$('#stars'))
+                 setStart(name,StarMonth,$('#fengyun'))
+                 getRoom(room_name,rank.this_month_room_send,$('#xiaofei'))
+                 getDate(name,rank.this_month_user_coin,$('#fuhao_week'))
+                 getDate(name,rank.this_week_user_coin,$('#fuhao'))
+                 getDate(name,rank.this_week_user_score,$('#start_week'))
+                 getDate(name,rank.this_month_user_score,$('#start'))
+                 getPh(name,rank.this_week_car_get,$('#car_week'))
+                 getPh(name,rank.this_month_car_get,$('#car'))
+                 getPh(name,rank.this_week_flower_get,$('#xianhua_week'))
+                 getPh(name,rank.this_month_flower_get,$('#xianhua'))
+                 getPh(name,rank.this_week_kiss_get,$('#xiangwen_week'))
+                 getPh(name,rank.this_month_kiss_get,$('#xiangwen'))
+                 getPh(name,rank.this_week_perfume_get,$('#xiangshui_week'))
+                 getPh(name,rank.this_month_perfume_get,$('#xiangshui'))
+                 getPh(name,rank.this_week_plane_get,$('#feiji_week'))
+                 getPh(name,rank.this_month_plane_get,$('#feiji'))
+                 getPh(name,rank.this_week_ring_get,$('#zhuanjie_week'))
+                 getPh(name,rank.this_month_ring_get,$('#zhuanjie'))
+                  $('.sites_img').each(function(){
+                  $(this).attr('src','img/'+getUrl().sites+'.gif')
+                 })
+
+            }
+        }
+     })   
+
+function no_1(names,data,doms)
+{
+            if(data==='')
+            {
+                return;
+            }
+            doms.empty()
+            if (data===undefined)
+      {
+        return;
+      }
+            var str =  '<div class="text">\
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：<span class="yellow" title="">'+names[data.user_id]+'</span></p>\
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDX：<span>'+data.user_id+'</span></p>\
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：<span>'+data.sum+'</span></p>\
+                    <p>上榜时间：<span>'+data.time.substr(0,10)+'</span></p>\
+                </div>'
+            doms.html(str)    
+}
+
+ function setStart(names,json,doms)
+ { 
+    var str = '';
+     doms.empty()
+     if (json.data===undefined)
+      {
+        return;
+      }
+     for(var i = 0;i<json.length;i++)
+     {
+            str+='<div class="star_fy"><img  width="230" height="174" class="sites_img"></div>';
+            str+='<div class="fy_bottom"><p><img src="img/star.gif"><span class="big">'+json[i].name+'</span>IDX：'+json[i].str[0].user_id+'</p>\
+                                    <p>昵称：<span title="'+names[json[i].str.user_id]+'">'+names[json[i].str[0].user_id]+'</span></p>\
+                                    <p>数量：'+json[i].str[0].sum+'</p>\
+                                </div>'
+      doms.append($('<li style="float: left; display: inline; margin-left: 0px;"></li>').append(str))
+      str = '';
+     }
+ }                   
+
+     
+function getDate(names,json,id){
+    var str = '';
+    id.empty()
+    if (json===undefined)
+      {
+        return;
+      }
+    for(var i = 0;i<json.length;i++)
+    {
+        str+='<td><img  src="img/0'+(i+1)+'.gif"></td>';
+        str+='<td class="orange" title="'+names[json[i].user_id]+'">'+names[json[i].user_id]+'</td>';
+        str+='<td class="orange">'+json[i].user_id+'</td>';
+        str+='<td class="orange">'+(json[i].sum/10000).toFixed(2)+'</td>';
+        id.append($('<tr></tr>').append(str))
+        str=''
+    }
+}
+
+function getDates(names,json,id){
+    var str = '';
+    id.empty()
+    if (json===undefined)
+      {
+        return;
+      }
+    for(var i = 0;i<json.length;i++)
+    {
+        str+='<td><img  src="img/0'+(i+1)+'.gif"></td>';
+        str+='<td class="orange" title="'+names[json[i].user_id]+'">'+names[json[i].user_id]+'</td>';
+        str+='<td class="orange">'+json[i].user_id+'</td>';
+        str+='<td class="orange">'+json[i].sum+'</td>';
+        id.append($('<tr></tr>').append(str))
+        str=''
+    }
+}
+
+function getRoom(names,json,id){
+    var str = '';
+    id.empty()
+    for(var i = 0;i<json.length;i++)
+    {
+        str+='<td><img  src="img/0'+(i+1)+'.gif"></td>';
+        str+='<td class="orange" title="'+names[json[i].room_id]+'">'+names[json[i].room_id]+'</td>';
+        str+='<td class="orange">'+(json[i].sum/10000).toFixed(2)+'</td>';
+        id.append($('<tr></tr>').append(str))
+        str=''
+    }
+}
+function getPh(names,json,id){
+    var str = '';
+    id.empty()
+    for(var i = 0;i<json.length;i++)
+    {
+        str+='<td><img  src="img/0'+(i+1)+'.gif"></td>';
+        str+='<td class="orange" title="'+names[json[i].room_id]+'">'+names[json[i].user_id]+'</td>';
+        str+='<td class="orange">'+json[i].sum+'</td>';
+        id.append($('<tr></tr>').append(str))
+        str=''
+    }
+}
+
+
+    function getUrl()
+  {
+      var json = {}
+      var url = window.location.href;
+      if(url.match(/\?/gi)===null)
+      {
+          alert('找不到网站标识符')
+          return false;
+      }
+      var nUrl = url.split('?')[1].split('&');
+      for(var i = 0;i<nUrl.length;i++)
+      {
+        var arr = [];
+        arr = nUrl[i].split('=')
+        arr[1] = arr[1].split('#')[0]
+        json[arr[0]] = arr[1]
+      }
+     return json;
+  }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1346 @@
+
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="utf-8" />
+    <title>----多人视频后台管理系统</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- basic styles -->
+    <link href="/css/bootstrap.min.css?v=1" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css?v=2" />
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="/css/font-awesome-ie7.min.css?v=2" />
+    <![endif]-->
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/css/ace.min.css?v=2" />
+    <link rel="stylesheet" href="/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="/js/bootstrap-lightbox/bootstrap-lightbox.min.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="/js/tablednd/tablednd.css" />
+    <link rel="stylesheet" href="/css/chosen.css" />
+    <link rel="stylesheet" href="/css/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="/css/jquery-ui-1.12.1.min.css" />
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/ace-ie.min.css" />
+    <![endif]-->
+    <script src="/js/ace-extra.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- 接入QQ -->
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101456922" data-redirecturi="http://qq.gzhsrj.com/qq?type=1" charset="utf-8" data-callback="true"></script>
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+    <script>
+    document.write("<script src='/js/global.js'>"+"<"+"/script>")
+    </script>
+
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript">
+        #428bca
+        window.jQuery || document.write("<script src='/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+
+    <style type="text/css">
+       .icon-double-angle-right:hover{
+            
+        }
+        .nav-list>li .submenu>li:hover .icon-double-angle-right{
+            display: block!important ;
+        }
+        .nav-list>li .submenu>li:active .icon-double-angle-right{
+            display: block!important ;
+        }
+
+
+    </style>
+
+    <script type="text/javascript">
+        if("ontouchend" in document) document.write("<script src='/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+
+        if (typeof Array.prototype.map != "function") {
+            Array.prototype.map = function (fn, context) {
+                var arr = [];
+                if (typeof fn === "function") {
+                    for (var k = 0, length = this.length; k < length; k++) {
+                        arr.push(fn.call(context, this[k], k, this));
+                    }
+                }
+                return arr;
+            };
+        }
+    </script>
+</head>
+<body style="height:100%;">
+<div class="navbar navbar-default" id="navbar">
+    <script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+    </script>
+
+    <div class="navbar-container" id="navbar-container">
+        <div class="navbar-header pull-left">
+            <a href="#" class="navbar-brand">
+                <small >
+                    <i class="icon-leaf"></i>
+                    <span class="_title">--多人游戏后台管理系统</span>
+                </small>
+            </a><!-- /.brand -->
+        </div><!-- /.navbar-header -->
+
+        <div class="navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+
+                <li id="chrome_tips" style="display: none;" class="text-warning bigger-160 orange2">
+                    <i class="icon-warning-sign"></i><b><a class="text-warning bigger-120 orange2" href="http://pan.baidu.com/s/1ntA9RSX" target="_blank">为更好的使用本后台系统，我们推荐使用Chrome浏览器，立刻点击这里下载</a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+
+                <li class="purple">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <i class="icon-qq icon-animated-vertical"></i>
+                        <span class="badge badge-important badge1" style="display: none;">未绑定QQ</span>
+                        <span class="badge badge-important badge2" style="display: none;">已绑定QQ</span>
+                        <i class="icon-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li id="qq_login_btn">
+                            <!-- <a href=""> -->
+                            <i class="icon-link"></i>
+                            立即绑定
+                            <!-- </a> -->
+                        </li>
+                        <li id="qq_logout_btn" style="cursor: pointer">
+                            <!-- <a href=""> -->
+                            <i class="icon-link"></i>
+                            解除绑定
+                            <!-- </a> -->
+                        </li>
+                    </ul>
+                </li>
+                <li class="light-blue">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" src="/avatars/user.jpg" alt="Jason's Photo" />
+                        <span class="user-info">
+                                                    <!-- <small>Welcome,</small>
+                                                    zhanzhang -->
+                        </span>
+                        <i class="icon-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a class="lin_href" href="/user_views_edit.html" data-modal="fancybox">
+                                <i class="icon-key"></i>
+                                修改密码
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="" id='logout'>
+                                <i class="icon-off"></i>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- /.ace-nav -->
+        </div><!-- /.navbar-header -->
+    </div><!-- /.container -->
+</div>
+
+<div class="main-container" id="main-container" style="height:100%;">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+    <div class="main-container-inner" style="overflow:hidden;height:100%;">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+
+        <div class="sidebar" id="sidebar">
+            <script type="text/javascript">
+                try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+            </script>
+
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    <button class="btn btn-success">
+                        <i class="icon-signal"></i>
+                    </button>
+
+                    <button class="btn btn-info">
+                        <i class="icon-pencil"></i>
+                    </button>
+
+                    <button class="btn btn-warning">
+                        <i class="icon-group"></i>
+                    </button>
+
+                    <button class="btn btn-danger">
+                        <i class="icon-cogs"></i>
+                    </button>
+                </div>
+
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
+
+                    <span class="btn btn-info"></span>
+
+                    <span class="btn btn-warning"></span>
+
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div><!-- #sidebar-shortcuts -->
+            <ul class="nav nav-list">
+                <li class="active">
+                    <a href="/main.html" target="iframe">
+                        <i class="icon-dashboard"></i>
+                        <span class="menu-text"> 首页 </span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-star"></i>
+                        <span class="menu-text"> 我的快捷菜单</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenuk">
+
+                    </ul>
+                </li>
+               
+                <li >
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-gamepad"></i>
+                        <span class="menu-text"> 游戏管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenu4">
+                    </ul>
+                </li>
+
+                <li >
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-shopping-cart"></i>
+                        <span class="menu-text"> 会员豆管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenu5">
+
+                        <!-- <li >
+                            <a href="/agent_views_money_list" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                代理后台打款记录
+                            </a>
+                        </li> -->
+
+                    </ul>
+                </li>
+          
+
+                <!-- <li >
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-microphone"></i>
+                        <span class="menu-text"> 主持管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenu6">
+
+                        <li >
+                            <a href="/zhuchi_views_shouhu_list" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                守护列表
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_shouhu_log" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                购买守护记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_shouhu_stat" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                守护统计
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_details" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                主持资料
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_unchecked" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                待审核主持兑点
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_checked" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                待支付主持兑点
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_paid" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                已支付主持兑点
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_cancel" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                已取消主持兑点
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_exchangeroomstat" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                房间兑换查询
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_daixinzhuchi" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                带薪主持人管理
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/zhuchi_views_online_mongo" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                主持上麦统计
+                            </a>
+                        </li>
+
+                    </ul>
+                </li> -->
+
+                <!-- <li >
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-user"></i>
+                        <span class="menu-text"> 用户管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenu2">
+
+                        <li >
+                            <a href="/member_views_fastquery" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员快速查询
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_largeUser_ice" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                大额用户查询（新）
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_index" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员查询
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_create" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员开号
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_create_log" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员开号记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_levelupdate" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员升降级
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_batch_level" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                批量升降级
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_photo" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                排行榜照片上传
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_loginlog" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                用户登陆记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_blockindex" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                被封用户查询
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_blockip" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                封号记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_largeUser_ice" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                大额用户查询
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/member_views_edit" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                编辑会员
+                            </a>
+                        </li>
+
+                    </ul>
+                </li> -->
+
+                <!-- <li >
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-credit-card"></i>
+                        <span class="menu-text"> 点卡管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenu7">
+
+                        <li >
+                            <a href="/card_views_sell" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                点卡销售查询
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/card_views_rank" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员充卡排行
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/card_views_turncard" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                充错卡转币
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/card_views_auto_pay" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                自动充卡
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/card_views_createcard" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                生成点卡
+                            </a>
+                        </li>
+
+                    </ul>
+                </li> -->
+
+                <!-- <li >
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-shopping-cart"></i>
+                        <span class="menu-text"> 销售中心</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenu8">
+
+                        <li >
+                            <a href="/sell_views_bankcoin" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员充扣银行币
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_transaction" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                币交易记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_transactionscore" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                积分交易记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_bankcoinlog" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                银行币交易记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/room_views_scorelog" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                房间积分交易记录
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_coin" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员充扣币
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_score" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员充扣积分
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_chargecoin" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员转币
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_chargescore" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                会员转积分
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_roomscore" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                充扣房间积分
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_CoinDetail" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                币消费明细
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/sell_views_ScoreDetail" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                积分明细
+                            </a>
+                        </li>
+
+                    </ul>
+                </li> -->
+
+                <li >
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-user-md"></i>
+                        <span class="menu-text"> 系统管理员</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu submenu1">
+                        <!-- <li >
+                            <a href="/system_views_index" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                系统管理员管理
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="/system_views_admindonelog" target="iframe">
+                                <i class="icon-double-angle-right"></i>
+                                管理员操作日志
+                            </a>
+                        </li> -->
+
+                    </ul>
+                </li>
+            </ul><!-- /.nav-list -->
+
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+            </div>
+
+            <script type="text/javascript">
+                //try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+            </script>
+        </div>
+
+
+
+        <div class="main-content" style="height:100%;">
+            <iframe src="/main.html" name="iframe" frameborder="0" style="width:100%;height:100%;"></iframe>
+        </div>
+        <div style="clear:both;"></div>
+
+    </div><!-- /.main-container-inner -->
+
+   <!-- <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>-->
+</div><!-- /.main-container -->
+
+
+<!-- basic scripts -->
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/typeahead-bs2.min.js"></script>
+<script src="/js/bootbox.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="/js/jquery.dataTables.min.js"></script>
+<!-- ace scripts -->
+<script src="/js/ace-elements.min.js"></script>
+<script src="js/ace.min.js"></script>
+<script src="/js/bootstrap-lightbox/bootstrap-lightbox.js"></script>
+<script type="text/javascript" src="/js/fancybox/jquery.fancybox.js?v=2"></script>
+<script type="text/javascript" src="/js/tablednd/jquery.tablednd.js"></script>
+<script src="/js/chosen.jquery.min.js"></script>
+<script src="/js/date-time/moment.min.js"></script>
+<script src="/js/daterangepicker.js"></script>
+<script src="/js/jquery.knob.min.js"></script>
+<script src="/js/jquery.autosize.min.js"></script>
+<script src="/js/jquery.inputlimiter.1.3.1.min.js"></script>
+<script src="/js/jquery.maskedinput.min.js"></script>
+<script src="/js/mkpasswd.js"></script>
+<script src="/js/bootstrap-tag.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/jquery.zclip.min.js"></script>
+<script src="/js/fuelux/fuelux.spinner.min.js"></script>
+<script src="/js/layer/layer.js"></script>
+<script src="/js/system_setup/global.js"></script>
+<!-- <script src="/js/underscore-min.js"></script> -->
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+  
+    _sites = getUrl().sites;
+    sessionStorage._sites = _sites;
+    if(typeof  _json_url==='undefined')
+    {
+        window.location.href = '/login.html?sites='+_sites;
+    }
+    $(function () {
+        getUserMessage()
+        // 解绑QQ
+        $('#qq_logout_btn').on('click', function() {
+            console.log(11111)
+            $.ajax({
+                type: "post",
+                xhrFields:{
+        withCredentials:true
+        },
+        url: _json_url.url+'/qq_logout_btn',
+                data: {},
+                dataType: "json",
+                success:function(res){
+                  window.location.href = '/index.html?sites='+_sites
+                }
+            })
+        })
+        // 绑定QQ
+        $('#qq_login_btn').on('click', function() {
+          var isBind = false
+          var time = setInterval(function() {
+            var qqBind = localStorage.getItem('qqBind')
+            if (qqBind) {
+              clearInterval(time)
+              localStorage.setItem('qqBind', false)
+              isBind = true
+              top.window.location.href = '/?sites='+_sites
+            } else {
+                console.log(qqBind, 'qqBind')
+            }
+          }, 1000)
+          setTimeout(function() {
+            if (!isBind) {
+              clearInterval(time)
+              top.window.location.href = '/?sites='+_sites
+            }
+          }, 20000)
+        })
+        // 退出登录
+        $('#logout').on('click',function() {
+        if(typeof _json_url ==='undefined')
+        {
+
+            window.location.href = '/login.html?sites='+_sites
+            return;
+        }
+         
+          $.ajax({
+            type: "post",
+            xhrFields:{
+            withCredentials:true
+        },
+        url: _json_url.url+'/logout',
+        success:function()
+        {
+             window.location.href = '/login.html?sites='+_sites
+        }
+          })
+          return false
+        })
+    })
+ 
+  function getUserMessage() {
+      // console.log('data')
+      var random = Math.floor(Math.random()*1000)
+      $.ajax({
+        xhrFields:{
+        withCredentials:true
+        },
+        url: _json_url.url+'/getUserMessage?random='+random,
+        data: {},
+        dataType: "json",
+        success:function(res){
+          if(res.code===100)
+          {
+            
+            top.window.location.href = '/?sites='+_sites
+            
+            
+            return;
+          }  
+          if (res.error_code == 'SUCCESS') {
+            if (res.result.user_name) {
+                setUserNmae(res.result.user_name, res.result.headerImg)
+            } else {
+                defaultNmae()
+            }
+            var authority = res.result.authority
+            setSidebar(authority)
+            shortcut(res.result.shortcut)
+          }
+        }
+      })
+    }
+    
+    function setUserNmae(name, img) {
+        $('.user-info').html('<small>' + name + '</small>')
+        $('.nav-user-photo').attr("src", img);
+        $('#qq_logout_btn').show()
+        $('.badge1').hide()
+        $('.badge2').show()
+        $('#qq_login_btn').hide()
+    }
+    function defaultNmae() {
+        $('.user-info').html('<small></small>')
+        $('.nav-user-photo').attr("src", '/avatars/user.jpg');
+        $('#qq_logout_btn').hide()
+        $('.badge1').show()
+        $('.badge2').hide()
+        $('#qq_login_btn').show()
+    }
+    function setSidebar(authority) {
+      var sidebar = [[], [], [], [], [], [], [], [], [], []]
+      for (var i = 0; i < authority.length; i++) {
+        sidebar[authority[i].classify].push(authority[i])
+      }
+      // console.log(sidebar)
+      for (var i = 0; i < sidebar.length; i++) {
+        if (sidebar[i].length > 0) {
+          var sidebarList = ''
+          for (var j = 0; j < sidebar[i].length; j++) {
+            sidebarList += '<li><a href=" ' + sidebar[i][j].url + '.html?sites='+_sites+'"  target="iframe"><i class="icon-double-angle-right"></i>' + 
+            sidebar[i][j].name + '</a></li>'
+          }
+          $('.submenu' + sidebar[i][0].classify).append(sidebarList)
+        } else {
+          $('.submenu' + i).parents('li').remove()
+        }
+
+      }
+        $('.submenu').each(function(){
+        $(this).children().each(function(i){
+            $(this).click(function(){
+          $('.submenu li').each(function(){
+            $(this).removeClass('active')
+             $(this).parent().parent().removeClass('active')
+          })
+             $(this).addClass('active')
+             $(this).parent().parent().addClass('active')
+            })
+        })
+       })
+    }
+    function shortcut(list) {
+      $('.submenuk').html('')
+      for (var i = 0; i < list.length; i++) {
+        $('.submenuk').append('<li><a href="' + list[i].url + '.html"  target="iframe"><i class="icon-double-angle-right"></i>' + 
+            list[i].name + '</a></li>')
+      }
+       $('.submenu').each(function(){
+        $(this).children().each(function(i){
+            $(this).click(function(){
+          $('.submenu li').each(function(){
+            $(this).removeClass('active')
+             $(this).parent().parent().removeClass('active')
+          })
+             $(this).addClass('active')
+             $(this).parent().parent().addClass('active')
+            })
+        })
+       })
+    }
+
+</script>
+<script type="text/javascript">
+    //判断访问终端
+    var browser = {
+        versions : function() {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {
+                trident : u.indexOf('Trident') > -1, //IE内核
+                presto : u.indexOf('Presto') > -1, //opera内核
+                webKit : u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                mobile : !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone : u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                iPad : u.indexOf('iPad') > -1, //是否iPad
+                webApp : u.indexOf('Safari') == -1
+                //是否web应该程序，没有头部与底部
+            };
+        }(),
+        language : (navigator.browserLanguage || navigator.language)
+            .toLowerCase()
+    };
+
+    var clip = null;
+    function CreatePwd(id,num)
+    {
+        var ruleSet = {
+            maxRepeat:  0,
+            minChars: num,
+            maxChars: num,
+            minUpper: 0,
+            minLower: 0,
+            minNums:  0,
+            minSpecials:0
+        };
+        var charSet = {
+            // For special character set, don't use backslashes, quotes, or backticks
+            specials: "",
+            nums:   "0123456789",
+            uppers:   "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            lowers:   "abcdefghijklmnopqrstuvwxyz",
+            wholeSet: ""
+        };
+        pwd = mkPasswd(ruleSet, charSet)
+        $("#"+id).val(pwd);
+        return pwd;
+    }
+
+    function update_level(idx,level)
+    {
+        $("#update_level_"+idx).html("正在进行升降级，请稍等...");
+        $.post(_json_url.url+"/member_views_level_update_ajax/", { idx: idx,level:level },function(data){
+            $("#update_level_"+idx).html(data.msg);
+        },"json").error(function(data) { alert("网络错误，请重试！"); });
+    }
+
+    var oldBeforeRow = null;
+    jQuery(function($) {
+        /*
+         $("#mainTable").dataTable( {
+         "bPaginate":false,
+         "bInfo":false,
+         "bFilter":false,
+         "bSort":false
+         } )
+         */
+        var isChrome = window.chrome;
+        if(isChrome || browser.versions.mobile)
+        {
+            $("#chrome_tips").hide();
+        }
+        else
+        {
+            $("#chrome_tips").show();
+        }
+
+        $('[data-rel="copy"]').zclip({
+            path:'/static/js/ZeroClipboard_jq.swf?v=2012',
+            copy:function(){
+                pwd = eval($(this).attr("data-javascript"));
+                return pwd;
+            },
+            afterCopy:function(){
+                var e = this;
+                $(e).closest('.form-group').addClass('has-success');
+                $(e).next('.help-block').html("复制成功");
+            }
+        });
+
+
+        /*
+         ZeroClipboard.config({ swfPath: "/static/js/ZeroClipboard2.2.0.swf?v=2012" })
+         var client = new ZeroClipboard($(''));
+
+         client.on("copy", function (event) {
+         var target = event.target;
+         pwd = eval($(target).attr("data-javascript"));
+         var clipboard = event.clipboardData;
+         clipboard.setData( "text/plain", pwd );
+         });
+         client.on("aftercopy",function(event){
+         var e = event.target
+         $(e).closest('.form-group').addClass('has-success');
+         $(e).next('.help-block').html("复制成功");
+         })
+         client.on("error",function(event){
+         var e = event.target
+         $(e).closest('.form-group').addClass('has-error');
+         $(e).next('.help-block').html("复制失败");
+         });
+         */
+
+        $('.date').daterangepicker({
+            singleDatePicker: true,
+            format:"YYYY-MM-DD"
+        },function(start,end,label)
+        {
+            var elm = this.elements[0];
+            if(elm != undefined)
+            {
+
+            }
+        });
+        $('.datetime').daterangepicker({
+            singleDatePicker: true,
+            format:"YYYY-MM-DD HH:mm",
+            timePickerIncrement:5,
+            timePicker12Hour:false,
+            timePicker:true
+        },function(start, end, label) {
+
+        });
+
+
+
+
+
+        $(':file').ace_file_input({
+            style:'well',
+            no_file:'No File ...',
+            btn_choose:'点击选择图片',
+            onchange:null,
+            no_icon:'icon-cloud-upload',
+            droppable:false,
+            whitelist:'gif|png|jpg|jpeg',
+            thumbnail:'fit',
+            before_change:function(files, dropped) {
+                var allowed_files = [];
+                for(var i = 0 ; i < files.length; i++) {
+                    var file = files[i];
+                    if(typeof file === "string") {
+                        //IE8 and browsers that don't support File Object
+                        if(! (/\.(jpe?g|png|gif|bmp)$/i).test(file) ) return false;
+                    }
+                    else {
+                        var type = $.trim(file.type);
+                        if( ( type.length > 0 && ! (/^image\/(jpe?g|png|gif|bmp)$/i).test(type) )
+                            || ( type.length == 0 && ! (/\.(jpe?g|png|gif|bmp)$/i).test(file.name) )//for android's default browser which gives an empty string for file.type
+                        ) continue;
+                    }
+
+                    allowed_files.push(file);
+                }
+                if(allowed_files.length == 0) return false;
+
+                return allowed_files;
+            }
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        });
+
+        $(".chosen-select").chosen({
+            placeholder_text_multiple:"点击选择"
+        });
+        $('[data-rel=popover]').popover({container:'body'});
+
+        $('[data-rel="fancybox"][data-options!="confirm"],[data-modal="fancybox"][data-options!="confirm"]').fancybox({
+            type: 'iframe',
+            fitToView: true,
+            width: browser.versions.mobile ? "98%":'60%',
+            //height: '100%',
+            autoResize:true,
+            autoSize: true,
+            closeBtn:false,
+            closeClick: true,
+            openEffect: 'fade',
+            closeEffect: 'fade'
+        });
+
+
+        $('table th input:checkbox').on('click' , function(){
+            var that = this;
+            $(this).closest('table').find('tr > td:first-child input:checkbox')
+                .each(function(){
+                    this.checked = that.checked;
+                    if(this.checked)
+                        $(this).closest('tr').addClass('selected');
+                    else
+                        $(this).closest('tr').removeClass('selected');
+                });
+
+        });
+
+        $('tr > td:first-child input:checkbox').on('click',function(){
+            if(this.checked)
+                $(this).closest('tr').addClass('selected');
+            else
+                $(this).closest('tr').removeClass('selected');
+        });
+
+        $('[data-rel="select"]').click(function(){
+            var value = $(this).val();
+            var c = $('[data-group="select"]').closest('.form-group');
+            c.hide();
+            c.next(".hr").hide();
+            c = $('[data-group_idx="'+value+'"]').closest('.form-group');
+            c.show();
+            c.next(".hr").show();
+        })
+
+        $('[data-rel="select"]').first().click();
+
+        $('[data-rel="toggle"]').change(function(){
+            var c = $("#id_"+$(this).attr("data-options")).closest('.form-group');
+            c.toggle();
+            c.next(".hr").toggle();
+        });
+
+        $('[data-rel="toggle-widget"]').change(function(){
+            var c = $("#id_"+$(this).attr("data-options"))
+            c.toggle();
+        });
+
+        $('[data-rel="help_text"]').each(function(){
+            content = $(this).closest('.form-group').find(".help-button").attr("data-content")
+            help_block = $(this).parent().next('.help-block')
+            help_block.css("background-color",$(this).attr("data-color")).css("color","#000")
+            help_block.html(content);
+
+        });
+
+
+        $('[data-rel="ajax"]').change(function(){
+            if($(this).val().length > 0)
+            {
+                currVal = $(this).val();
+                url = $(this).attr("data-options");
+                fields = $(this).attr("data-fields");
+                if(fields == undefined)
+                    fields = {}
+                else
+                    fields = eval("(" + fields + ")")
+                e = this
+                $(this).after("<span>正在查询.....</span>")
+                $.post(_json_url.url+url, { data: currVal },function(data){
+                    if (data.success != 0){
+                        result = data.result;
+                        for(var key in result)
+                        {
+                            if(fields[key] != undefined)
+                                $("#id_"+fields[key]).val(result[key]);
+                            else
+                                $("#id_"+key).val(result[key]);
+                        }
+                        $(e).closest('.form-group').removeClass('has-error');
+                        $(e).parent().next('.help-block').html("");
+
+                    }
+                    else
+                    {
+                        $(":input").val("");
+                        $(e).closest('.form-group').addClass('has-error');
+                        $(e).parent().next('.help-block').html(data.msg);
+                        $(e).focus();
+
+                    }
+                    $(e).siblings("span").remove()
+                },"json").error(function(data) { alert("网络错误，请重试！"); });
+            }
+        });
+
+
+        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement,html:true});
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table,div')
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'left';
+        }
+
+        $('[data-ajax="ajax"]').click(function(){
+            currVal = $(this).attr("data-value");
+            url = $(this).attr("data-options");
+            fields = $(this).attr("data-fields");
+            if(fields == undefined)
+                fields = {}
+            else
+                fields = eval("(" + fields + ")")
+            e = this
+            for(var key in fields)
+            {
+                $("#"+fields[key]).html("正在查询...")
+            }
+            $.post(_json_url.url+url, { data: currVal },function(data){
+                if (data.success != 0){
+                    result = data.result;
+                    for(var key in result)
+                    {
+                        if(fields[key] != undefined)
+                            $("#"+fields[key]).html(result[key]);
+                        else
+                            $("#"+key).html(result[key]);
+                    }
+                }
+                else
+                {
+                    alert("查询失败，请重试！")
+                }
+            },"json").error(function(data) { alert("网络错误，请重试！"); });
+        });
+
+        $('[data-options="confirm"]').on(ace.click_event, function() {
+            url = $(this).attr("href");
+            bootbox.confirm($(this).attr("data-confirm-title"), function(result) {
+                if(result) {
+                    $.fancybox.open({
+                        type: 'iframe',
+                        fitToView: true,
+                        //width: "auto",
+                        //minWidth:335,
+                        //height: '100%',
+                        autoResize:true,
+                        //autoSize: false,
+                        closeBtn:false,
+                        closeClick: true,
+                        openEffect: 'fade',
+                        closeEffect: 'fade',
+                        href:url
+                    });
+
+                }
+            });
+        });
+
+
+
+        $(".table").tableDnD({
+            onDragClass: "warning",
+            dragHandle: ".dragHandle",
+            onDragStart: function(table, row) {
+                row = $(row).parent().get(0);
+                var id = row.id
+                var prev = null;
+                for(var i=1;i<table.rows.length;i++)
+                {
+                    var currRow = table.rows[i];
+                    if(currRow.id == id)  //找到移动行在表格中的当前位置
+                    {
+                        oldBeforeRow = prev;
+                    }
+                    if($(currRow).attr("pid") != $(row).attr("pid"))
+                    {
+                        $(currRow).addClass("nodrop");
+                    }
+                    prev = currRow;
+
+                }
+            },
+            onDrop: function(table, row) {
+                var pid = $(row).attr("pid")
+                var id = row.id
+                var prev = null;
+                var moveRows = [];
+                for(var i=1;i<table.rows.length;i++)
+                {
+                    var currRow = table.rows[i];
+                    if(currRow.id == id)  //找到移动行在表格中的当前位置
+                    {
+                        if(prev == null && pid != 0)  //子目录移到表格第一列
+                        {
+                            $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                            break;
+                        }
+                        else if(prev && pid != 0) //子目录移动到非第一列
+                        {
+                            if($(prev).attr("pid") == 0
+                                && prev.id !=pid)  //子目录移到其它父目录下(父目录后面)
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                            else if($(prev).attr("pid") != 0
+                                && $(prev).attr("pid") !=pid) //子目录移到其它父目录下（父目录的子目录后面）
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                        }
+                        else if(prev && pid == 0) //父目录移动到非第一列
+                        {
+                            var next = null; //找到移动行在表格中的下一行
+                            if(i + 1 < table.rows.length)
+                                next = table.rows[i+1]
+                            if(next && $(prev).attr("pid") == 0
+                                && $(next).attr("pid") == prev.id)  //父目录移动到其它父目录和子目录之间
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                            else if(next && $(prev).attr("pid") != 0
+                                && $(next).attr("pid") == $(prev).attr("pid"))//父目录移动到其它子目录和子目录之间
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                        }
+                    }
+
+                    if($(currRow).attr("pid") == id) //移动行的全部子目录一起跟着移动
+                    {
+                        moveRows.push(currRow);
+                    }
+                    prev = currRow;
+                }
+                for(var i=0;i<moveRows.length;i++)
+                {
+                    var currRow = moveRows[i];
+                    $(row).after(currRow);
+                }
+                var data = JSON.parse($.tableDnD.jsonize())
+                $.post(_json_url.url+"", $.tableDnD.serialize(), function (data) {
+                    //$(".alert").html(data)
+                });
+            }
+        });
+        $(document).on("mouseover", "tr", function () {
+            if(!$(this).hasClass("nodrop"))
+                $(this.cells[1]).filter(".dragHandle").addClass('showDragHandle');
+        });
+        $(document).on("mouseout", "tr", function () {
+            $(this.cells[1]).filter(".dragHandle").removeClass('showDragHandle');
+        });
+        /*
+         $(".table").find("tr[class!='nodrop']").hover(function() {
+         $(this.cells[1]).addClass('showDragHandle');
+         }, function() {
+         $(this.cells[1]).removeClass('showDragHandle');
+         });
+         */
+        $(".table").mouseup(function()
+        {
+            $(".nodrop").removeClass("nodrop");
+        })
+
+        $(".knob").knob();
+
+
+        $('.widget-container-span').sortable({
+            connectWith: '.widget-container-span',
+            items:'> .widget-box',
+            opacity:0.8,
+            revert:true,
+            forceHelperSize:true,
+            placeholder: 'widget-placeholder',
+            forcePlaceholderSize:true,
+            tolerance:'pointer',
+            stop:function(event,ui)
+            {
+                id = this.id;
+                list = $(this).sortable("toArray");
+                $.post(_json_url.url+"/setting_views_setgiftsort/", { gid: id,gifts:list },function(data){
+
+                },"json").error(function(data) { alert("网络错误，请重试！"); });
+            }
+        });
+    })
+</script>
+<script type="text/javascript">
+    QC.Login({//按默认样式插入QQ登录按钮
+        btnId:"qq_login_btn"    //插入按钮的节点id
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $(document).attr('title',_json_url.name+'--多人游戏后台管理系统')
+        $('._title').text(_json_url.name+'--多人游戏后台管理系统')
+    })
+
+</script>
+</body>
+</html>

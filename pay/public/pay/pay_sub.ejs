@@ -1,0 +1,335 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CC娱乐 充值中心</title>
+    <link type="text/css" rel="stylesheet" href="/skin_2013/style/style.css?v=201703311047"/>
+
+    <script src="/skin_2013/js/jquery-1.7.js" type="text/javascript"  language="javascript"></script>
+    <script type="text/javascript" language="javascript" src="/skin_2013/js/jquery.zxxbox.3.0-min.js"></script>
+    <script type="text/javascript" language="javascript" src="/js/underscore-min.js"></script>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/skin_2013/js/ie6png.js"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('.top_Box img,.pay_tb1,.pay_tb2,.pay_tb3,.pay_tb4,.pay_tb5,.pay_tb6,.pay_tb7,.pay_tb8,.pay_tb9,.pay_tb10,.pay_xtb1,.pay_xtb2,.p_rtop img');
+    </script>
+    <![endif]-->
+    <script>
+        function clearDefaultText (el,message)
+        {
+            var obj = el;
+            if(typeof(el) == "string")
+                obj = document.getElementById(id);
+            if(obj.value == message)
+            {
+                obj.value = "";
+                obj.style.color="#333";
+            }
+            obj.onblur = function()
+            {
+                if(obj.value == "")
+                {
+                    obj.value = message;
+                    obj.style.color="#999";
+                }
+            }
+        }
+        $(function()
+        {
+            $('.pay_c b').click(function(){
+                $('.pay_c').hide();
+                $('.pay_x').show();
+            })
+            //$('.pay_btn>input').attr("disabled","disabled")
+            search = _.debounce(function(){
+                if($("#userid2").val() == "" || $("#userid2").val() == "0") {
+                    $(".pay_tip>.msg").text("请输入账号");
+                    $("#userid").val("")
+                    return
+                }
+                $.getJSON("/search/user?idx=" + $("#userid2").val(),function(data) {
+                    if(data.length <= 1){
+                        if(data.length == 0) {
+                            $(".pay_tip>.msg").text("您输入的账号不存在");
+                            $("#userid").val("")
+                        } else {
+
+                            msg = "";
+                            if(data[0].pid && data[0].pid != "" && data[0].pid != "0") {
+                                msg += "<img width='30' src='http://img.piupiu.com/ico_piupiu.png'> " + data[0].myname + "("+data[0].pid+")";
+                            } else {
+                                msg += "<img width='30' src='http://img.piupiu.com/ico_ccav88.png'> " + data[0].myname + "("+data[0].idx+")";
+                            }
+                            $(".pay_tip>.msg").html(msg);
+                            $("#userid").val(data[0].idx)
+                            $(".pay_btn>input").removeAttr("disabled")
+                        }
+                        $(".pay_tip").show();
+                        $(".pay_tip>.msg").show();
+                        $(".pay_tip>.users").hide();
+                    } else {
+                        $(".pay_tip>.users>p.checked_radio").html("")
+                        for(var i=0;i<data.length;i++) {
+                            msg = "";
+                            if(data[i].pid && data[i].pid != "" && data[i].pid != "0") {
+                                msg += "<img width='20' src='http://img.piupiu.com/ico_piupiu.png'> " + data[i].myname + "("+data[i].pid+")";
+                            } else {
+                                msg += "<img width='20' src='http://img.piupiu.com/ico_ccav88.png'> " + data[i].myname + "("+data[i].idx+")";
+                            }
+                            if(i==0) {
+                                html = '<span class="rd_on"><label><input  name="p_userid" type="radio" value="'+data[i].idx+'" checked="checked"/>'+msg+'</label></span>'
+                                $("#userid").val(data[i].idx)
+                                $(".pay_btn>input").removeAttr("disabled")
+                            } else {
+                                html = '<span class=""><label><input  name="p_userid" type="radio" value="'+data[i].idx+'" />'+msg+'</label></span>'
+                            }
+                            $(".pay_tip>.users>p.checked_radio").append(html)
+                        }
+                        $(".pay_tip").show();
+                        $(".pay_tip>.msg").hide();
+                        $(".pay_tip>.users").show();
+                    }
+                })
+            },500);
+
+            $("#userid2").on("input change keypress",function(){
+                $(".pay_btn>input").attr("disabled","disabled")
+                search()
+            })
+
+            $('.checked_radio span').live("click",function(){
+                $(this).addClass('rd_on').siblings().removeClass('rd_on');
+            })
+
+            $("input[name=p_userid]").live("click",function(){
+                $("#userid").val(this.value)
+            })
+            var userid = $("#userid").val();
+            if (userid == "") {
+                //$("#userid").val("请输入您的ID");
+                $("#userid2").val("请输入您的ID");
+                $('.pay_c b').trigger("click");
+            } else {
+                search()
+                //$("#search>img").trigger("click");
+            }
+
+
+
+            $('#on_bank').click(function(){
+                $('#pay_bank').animate({height:'370'});
+                $(this).hide();
+            })
+
+            $('.pay_btn').click(function () {
+                if ($("#userid").val() == "") {
+                    alert("账号不能为空！,请输入账号并确认账号");
+                }
+                else {
+
+                    $("#pay_k").zxxbox();
+                    $("#bank_pay").submit();
+
+                }
+            });
+
+            $("#pay_k").click(function(){
+                $.zxxbox.hide();
+            })
+
+        })
+    </script>
+</head>
+<body>
+<div class="top_Box">
+    <ul class="clearfix mt_5">
+        <li class="left logo"><img title="" alt="" /></li>
+        <li class="left top_tit mt_20">充值中心</li>
+        <li class="nav t_r mt_10">
+            <a href="http://www.ccav88.jhzhidu.com">首页</a>
+
+
+            <span>欢迎您，亲爱的会员</span>
+        </li>
+    </ul>
+</div>
+<div class="middle bg_f7 p_30 clearfix">
+    <div class="body_auto">
+
+
+        <div class="pay_left left">
+            <h1 class="clearfix">
+
+
+                <span onclick="window.location.href='pay/pay'" class="p_tit1 t_bg1 "  title="账户充值">账户充值</span>
+
+
+                <span onclick="window.location.href='pay/payvip'" class="p_tit2 t_bg2 t_opc" title="购买VIP">购买VIP</span>
+
+
+            </h1>
+            <div class="clearfix" id="pay_box">
+                <ul class="left t_c pay_class" id="pay_c">
+
+
+                    <li >
+                        <a href="pat/pay">
+                            <span class="pay">网银支付</span></a>
+                    </li>
+
+
+
+                    <li class="select_on">
+                        <a href="alipay">
+                            <span class="alipay">支付宝支付</span></a>
+                    </li>
+
+
+
+                    <li >
+                        <a href="weixinpay">
+                            <span class="weixinpay">微信支付</span></a>
+                    </li>
+
+
+
+                    <li >
+                        <a href="card">
+                            <span class="card">点卡充值</span></a>
+                    </li>
+
+
+
+                </ul>
+                <!--确认订单信息-->
+                <div class="pay_info pay_dd">
+                    <ul class="f_14 mt_20 pl_30 mb_20">
+                        <li class="col_f50 bd_line1 mr_10 pb_5">请确认您的订单</li>
+                        <li class="pay_c1">充值站点：<span style="color:red;font-weight:bold;"></span> （请务必确认充值站点）</li>
+                        <li> 订单号： zdp_ccav_201704261738322521    <span style="color:red">注：请记录该订单号或截图该屏，届时如果各种未知原因充值没到账，该订单号将非常有用</span></li>
+                        <li>渠道：智通卡</li>
+                        <li>类别： 智通卡（支付宝）</li>
+                        <li style="color:green">用户昵称： <img width='30' src='http://img.piupiu.com/ico_ccav88.png'> 2333 (2333) </li>
+                        <li>param： coin_alipay_100</li>
+                        <li>金额： 100</li>
+                        <li>说明： 支付宝:1元=90000币</li>
+                    </ul>
+                    <form id="form1" method="post" action="/pay/gateway">
+                        <input id="oid" name="oid" type="hidden" value="zdp_ccav_201704261738322521" />
+                        <p class="pay_btn2 t_c mt_20"><input type="submit" value="确认充值"  class="w_140"/></p>
+                    </form>
+
+                </div>
+                <!--确认订单信息end-->
+
+            </div>
+        </div>
+
+
+
+        <div class="pay_right right">
+            <ul class="p_rtop">
+
+
+                <li class="clearfix">
+                    <i><img src="/skin_2013/images/r_xtb2.png"/></i>
+                    <span class="left r_class">
+                    	客户服务热线：</br>
+
+                        <b>15872527222</b>
+
+                    </span>
+                </li>
+
+                <li class="clearfix">
+                    <i><img src="/skin_2013/images/r_xtb3.png"/></i>
+                    <span class="left">
+
+                    	<a href="http://wpa.qq.com/msgrd?v=3&uin=123621716&site=在线咨询&menu=yes" class="r_class" title="在线咨询"><b class="qq_1 qq_1s"></b></a>
+
+
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=123621716&site=在线咨询&menu=yes" class="r_class" title="VIP销售"><b class="qq_2 qq_2s"></b></a>
+
+                    </span>
+                </li>
+
+            </ul>
+            <ul class="r_ts">
+                <li><b>温馨提示</b></li>
+                <li>如果您在充值过程中遇到什么问题请及时与客服联系！</li>
+                <li>
+                    1.充值后请保存好订单号码，以备核对。</br>
+                    2.如果充值遇到问题请联系客服。</br>
+                    3.请保管好你的密码，以免丢失号。
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="foot_Box">
+    <ul class="body_auto">
+
+        <li class="mt_20">
+        	<span class="right">
+            </span>
+
+
+            警方提示防诈骗、远离黄赌毒<br>
+            <br>
+            Copyright (C) 2010-2018  All Rights Reserved XRSystem 版权所有
+
+
+        </li>
+    </ul>
+</div>
+<div id="pay_k" style="display:none">
+    <div class="pay_k col_55">
+        <h2><b class="right close" title="关闭"></b> 登录网上银行付款</h2>
+        <ul class="mt_20">
+            <li>充值完成前请不要关闭此窗口。完成充值后请根据你的情况点击下面的按钮：</li>
+            <li><b>请在新开网上储蓄卡页面完成付款后再选择。</b></li>
+            <li>或 <span class="col_09e">返回重新选择充值方式</span></li>
+            <li class="btn t_c mt_20">
+                <a href="javascript:;"><span>已完成充值</span></a>
+                <a href="#"><span>充值遇到问题</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="block_Bg"></div>
+</div>
+<script type="text/javascript">
+    $(function() {
+      var order_num= getRequest().order_num;
+      getOrderMessage(order_num)
+    })
+    function getRequest() {
+      var url = window.location.search; //获取url中"?"符后的字串
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+          theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+    function getOrderMessage(order_money) {
+      $.ajax({
+        type: "post",
+        url: '/getOrder',
+        data: {
+          order_money: order_money,
+        },
+        dataType: "json",
+        success:function(res){
+          if (res.error_code === 'SUCCESS') {
+            console.log(res)
+          }
+        }
+      })
+    }
+</script>
+</body>
+</html>

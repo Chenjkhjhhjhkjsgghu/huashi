@@ -1,0 +1,159 @@
+﻿@charset "utf-8";
+/* ===========================================
+   Bailh CSS for User
+   By rEsky lEe
+   2010-05-28 
+=========================================== */
+@import url(global.css);
+@import url(foot.css);
+
+
+/*User*/
+.user {margin:0 auto 10px auto;width:960px;padding:10px 10px 30px 10px;border: 1px #d4d4d4 solid;}
+
+.user_top {margin:0 0 1px 0;padding:0;width:100%;background:url(/media/default/images/banner_bg.jpg) top left repeat-x; height:120px}
+.user_top .banner {margin:0 auto;padding:0;width:980px;height:120px}
+.user_top .banner img {float:left;margin:0;padding:0;border:0}
+
+.user .title {float:left;margin:0 0 10px 0;width:960px; padding:0;border-bottom:1px #d4d4d4 dashed}
+.user .title h2 {float:right; margin:0; font-size:12px; font-family:'宋体';color:#000;text-align:left; font-weight:lighter; padding:5px 5px 10px 0}
+.user .title h2 a {color:#ff5500; text-decoration:none}
+.user .title h2 a:hover {color:#ff5500; text-decoration:underline}
+.user .title span {color:#ff5500}
+.user .tip {float:left;margin:0;padding:0; width:960px}
+.user .tip h2 {float:left; margin:0 0 10px 0; font-size:14px; font-family:'宋体';color:#000;text-align:left; font-weight:bold;padding:5px 0 10px 5px;border-bottom:1px #d4d4d4 solid;width:955px}
+.user .tip h2 span {color:#ff5500}
+
+.user_body {float:left;margin:0;padding:10px 0 10px 0; width:960px;}
+
+.user_topmenu {float:left;margin:0 0 20px 0;padding:0 15px 0 15px;width:930px;height:28px; background:url(/media/default/images/menu_bg.gif) top left repeat-x}
+.user_topmenu ul {margin:0;padding:0}
+.user_topmenu ul li {margin:0 2px 0 0;padding:0}
+
+.utp_menu_on {float:left;height:28px;background:url(/media/default/images/menu_on.gif) top left repeat-x; border-left:1px #c4d6ec solid; border-right:1px #c4d6ec solid; cursor:pointer}
+.utp_menu_on span {float:left; margin:0;padding:7px 10px 0 10px;font-size:14px; font-family:'宋体';color:#000;text-align:left; font-weight:bold}
+.utp_menu_off {float:left;height:27px;background:url(/media/default/images/menu_off.gif) top left repeat-x; border-left:1px #c4d6ec solid; border-right:1px #c4d6ec solid; cursor:pointer}
+.utp_menu_off span {float:left; margin:0;padding:7px 10px 0 10px;font-size:14px; font-family:'宋体';color:#1e50a2;text-align:left; font-weight:lighter}
+
+.user_contain {float:left;margin:0 0 20px 0;padding:0 30px 0 30px;width:900px;}
+
+.umc_input {float:left;margin:0 3px 0 0;border:1px #99d2ee solid; padding:4px 4px 0 4px; background:#ffffff;width:200px;height:18px;}
+.umc_input_on {float:left;width:200px;margin:0 3px 0 0;height:18px;border:1px #8ecb96 solid; padding:4px 4px 0 4px; background:#ecf8e8}
+.umc_input2 {float:left;width:113px;margin:0 3px 0 0;height:18px;border:1px #99d2ee solid; padding:4px 4px 0 4px; background:#ffffff;margin:0 5px 0 0}
+.umc_input2_on {float:left;width:113px;margin:0 3px 0 0;height:18px;border:1px #8ecb96 solid; padding:4px 4px 0 4px; background:#ecf8e8;margin:0 5px 0 0}
+
+.umcbtn_off {float:left;margin:0 5px 0 0;padding:0;width:90px;height:25px; background:url(/media/default/images/user_btn.gif) 0 0 no-repeat;cursor:pointer}
+.umcbtn_off span {float:left;margin:0;padding:6px 0 0 0;font-family:'宋体'; font-size:12px; font-weight:lighter; color:#000000; text-align:center;width:90px}
+.umcbtn_on {float:left;margin:0 5px 0 0;padding:0;width:90px;height:25px; background:url(/media/default/images/user_btn.gif) 0 -25px no-repeat;cursor:pointer}
+.umcbtn_on span {float:left;margin:0;padding:6px 0 0 0;font-family:'宋体'; font-size:12px; font-weight:lighter; color:#000000; text-align:center;width:90px}
+
+.user_contain .userwelcome {float:left;margin:0;padding:0 101px;with:698px; text-align:center}
+.user_contain .userwelcome img {margin:0 auto;padding:0; border:0;}
+
+.user_contain .userinfo {float:left;margin:0;padding:0;with:900px}
+.user_contain .userinfo .title {float:left;margin:0 0 15px 0;padding:0;width:900px; border-bottom:1px #cccccc dashed}
+.user_contain .userinfo .title span {float:left;margin:0 0 5px 0;padding:0 0 10px 5px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a}
+.user_contain .userinfo ul {margin:0;padding:0}
+.user_contain .userinfo ul li {float:left;margin:0;padding:0 0 10px 0;width:900px;}
+.user_contain .userinfo ul li h2 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#999999;width:740px; text-align:left; font-weight:lighter;padding:0 0 8px 160px}
+.user_contain .userinfo ul li h2 span {color:#ff5500; font-size:12px}
+.user_contain .userinfo ul li h3 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#333333;width:150px; text-align:right; font-weight:lighter;padding:4px 10px 10px 0}
+.user_contain .userinfo ul li h3 span {color:#ff5500; font-size:12px}
+.user_contain .userinfo ul li img {float:left;margin:0;padding:0;border:0}
+.user_contain .userinfo ul li h4 {float:left; margin:0; font-size:12px; font-family:'宋体';color:#ff0000;width:350px; text-align:left; font-weight:lighter;padding:7px 0 0 10px}
+.user_contain .userinfo ul li h5 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#000;text-align:left; font-weight:lighter}
+.user_contain .userinfo ul li h6 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#000;text-align:left; font-weight:lighter; font-weight:lighter;padding:4px 3px 0 3px}
+.user_contain .userinfo ul li select {float:left;margin:0;padding:0}
+.user_contain .userinfo ul li input {float:left;}
+
+.user_contain .userhead {float:left;margin:0;padding:0;with:900px}
+.user_contain .userhead .title {float:left;margin:0 0 15px 0;padding:0;width:900px; border-bottom:1px #cccccc dashed}
+.user_contain .userhead .title span {float:left;margin:0 0 5px 0;padding:0 0 10px 5px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a}
+
+.umc_syshead {float:left;margin:0;padding:5px 0;width:900px;}
+.umc_syshead h2 {float:left;margin:0;padding:0 0 10px 0; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a; width:900px}
+.umc_syshead .list {float:left;margin:0 0 10px 0;padding:0 0 10px 0; text-align:left; font-family:'宋体'; font-size:12px; font-weight:bold; color:#4a4a4a; width:900px;border-bottom:1px #d4d4d4 dashed;}
+.umc_syshead .list ul {margin:0;padding:0}
+.umc_syshead .list ul li {float:left;margin:0 0 5px 0;padding:5px 0 0 0;width:100px;text-align:center;cursor:pointer;height:65px;}
+.umc_s_off {}
+.umc_s_off img {margin:0;padding:1px;width:60px;height:60px;border:2px #eaeaea solid}
+.umc_s_on {}
+.umc_s_on img {margin:0;padding:1px;width:60px;height:60px;border:2px #bee1ff solid}
+.umc_s_ov {}
+.umc_s_ov img {margin:0;padding:1px;width:60px;height:60px;border:2px #cccccc solid}
+
+.umc_uplhead {float:left;margin:0;padding:5px 0;width:900px;}
+.umc_uplhead h2 {float:left;margin:0;padding:0 0 20px 0; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a; width:900px}
+.umc_uplhead .viewuphead {float:left;margin:0 10px 0 0;padding:0 0 0 20px}
+.umc_uplhead .viewuphead img {margin:0 0 5px 0;padding:10px;width:60px;height:60px;border:1px #bee1ff solid}
+.umc_uplhead .upheadarea {float:left;margin:0;padding:0;width:600px;}
+.umc_uplhead .upheadarea h3 {float:left;margin:0 0 5px 0;padding:0; text-align:left; font-family:'宋体'; font-size:12px; font-weight:bold; color:#4a4a4a; width:600px}
+
+.user_contain .userpower {float:left;margin:0;padding:0;with:900px}
+.user_contain .userpower .title {float:left;margin:0 0 15px 0;padding:0;width:900px; border-bottom:1px #cccccc dashed}
+.user_contain .userpower .title span {float:left;margin:0 0 5px 0;padding:0 0 10px 5px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a}
+.user_contain .userpower .contain {float:left;margin:0 0 15px 0;padding:0;width:900px;}
+
+.user_contain .useruse {float:left;margin:0;padding:0;with:900px}
+.user_contain .useruse .title {float:left;margin:15px 0 15px 0;padding:0;width:100%; border-bottom:1px #cccccc dashed}
+.user_contain .useruse .title span {float:left;margin:0 0 5px 0;padding:0 0 10px 5px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a}
+.user_contain .useruse .search {float:left;margin:0 0 15px 0;padding:5px 0 20px 0;width:900px; border-bottom:1px #cccccc dashed}
+.user_contain .useruse .search h2 {float:left;width:60px;margin:0; font-size:12px; font-family:'宋体';color:#1f83c9;text-align:left; font-weight:lighter;padding:6px 0 0 5px}
+.user_contain .useruse .datearea {float:left;margin:0 0 15px 0;padding:0 0 20px 0;width:100%;border-bottom:1px #cccccc dashed}
+.user_contain .useruse .bottom {float:left;margin:0;padding:0;width:100%;}
+.user_contain .useruse .bottom .page {float:left;margin:0;padding:0;}
+.user_contain .useruse .bottom .page a {float:left;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#1f83c9;text-align:left; font-weight:lighter; text-decoration:none}
+.user_contain .useruse .bottom .page a:hover {float:left;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#ffffff;text-align:left; font-weight:lighter; text-decoration:none; background:#30789e}
+.user_contain .useruse .bottom .page span {float:left;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#ffffff;text-align:left; font-weight:lighter; text-decoration:none; background:#4393bd}
+.user_contain .useruse .bottom .total {float:right;margin:0;padding:0} 
+.user_contain .useruse .bottom .total h2 {float:right;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#4393bd;text-align:left; font-weight:lighter}
+.user_contain .useruse .bottom .total h2 span {color:#ff5500}
+
+.searchtype {float:left;margin:0 5px 5px 0;padding:5px 10px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#ffffff;background:#4393bd;cursor:pointer}
+.searchtype_off {float:left;margin:0 5px 5px 0;padding:5px 10px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:lighter; color:#323232;background:#cccccc;cursor:pointer}
+
+.user_contain .usercard {float:left;margin:0;padding:0;with:900px}
+.user_contain .usercard .title {float:left;margin:0 0 15px 0;padding:0;width:100%; border-bottom:1px #cccccc dashed}
+.user_contain .usercard .title span {float:left;margin:0 0 5px 0;padding:0 0 10px 5px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a}
+.user_contain .usercard .search {float:left;margin:0 0 15px 0;padding:5px 0 20px 0;width:900px; border-bottom:1px #cccccc dashed}
+.user_contain .usercard .search h2 {float:left;width:60px;margin:0; font-size:12px; font-family:'宋体';color:#1f83c9;text-align:left; font-weight:lighter;padding:6px 0 0 5px}
+.user_contain .usercard .datearea {float:left;margin:0 0 15px 0;padding:0 0 20px 0;width:100%;border-bottom:1px #cccccc dashed}
+.user_contain .usercard .bottom {float:left;margin:0;padding:0;width:100%;}
+.user_contain .usercard .bottom .page {float:left;margin:0;padding:0;}
+.user_contain .usercard .bottom .page a {float:left;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#1f83c9;text-align:left; font-weight:lighter; text-decoration:none}
+.user_contain .usercard .bottom .page a:hover {float:left;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#ffffff;text-align:left; font-weight:lighter; text-decoration:none; background:#30789e}
+.user_contain .usercard .bottom .page span {float:left;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#ffffff;text-align:left; font-weight:lighter; text-decoration:none; background:#4393bd}
+.user_contain .usercard .bottom .total {float:right;margin:0;padding:0} 
+.user_contain .usercard .bottom .total h2 {float:right;margin:0 3px 0 0;padding:3px;line-height:16px;font-size:12px;font-family:'宋体';color:#4393bd;text-align:left; font-weight:lighter}
+.user_contain .usercard .bottom .total h2 span {color:#ff5500}
+
+.user_contain .changecode {float:left;margin:0;padding:0;with:900px}
+.user_contain .changecode .title {float:left;margin:0 0 15px 0;padding:0;width:100%; border-bottom:1px #cccccc dashed}
+.user_contain .changecode .title span {float:left;margin:0 0 5px 0;padding:0 0 10px 5px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a}
+.user_contain .changecode ul {margin:0;padding:0}
+.user_contain .changecode ul li {float:left;margin:0;padding:0 0 10px 0;width:900px;}
+.user_contain .changecode ul li h2 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#999999;width:740px; text-align:left; font-weight:lighter;padding:0 0 8px 160px}
+.user_contain .changecode ul li h2 span {color:#ff5500; font-size:12px}
+.user_contain .changecode ul li h3 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#333333;width:150px; text-align:right; font-weight:lighter;padding:4px 10px 10px 0}
+.user_contain .changecode ul li h3 span {color:#ff5500; font-size:12px}
+.user_contain .changecode ul li img {float:left;margin:0;padding:0;border:0}
+.user_contain .changecode ul li h4 {float:left; margin:0; font-size:12px; font-family:'宋体';color:#ff0000;width:350px; text-align:left; font-weight:lighter;padding:7px 0 0 10px}
+.user_contain .changecode ul li h5 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#000;text-align:left; font-weight:lighter}
+.user_contain .changecode ul li h6 {float:left; margin:0; font-size:14px; font-family:'宋体';color:#000;text-align:left; font-weight:lighter; font-weight:lighter;padding:4px 3px 0 3px}
+.user_contain .changecode ul li select {float:left;margin:0;padding:0}
+.user_contain .changecode ul li input {float:left;}
+
+.user_contain .userlevel {float:left;margin:0;padding:0;with:900px}
+.user_contain .userlevel .title {float:left;margin:0 0 15px 0;padding:0;width:100%; border-bottom:1px #cccccc dashed}
+.user_contain .userlevel .title span {float:left;margin:0 0 5px 0;padding:0 0 10px 5px; text-align:left; font-family:'宋体'; font-size:14px; font-weight:bold; color:#4a4a4a}
+.user_contain .userlevel .contain {float:left;margin:0 0 15px 0;padding:0;width:100%;}
+
+.tdstyle_co_b {background:#83bbd9;color:#000;font-size:12px; font-family:'宋体';font-weight:lighter;}
+.tdstyle_co_w {background:#ffffff;color:#000;font-size:12px; font-family:'宋体';font-weight:lighter;}
+.tdstyle_co_tb {background:#4393bd;color:#fff;font-size:12px; font-family:'宋体';font-weight:lighter;}
+.tdstyle_co_tbs {background:#d6f1ff;color:#000;font-size:12px; font-family:'宋体';font-weight:lighter;}
+.tdstyle_co_tbd {background:#eff9ff;color:#000;font-size:12px; font-family:'宋体';font-weight:lighter;}
+.tdstyle_co_tbo {background:#a7d8f3;color:#000;font-size:12px; font-family:'宋体';font-weight:lighter;}
+.tdtext_left {text-align:left}
+.tdtext_right {text-align:right}
+.tdtext_center {text-align:center}

@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1111</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="">
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+</head>
+<body class="gray-bg">
+<div class="middle-box text-center animated fadeInDown">
+</div>
+</body>
+<script type="text/javascript">
+	$(function() {
+		var url = document.location.href;
+    // console.log(url)
+    var thisUrl = url.split('?')[1]
+    getToken(thisUrl)
+	})
+  function getToken(url) {
+		var list = url
+		list = list.split('&')
+		var obj = {}
+		for (var i = 0; i < list.length; i++) {
+			var key = list[i].split('=')[0]
+			var value = list[i].split('=')[1]
+			obj[key] = value
+		}
+		var random = Math.floor(Math.random()*1000)
+		$.ajax({
+      type: "get",
+      xhrFields:{
+        withCredentials:true
+        },
+        url: _json_url.url+'/qq?access_token='+obj.access_token+'&random='+random,
+      data: {},
+      dataType: "json",
+      success:function(res){
+        if(res.code===100)
+          {
+            
+            top.window.location.href = '/?sites='+_sites
+            
+            
+            return;
+          }  
+          if (res.error_code == 'SUCCESS') {
+          window.close()
+          localStorage.setItem('qqBind', true)
+        } else {
+        	alert(res.reason)
+        }
+      }
+    })
+	}
+</script>
+<style type="text/css">
+	* {
+		text-align: center;
+		margin:0;
+		padding: 0;
+		color: #333;
+	}
+	h1 {
+		font-size: 100px;
+		color: #666;
+	}
+	h3 {
+		font-size: 40px;
+	}
+	.error-desc  {
+		font-size: 40px;
+	}
+</style>
+</html>

@@ -1,0 +1,160 @@
+﻿
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="static/css/bank.css?v=5" />
+    <title>银行</title>
+    <script src="static/js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript">
+function CCNet(divName,tName,divId)
+{
+  //alert(divId);
+  var zzDivCount = 2;
+  for(i=0;i<=zzDivCount;i++)
+  {
+    //var objDiv = getObject(i);
+    if(divId == i)
+    {
+      document.getElementById(divName+divId).className = "on";
+      document.getElementById(tName+divId).style.display="block";
+    }
+    else
+    {
+      document.getElementById(divName+i).className = "";
+      document.getElementById(tName+i).style.display="none";
+    }
+  }
+}
+
+function Openbuy()
+{
+    window.open('http://tangrj.pay.jhzhidu.com/Pay/pay/?top=1&amp;userid=59193');
+    return;
+    var jslevel=1840;
+    if(jslevel<100)
+    {
+        if (!confirm('对不起！您需要注册才能充值,点击确定填写注册资料！')) { return false; }
+        window.open('http://www.tangrj.jhzhidu.com/reg.aspx');
+    }else
+    {
+        window.open('http://tangrj.pay.jhzhidu.com/Pay/pay/?top=1&amp;userid=59193');
+    }
+}
+
+//存款
+function ck_on() {
+    var bank = 20000000;
+    var coin = 18807888;
+    var ckmoney = $("#ck_money").val();
+    if (parseInt(ckmoney) > coin) {
+        $("#ck_money").val(coin);
+    }
+};
+//取款
+function qk_on() {
+    var bank = 20000000;
+    var coin = 18807888;
+    var qkmoney = $("#qk_money").val();
+    if (parseInt(qkmoney) > bank) {
+        $("#qk_money").val(bank);
+    }
+};
+    </script>
+</head>
+
+<body scroll="no">
+    <div class="main">
+        <div class="mbf_top">
+            <ul>
+                <li id="tab0" class="on"><h2><a href="#" onclick="CCNet('tab','t','0')">存款</a></h2></li>
+                <li id="tab1"><h2><a href="#" onclick="CCNet('tab','t','1')">取款</a></h2></li>
+                <li id="tab2"><h2><a href="#" onclick="CCNet('tab','t','2')">修改密码</a></h2></li>
+            </ul>
+        </div>
+        <form method="post">
+            <div id="t0" class="main_bankframe">
+                <div class="mbf_bankinfo">
+                    <ul>
+                        <li><h2>银行存款</h2><h3>20000000</h3></li>
+                        <li><h2>账户余额</h2><h3>18807888</h3><a href="http://tangrj.pay.jhzhidu.com/Pay/pay/?top=1&amp;userid=59193" class="btn_charge">充值</a></li>
+                    </ul>
+                </div>
+                <div class="mbf_banks">
+                    <table width="340" border="0" cellspacing="0" cellpadding="0" class="regtable">
+                        <tr>
+                            <td class="td_w1"><h2>我要存入</h2></td>
+                            <td class="td_w2"><input class="td_input" onmouseover="this.className='td_input_hover'" onmouseout="this.className='td_input'" name="ck_money" id="ck_money" onblur="ck_on()" onkeyup="this.value=this.value.replace(/\D/g,&#39;&#39;)" onafterpaste="this.value=this.value.replace(/\D/g,&#39;&#39;)"> </td>
+                            <td class="td_w3"><h3><span class="check_w"></span></h3></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mbf_barea">
+                    <div class="submitnow">
+                        <input type="submit" name="btnCK" class="btn_submit" value="确定存入" />
+                    </div>
+                    <div class="submitres"><h2></h2></div>
+                </div>
+            </div>
+            <div id="t1" class="main_bankframe" style="display:none">
+                <div class="mbf_bankinfo">
+                    <ul>
+                        <li><h2>银行存款</h2><h3>20000000</h3></li>
+                        <li><h2>账户余额</h2><h3>18807888</h3><a href="http://tangrj.pay.jhzhidu.com/Pay/pay/?top=1&amp;userid=59193" class="btn_charge">充值</a></li>
+                    </ul>
+                </div>
+                <div class="mbf_banks">
+                    <table width="340" border="0" cellspacing="0" cellpadding="0" class="regtable">
+                        <tr>
+                            <td class="td_w1"><h2>我要取款</h2></td>
+                            <td class="td_w2"><input class="td_input" onmouseover="this.className='td_input_hover'" onmouseout="this.className='td_input'" name="qk_money" id="qk_money" onblur="qk_on()" onkeyup="this.value=this.value.replace(/\D/g,&#39;&#39;)" onafterpaste="this.value=this.value.replace(/\D/g,&#39;&#39;)"></td>
+                            <td class="td_w3"><h3><span class="check_w"></span></h3></td>
+                        </tr>
+                        <tr>
+                            <td class="td_w1"><h2>取款密码</h2></td>
+                            <td class="td_w2"><input class="td_input" onmouseover="this.className='td_input_hover'" onmouseout="this.className='td_input'" name="qk_pwd" id="qk_pwd" type="password"></td>
+                            <td class="td_w3"><h3><span class="check_w"></span></h3></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mbf_barea">
+                    <div class="submitnow">
+                        <input type="submit" name="btnQK" class="btn_submit" value="确定取款" />
+                    </div>
+                    <div class="submitres"><h2></h2></div>
+                </div>
+            </div>
+            <div id="t2" class="main_bankframe" style="display:none">
+                <div class="mbf_banks">
+                    <table width="340" border="0" cellspacing="0" cellpadding="0" class="regtable">
+                        <tr>
+                            <td colspan="3"><h4><span class="check_w">为了存款安全请设置取款密码！</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td class="td_w1"><h2>原 密 码</h2></td>
+                            <td class="td_w2"><input class="td_input" onmouseover="this.className='td_input_hover'" onmouseout="this.className='td_input'" name="oldpwd" id="oldpwd" type="password"></td>
+                            <td class="td_w3"><h3><span class="check_w">默认：888888</span></h3></td>
+                        </tr>
+                        <tr>
+                            <td class="td_w1"><h2>新 密 码</h2></td>
+                            <td class="td_w2"><input class="td_input" onmouseover="this.className='td_input_hover'" onmouseout="this.className='td_input'" name="newpwd" id="newpwd" type="password"></td>
+                            <td class="td_w3"><h3><span class="check_w"></span></h3></td>
+                        </tr>
+                        <tr>
+                            <td class="td_w1"><h2>确认密码</h2></td>
+                            <td class="td_w2"><input class="td_input" onmouseover="this.className='td_input_hover'" onmouseout="this.className='td_input'" name="renewpwd" id="renewpwd" type="password"></td>
+                            <td class="td_w3"><h3><span class="check_w"></span></h3></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mbf_barea">
+                    <div class="submitnow">
+                        <input type="submit" name="btnXG" class="btn_submit" value="确定修改" />
+                    </div>
+                    <div class="submitres"><h2></h2></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

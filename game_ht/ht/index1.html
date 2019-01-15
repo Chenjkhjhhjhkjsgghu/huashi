@@ -1,0 +1,1984 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>欢聚吧----多人视频后台管理系统</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- basic styles -->
+    <link href="/static/css/bootstrap.min.css?v=1" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css?v=2" />
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="/static/css/font-awesome-ie7.min.css?v=2" />
+    <![endif]-->
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/static/css/ace.min.css?v=2" />
+    <link rel="stylesheet" href="/static/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/static/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="/static/js/bootstrap-lightbox/bootstrap-lightbox.min.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/static/js/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="/static/js/tablednd/tablednd.css" />
+    <link rel="stylesheet" href="/static/css/chosen.css" />
+    <link rel="stylesheet" href="/static/css/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="/static/css/jquery-ui-1.12.1.min.css" />
+
+
+    <!--[if lte IE 8]>
+          <link rel="stylesheet" href="/static/css/ace-ie.min.css" />
+    <![endif]-->
+    <script src="/static/js/ace-extra.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="/static/js/html5shiv.js"></script>
+        <script src="/static/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='/static/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+    <!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='/static/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+    <script type="text/javascript">
+        if("ontouchend" in document) document.write("<script src='/static/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+
+        if (typeof Array.prototype.map != "function") {
+            Array.prototype.map = function (fn, context) {
+                var arr = [];
+                if (typeof fn === "function") {
+                    for (var k = 0, length = this.length; k < length; k++) {
+                        arr.push(fn.call(context, this[k], k, this));
+                    }
+                }
+                return arr;
+            };
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-leaf"></i>
+                        欢聚吧----多人视频后台管理系统
+                    </small>
+                </a><!-- /.brand -->
+            </div><!-- /.navbar-header -->
+
+            <div class="navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+
+                <li id="chrome_tips" style="display: none;" class="text-warning bigger-160 orange2">
+                    <i class="icon-warning-sign"></i><b><a class="text-warning bigger-120 orange2" href="http://pan.baidu.com/s/1ntA9RSX" target="_blank">为更好的使用本后台系统，我们推荐使用Chrome浏览器，立刻点击这里下载</a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+
+            <!--
+                <li class="grey">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon-tasks"></i>
+                        <span class="badge badge-grey">4</span>
+                    </a>
+
+                    <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="icon-ok"></i>
+                            4 Tasks to complete
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                    <span class="pull-left">Software Update</span>
+                                    <span class="pull-right">65%</span>
+                                </div>
+
+                                <div class="progress progress-mini ">
+                                    <div style="width:65%" class="progress-bar "></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                    <span class="pull-left">Hardware Upgrade</span>
+                                    <span class="pull-right">35%</span>
+                                </div>
+
+                                <div class="progress progress-mini ">
+                                    <div style="width:35%" class="progress-bar progress-bar-danger"></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                    <span class="pull-left">Unit Testing</span>
+                                    <span class="pull-right">15%</span>
+                                </div>
+
+                                <div class="progress progress-mini ">
+                                    <div style="width:15%" class="progress-bar progress-bar-warning"></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                    <span class="pull-left">Bug Fixes</span>
+                                    <span class="pull-right">90%</span>
+                                </div>
+
+                                <div class="progress progress-mini progress-striped active">
+                                    <div style="width:90%" class="progress-bar progress-bar-success"></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                See tasks with details
+                                <i class="icon-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="purple">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon-bell-alt icon-animated-bell"></i>
+                        <span class="badge badge-important">8</span>
+                    </a>
+
+                    <ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="icon-warning-sign"></i>
+                            8 Notifications
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                                            <span class="pull-left">
+                                                                <i class="btn btn-xs no-hover btn-pink icon-comment"></i>
+                                                                New Comments
+                                                            </span>
+                                    <span class="pull-right badge badge-info">+12</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="btn btn-xs btn-primary icon-user"></i>
+                                Bob just signed up as an editor ...
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                                            <span class="pull-left">
+                                                                <i class="btn btn-xs no-hover btn-success icon-shopping-cart"></i>
+                                                                New Orders
+                                                            </span>
+                                    <span class="pull-right badge badge-success">+8</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                                            <span class="pull-left">
+                                                                <i class="btn btn-xs no-hover btn-info icon-twitter"></i>
+                                                                Followers
+                                                            </span>
+                                    <span class="pull-right badge badge-info">+11</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                See all notifications
+                                <i class="icon-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                -->
+
+                <!--
+                <li class="green">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon-bell-alt icon-animated-bell"></i>
+                        <span class="badge badge-success">5</span>
+                    </a>
+
+                    <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="icon-bell-alt"></i>
+                            5 Messages
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="/static/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                                        <span class="msg-body">
+                                                            <span class="msg-title">
+                                                                <span class="blue">Alex:</span>
+                                                                Ciao sociis natoque penatibus et auctor ...
+                                                            </span>
+
+                                                            <span class="msg-time">
+                                                                <i class="icon-time"></i>
+                                                                <span>a moment ago</span>
+                                                            </span>
+                                                        </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="inbox.html">
+                                See all messages
+                                <i class="icon-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                -->
+
+            <li class="purple">
+                <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+
+                    
+                        <i class="icon-qq icon-animated-vertical"></i>
+                        <span class="badge badge-important">未绑定QQ</span>
+                    
+                    <i class="icon-caret-down"></i>
+                </a>
+
+                <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                    
+                        <li>
+                            <a href="/qqbind/?must=1">
+                                <i class="icon-link"></i>
+                                立即绑定
+                            </a>
+                        </li>
+                    
+                </ul>
+            </li>
+                <li class="light-blue">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" src="/static/avatars/user.jpg" alt="Jason's Photo" />
+                                                <span class="user-info">
+                                                    <small>Welcome,</small>
+                                                    zhanzhang
+                                                </span>
+
+                        <i class="icon-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="/system_views_edit.aspx" data-modal="fancybox">
+                                <i class="icon-key"></i>
+                                修改密码
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="/logout/">
+                                <i class="icon-off"></i>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- /.ace-nav -->
+    </div><!-- /.navbar-header -->
+        </div><!-- /.container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+        </script>
+
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+
+            <div class="sidebar" id="sidebar">
+                <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+                </script>
+
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <button class="btn btn-success">
+                            <i class="icon-signal"></i>
+                        </button>
+
+                        <button class="btn btn-info">
+                            <i class="icon-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-warning">
+                            <i class="icon-group"></i>
+                        </button>
+
+                        <button class="btn btn-danger">
+                            <i class="icon-cogs"></i>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                        <span class="btn btn-success"></span>
+
+                        <span class="btn btn-info"></span>
+
+                        <span class="btn btn-warning"></span>
+
+                        <span class="btn btn-danger"></span>
+                    </div>
+                </div><!-- #sidebar-shortcuts -->
+                <ul class="nav nav-list">
+                    <li class="active">
+                        <a href="/">
+                            <i class="icon-dashboard"></i>
+                            <span class="menu-text"> 首页 </span>
+                        </a>
+                    </li>
+                    
+                    <li class="active open">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-star"></i>
+                            <span class="menu-text"> 我的快捷菜单</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/game_views_car_index.html.html.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行列表
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_car_service.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行服务费查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_reset.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    游戏限制清除
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_winlost.html.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行输赢排行
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_chargecoin.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员转币
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-gears"></i>
+                            <span class="menu-text"> 系统设置</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/setting_views_setqqtel.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    QQ电话设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_banner.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    大厅轮播图片管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_bankexport.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    银行批量转账导出设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_clientad.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    登陆框广告设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_setsite.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    站点设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_memberleveltype.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    自动升降级设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_setgift.html">
+                                    <i class="icon-double-angle-right"></i>
+                                    道具设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_autocoin.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    定时发放扶持币
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_setagent.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_setmsgprice.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    短信喇叭价格设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_pay.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    支付价格设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_setdefaultroom.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    非会员默认进房间设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_pay_free_coin.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    充值赠送活动管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_hiderank.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    排行榜号码隐藏
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_client_right_msg.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    客户端弹框消息管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_board.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    后台喇叭管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_time_board.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    定时喇叭管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_gamecar.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行设置
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/setting_views_setexchange.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    积分兑换设置
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-home"></i>
+                            <span class="menu-text"> 分区房间管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/room_views_service.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    购买服务器
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/roomgroup_views_index.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    分区管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/room_views_manager.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    房间管理员管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/room_views_index.html">
+                                    <i class="icon-double-angle-right"></i>
+                                    房间管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/room_views_vip_robot.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员机器人管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/room_views_block.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    房间黑名单管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/room_views_online.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    房间人气统计
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-gamepad"></i>
+                            <span class="menu-text"> 游戏管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/game_views_car_sumwin.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行币流向
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_zadan_pool.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    砸蛋奖池
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_submit_search.html.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行押注查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_index.html.html.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行列表
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_blockindex.html">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行黑名单管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_car_service.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行服务费查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_reset.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    游戏限制清除
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_winlost.html.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    车行输赢排行
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/game_views_car_daily_winlost.html.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员每日输赢情况
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-female"></i>
+                            <span class="menu-text"> 代理商管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/agent_views_money_list.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理后台打款记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/card_views_sell_bjk.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    搬家卡查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/card_views_createcard_bjk.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    搬家卡发放
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_index.html">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理商管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_checkindex.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理商申请管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_statistics.html">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理商销售统计
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_transfer.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理商转账记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_money.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理资金流水
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_loan.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    代理欠款明细
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_httomoney.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    后台打款
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/agent_views_htbackmoney.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    后台还款
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-microphone"></i>
+                            <span class="menu-text"> 主持管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/zhuchi_views_shouhu_list.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    守护列表
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_shouhu_log.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    购买守护记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_shouhu_stat.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    守护统计
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_details.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    主持资料
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_unchecked.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    待审核主持兑点
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_checked.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    待支付主持兑点
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_paid.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    已支付主持兑点
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_cancel.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    已取消主持兑点
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_exchangeroomstat.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    房间兑换查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_daixinzhuchi.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    带薪主持人管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/zhuchi_views_online_mongo.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    主持上麦统计
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-user"></i>
+                            <span class="menu-text"> 用户管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/member_views_fastquery.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员快速查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_largeUser_ice.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    大额用户查询（新）
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_index.html">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_create.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员开号
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_create_log.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员开号记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_levelupdate.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员升降级
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_batch_level.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    批量升降级
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_photo.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    排行榜照片上传
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_loginlog.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    用户登陆记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_blockindex.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    被封用户查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_blockip.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    封号记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_largeUser_ice.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    大额用户查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/member_views_edit.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    编辑会员
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-credit-card"></i>
+                            <span class="menu-text"> 点卡管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/card_views_sell.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    点卡销售查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/card_views_rank.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员充卡排行
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/card_views_turncard.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    充错卡转币
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/card_views_auto_pay.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    自动充卡
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/card_views_createcard.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    生成点卡
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-shopping-cart"></i>
+                            <span class="menu-text"> 销售中心</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/sell_views_bankcoin.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员充扣银行币
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_transaction.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    币交易记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_transactionscore.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    积分交易记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_bankcoinlog.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    银行币交易记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/room_views_scorelog.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    房间积分交易记录
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_coin.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员充扣币
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_score.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员充扣积分
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_chargecoin.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员转币
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_chargescore.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    会员转积分
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_roomscore.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    充扣房间积分
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_CoinDetail.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    币消费明细
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_ScoreDetail.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    积分明细
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/sell_views_paylist.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    充值订单查询
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_daily_sell_stat.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    财务明细
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_daily_all_stat.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    平台币积分统计
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/sell_views_caiyun.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    爆炸道具统计
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-user-md"></i>
+                            <span class="menu-text"> 系统管理员</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            
+                            <li >
+                                <a href="/system_views_index.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    系统管理员管理
+                                </a>
+                            </li>
+                            
+                            <li >
+                                <a href="/system_views_admindonelog.aspx">
+                                    <i class="icon-double-angle-right"></i>
+                                    管理员操作日志
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+
+
+                </ul><!-- /.nav-list -->
+
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                </div>
+
+                <script type="text/javascript">
+                    //try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+                </script>
+            </div>
+
+
+            
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+            </script>
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a id="myModal" href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">首页</a>
+                </li>
+            </ul><!-- .breadcrumb -->
+        </div>
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    首页
+                </h1>
+            </div><!-- /.page-header -->
+            
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="blue">我的快捷操作菜单</h2>
+                            <div>
+                                
+                                    
+                                        
+                                            <a href="/game_views_car_index.html.html/?p=0&c=27" class="btn btn-app btn-info btn-sm" data-rel="tooltip" data-original-title="车行列表">
+                                                <i class="icon-star bigger-200"></i>
+                                                车行列表
+                                            </a>
+                                        
+                                            <a href="/game_car_service/?p=0&c=29" class="btn btn-app btn-info btn-sm" data-rel="tooltip" data-original-title="车行服务费查询">
+                                                <i class="icon-star bigger-200"></i>
+                                                车行服务
+                                            </a>
+                                        
+                                            <a href="/game_views_car_reset/?p=0&c=30" class="btn btn-app btn-info btn-sm" data-rel="tooltip" data-original-title="游戏限制清除">
+                                                <i class="icon-star bigger-200"></i>
+                                                游戏限制
+                                            </a>
+                                        
+                                            <a href="/game_views_car_winlost.html/?p=0&c=31" class="btn btn-app btn-info btn-sm" data-rel="tooltip" data-original-title="车行输赢排行">
+                                                <i class="icon-star bigger-200"></i>
+                                                车行输赢
+                                            </a>
+                                        
+                                            <a href="/sell_views_chargecoin/?p=0&c=69" class="btn btn-app btn-info btn-sm" data-rel="tooltip" data-original-title="会员转币">
+                                                <i class="icon-star bigger-200"></i>
+                                                会员转币
+                                            </a>
+                                        
+                                <a class="btn btn-app btn-warning btn-sm" data-rel="fancybox" href="/system_views_set_custom_menus.html" title="">
+                                    <i class="icon-plus bigger-200"></i>
+                                    添加菜单
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-xs-offset-6">
+                    <div id="timeline-2">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                                <h2 class="red">后台更新日志</h2>
+
+                                <div class="timeline-container timeline-style2">
+                                    <span class="timeline-label">
+                                     <b>2015-06-25</b>
+                                    </span>
+                                    <div class="timeline-items">
+                                        <div class="timeline-item clearfix">
+                                            <div class="timeline-info">
+                                                <span class="timeline-date">14:30 </span>
+                                                <i class="timeline-indicator btn btn-info no-hover"></i>
+                                            </div>
+
+                                            <div class="widget-box transparent">
+                                                <div class="widget-body">
+                                                    <div class="widget-main no-padding">
+                                                        增加“道具设置”功能，可自行排序道具、修改道具价格，以及增删道具等功能，具体进入菜单“系统设置-道具设置”查看设置
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item clearfix">
+                                            <div class="timeline-info">
+                                                <span class="timeline-date">10:00 </span>
+                                                <i class="timeline-indicator btn btn-info no-hover"></i>
+                                            </div>
+
+                                            <div class="widget-box transparent">
+                                                <div class="widget-body">
+                                                    <div class="widget-main no-padding">
+                                                        增加“自动升降级设置”功能，设置升级保级标准后系统会自动实时升级以及每月月初进行降级，具体进入菜单“系统设置-自动升降级设置”查看设置
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- /.timeline-items -->
+                                </div><!-- /.timeline-container -->
+
+                                <div class="timeline-container timeline-style2">
+                                    <span class="timeline-label">
+                                     <b>2015-06-10</b>
+                                    </span>
+                                    <div class="timeline-items">
+                                        <div class="timeline-item clearfix">
+                                            <div class="timeline-info">
+                                                <span class="timeline-date">16:50 </span>
+                                                <i class="timeline-indicator btn btn-info no-hover"></i>
+                                            </div>
+
+                                            <div class="widget-box transparent">
+                                                <div class="widget-body">
+                                                    <div class="widget-main no-padding">
+                                                        增加“站点设置”功能，可以自行修改是否允许游客登录，是否允许注册等设置，具体进入菜单“系统设置-站点设置”查看设置
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item clearfix">
+                                            <div class="timeline-info">
+                                                <span class="timeline-date">11:00 </span>
+                                                <i class="timeline-indicator btn btn-info no-hover"></i>
+                                            </div>
+
+                                            <div class="widget-box transparent">
+                                                <div class="widget-body">
+                                                    <div class="widget-main no-padding">
+                                                        在“用户登录记录”中增加“封IP”功能，可以封任何一条已登录过的IP
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- /.timeline-items -->
+                                </div><!-- /.timeline-container -->
+
+                                <div class="timeline-container timeline-style2">
+                                    <span class="timeline-label">
+                                     <b>2015-06-09</b>
+                                    </span>
+                                    <div class="timeline-items">
+                                        <div class="timeline-item clearfix">
+                                            <div class="timeline-info">
+                                                <span class="timeline-date">16:00 </span>
+                                                <i class="timeline-indicator btn btn-info no-hover"></i>
+                                            </div>
+
+                                            <div class="widget-box transparent">
+                                                <div class="widget-body">
+                                                    <div class="widget-main no-padding">
+                                                        增加“积分兑换设置”功能，可以自行修改积分换币比例、积分兑换次数和积分换卡设置等参数，具体进入菜单“系统设置-积分兑换设置”查看设置
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- /.timeline-items -->
+                                </div><!-- /.timeline-container -->
+
+                                <div class="timeline-container timeline-style2">
+                                    <span class="timeline-label">
+                                     <b>2015-06-03</b>
+                                    </span>
+                                    <div class="timeline-items">
+                                        <div class="timeline-item clearfix">
+                                            <div class="timeline-info">
+                                                <span class="timeline-date">17:00 </span>
+                                                <i class="timeline-indicator btn btn-info no-hover"></i>
+                                            </div>
+
+                                            <div class="widget-box transparent">
+                                                <div class="widget-body">
+                                                    <div class="widget-main no-padding">
+                                                        增加站务后台财务打款额度限制功能，站长可以给每个站务设置不同的额度，站务在使用财务打款时只能使用自己额度内的金额。额度不足则重新跟站长申请。注：鉴于并非每个站都需要这个功能，该功能默认不开启，需要的站请联系技术
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- /.timeline-items -->
+                                </div><!-- /.timeline-container -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.main-content -->
+    </div>
+    
+
+            <!--
+            <div class="ace-settings-container" id="ace-settings-container">
+                <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                    <i class="icon-cog bigger-150"></i>
+                </div>
+
+                <div class="ace-settings-box" id="ace-settings-box">
+                    <div>
+                        <div class="pull-left">
+                            <select id="skin-colorpicker" class="hide">
+                                <option data-skin="default" value="#438EB9">#438EB9</option>
+                                <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                            </select>
+                        </div>
+                        <span>&nbsp; Choose Skin</span>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+                        <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+                        <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+                        <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+                        <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+                        <label class="lbl" for="ace-settings-add-container">
+                            Inside
+                            <b>.container</b>
+                        </label>
+                    </div>
+                </div>
+            </div><!-- /#ace-settings-container -->
+
+        </div><!-- /.main-container-inner -->
+
+            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="icon-double-angle-up icon-only bigger-110"></i>
+            </a>
+    </div><!-- /.main-container -->
+
+
+<!-- basic scripts -->
+
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/typeahead-bs2.min.js"></script>
+<script src="/static/js/bootbox.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="/static/js/jquery.dataTables.min.js"></script>
+<!-- ace scripts -->
+<script src="/static/js/ace-elements.min.js"></script>
+<script src="/static/js/ace.min.js"></script>
+<script src="/static/js/bootstrap-lightbox/bootstrap-lightbox.js"></script>
+<script type="text/javascript" src="/static/js/fancybox/jquery.fancybox.js?v=2"></script>
+<script type="text/javascript" src="/static/js/tablednd/jquery.tablednd.js"></script>
+<script src="/static/js/chosen.jquery.min.js"></script>
+<script src="/static/js/date-time/moment.min.js"></script>
+<script src="/static/js/daterangepicker.js"></script>
+<script src="/static/js/jquery.knob.min.js"></script>
+<script src="/static/js/jquery.autosize.min.js"></script>
+<script src="/static/js/jquery.inputlimiter.1.3.1.min.js"></script>
+<script src="/static/js/jquery.maskedinput.min.js"></script>
+<script src="/static/js/mkpasswd.js"></script>
+<script src="/static/js/bootstrap-tag.min.js"></script>
+<script src="/static/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/static/js/jquery.zclip.min.js"></script>
+<script src="/static/js/fuelux/fuelux.spinner.min.js"></script>
+<script src="/static/js/layer/layer.js"></script>
+<script src="/static/js/underscore-min.js"></script>
+
+<!-- inline scripts related to this page -->
+
+
+<script type="text/javascript">
+    //判断访问终端
+    var browser = {
+        versions : function() {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {
+                trident : u.indexOf('Trident') > -1, //IE内核
+                presto : u.indexOf('Presto') > -1, //opera内核
+                webKit : u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                mobile : !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone : u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                iPad : u.indexOf('iPad') > -1, //是否iPad
+                webApp : u.indexOf('Safari') == -1
+                //是否web应该程序，没有头部与底部
+            };
+        }(),
+        language : (navigator.browserLanguage || navigator.language)
+                .toLowerCase()
+    };
+
+    var clip = null;
+    function CreatePwd(id,num)
+    {
+        var ruleSet = {
+            maxRepeat:	0,
+            minChars:	num,
+            maxChars:	num,
+            minUpper:	0,
+            minLower:	0,
+            minNums:	0,
+            minSpecials:0
+        };
+        var charSet = {
+            // For special character set, don't use backslashes, quotes, or backticks
+            specials:	"",
+            nums:		"0123456789",
+            uppers:		"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            lowers:		"abcdefghijklmnopqrstuvwxyz",
+            wholeSet:	""
+        };
+        pwd = mkPasswd(ruleSet, charSet)
+        $("#"+id).val(pwd);
+        return pwd;
+    }
+
+    function update_level(idx,level)
+    {
+        $("#update_level_"+idx).html("正在进行升降级，请稍等...");
+        $.post(_json_url.url+"/member_views_level_update_ajax/", { idx: idx,level:level },function(data){
+            $("#update_level_"+idx).html(data.msg);
+        },"json").error(function(data) { alert("网络错误，请重试！"); });
+    }
+
+    var oldBeforeRow = null;
+    jQuery(function($) {
+        /*
+        $("#mainTable").dataTable( {
+            "bPaginate":false,
+            "bInfo":false,
+            "bFilter":false,
+            "bSort":false
+        } )
+        */
+        var isChrome = window.chrome;
+        if(isChrome || browser.versions.mobile)
+        {
+            $("#chrome_tips").hide();
+        }
+        else
+        {
+            $("#chrome_tips").show();
+        }
+
+        $('[data-rel="copy"]').zclip({
+            path:'/static/js/ZeroClipboard_jq.swf?v=2012',
+            copy:function(){
+                pwd = eval($(this).attr("data-javascript"));
+                return pwd;
+            },
+            afterCopy:function(){
+                var e = this;
+                $(e).closest('.form-group').addClass('has-success');
+                $(e).next('.help-block').html("复制成功");
+            }
+        });
+
+
+        /*
+        ZeroClipboard.config({ swfPath: "/static/js/ZeroClipboard2.2.0.swf?v=2012" })
+        var client = new ZeroClipboard($(''));
+
+        client.on("copy", function (event) {
+            var target = event.target;
+            pwd = eval($(target).attr("data-javascript"));
+            var clipboard = event.clipboardData;
+            clipboard.setData( "text/plain", pwd );
+        });
+        client.on("aftercopy",function(event){
+            var e = event.target
+            $(e).closest('.form-group').addClass('has-success');
+            $(e).next('.help-block').html("复制成功");
+        })
+        client.on("error",function(event){
+            var e = event.target
+            $(e).closest('.form-group').addClass('has-error');
+            $(e).next('.help-block').html("复制失败");
+        });
+        */
+
+        $('.date').daterangepicker({
+            singleDatePicker: true,
+            format:"YYYY-MM-DD"
+        },function(start,end,label)
+        {
+            var elm = this.elements[0];
+            if(elm != undefined)
+            {
+
+            }
+        });
+        $('.datetime').daterangepicker({
+            singleDatePicker: true,
+            format:"YYYY-MM-DD HH:mm",
+            timePickerIncrement:5,
+            timePicker12Hour:false,
+            timePicker:true
+        },function(start, end, label) {
+
+        });
+
+
+
+
+
+        $(':file').ace_file_input({
+            style:'well',
+            no_file:'No File ...',
+            btn_choose:'点击选择图片',
+            onchange:null,
+            no_icon:'icon-cloud-upload',
+            droppable:false,
+            whitelist:'gif|png|jpg|jpeg',
+            thumbnail:'fit',
+            before_change:function(files, dropped) {
+                var allowed_files = [];
+                for(var i = 0 ; i < files.length; i++) {
+                    var file = files[i];
+                    if(typeof file === "string") {
+                        //IE8 and browsers that don't support File Object
+                        if(! (/\.(jpe?g|png|gif|bmp)$/i).test(file) ) return false;
+                    }
+                    else {
+                        var type = $.trim(file.type);
+                        if( ( type.length > 0 && ! (/^image\/(jpe?g|png|gif|bmp)$/i).test(type) )
+                                || ( type.length == 0 && ! (/\.(jpe?g|png|gif|bmp)$/i).test(file.name) )//for android's default browser which gives an empty string for file.type
+                                ) continue;
+                    }
+
+                    allowed_files.push(file);
+                }
+                if(allowed_files.length == 0) return false;
+
+                return allowed_files;
+            }
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        });
+
+        $(".chosen-select").chosen({
+            placeholder_text_multiple:"点击选择"
+        });
+        $('[data-rel=popover]').popover({container:'body'});
+
+        $('[data-rel="fancybox"][data-options!="confirm"],[data-modal="fancybox"][data-options!="confirm"]').fancybox({
+            type: 'iframe',
+            fitToView: true,
+            width: browser.versions.mobile ? "98%":'60%',
+            //height: '100%',
+            autoResize:true,
+            autoSize: true,
+            closeBtn:false,
+            closeClick: true,
+            openEffect: 'fade',
+            closeEffect: 'fade'
+        });
+
+
+        $('table th input:checkbox').on('click' , function(){
+            var that = this;
+            $(this).closest('table').find('tr > td:first-child input:checkbox')
+                    .each(function(){
+                        this.checked = that.checked;
+                        if(this.checked)
+                            $(this).closest('tr').addClass('selected');
+                        else
+                            $(this).closest('tr').removeClass('selected');
+                    });
+
+        });
+
+        $('tr > td:first-child input:checkbox').on('click',function(){
+            if(this.checked)
+                $(this).closest('tr').addClass('selected');
+            else
+                $(this).closest('tr').removeClass('selected');
+        });
+
+        $('[data-rel="select"]').click(function(){
+            var value = $(this).val();
+            var c = $('[data-group="select"]').closest('.form-group');
+            c.hide();
+            c.next(".hr").hide();
+            c = $('[data-group_idx="'+value+'"]').closest('.form-group');
+            c.show();
+            c.next(".hr").show();
+        })
+
+        $('[data-rel="select"]').first().click();
+
+        $('[data-rel="toggle"]').change(function(){
+            var c = $("#id_"+$(this).attr("data-options")).closest('.form-group');
+            c.toggle();
+            c.next(".hr").toggle();
+        });
+
+        $('[data-rel="toggle-widget"]').change(function(){
+            var c = $("#id_"+$(this).attr("data-options"))
+            c.toggle();
+        });
+
+        $('[data-rel="help_text"]').each(function(){
+            content = $(this).closest('.form-group').find(".help-button").attr("data-content")
+            help_block = $(this).parent().next('.help-block')
+            help_block.css("background-color",$(this).attr("data-color")).css("color","#000")
+            help_block.html(content);
+
+        });
+
+
+        $('[data-rel="ajax"]').change(function(){
+            if($(this).val().length > 0)
+            {
+                currVal = $(this).val();
+                url = $(this).attr("data-options");
+                fields = $(this).attr("data-fields");
+                if(fields == undefined)
+                    fields = {}
+                else
+                    fields = eval("(" + fields + ")")
+                e = this
+                $(this).after("<span>正在查询.....</span>")
+                $.post(_json_url.url+url, { data: currVal },function(data){
+                    if (data.success != 0){
+                        result = data.result;
+                        for(var key in result)
+                        {
+                            if(fields[key] != undefined)
+                                $("#id_"+fields[key]).val(result[key]);
+                            else
+                                $("#id_"+key).val(result[key]);
+                        }
+                        $(e).closest('.form-group').removeClass('has-error');
+                        $(e).parent().next('.help-block').html("");
+
+                    }
+                    else
+                    {
+                        $(":input").val("");
+                        $(e).closest('.form-group').addClass('has-error');
+                        $(e).parent().next('.help-block').html(data.msg);
+                        $(e).focus();
+
+                    }
+                    $(e).siblings("span").remove()
+                },"json").error(function(data) { alert("网络错误，请重试！"); });
+            }
+        });
+
+
+        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement,html:true});
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table,div')
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'left';
+        }
+
+        $('[data-ajax="ajax"]').click(function(){
+            currVal = $(this).attr("data-value");
+            url = $(this).attr("data-options");
+            fields = $(this).attr("data-fields");
+            if(fields == undefined)
+                fields = {}
+            else
+                fields = eval("(" + fields + ")")
+            e = this
+            for(var key in fields)
+            {
+                $("#"+fields[key]).html("正在查询...")
+            }
+            $.post(_json_url.url+url, { data: currVal },function(data){
+                if (data.success != 0){
+                    result = data.result;
+                    for(var key in result)
+                    {
+                        if(fields[key] != undefined)
+                            $("#"+fields[key]).html(result[key]);
+                        else
+                            $("#"+key).html(result[key]);
+                    }
+                }
+                else
+                {
+                    alert("查询失败，请重试！")
+                }
+            },"json").error(function(data) { alert("网络错误，请重试！"); });
+        });
+
+        $('[data-options="confirm"]').on(ace.click_event, function() {
+            url = $(this).attr("href");
+            bootbox.confirm($(this).attr("data-confirm-title"), function(result) {
+                if(result) {
+                    $.fancybox.open({
+                        type: 'iframe',
+                        fitToView: true,
+                        //width: "auto",
+                        //minWidth:335,
+                        //height: '100%',
+                        autoResize:true,
+                        //autoSize: false,
+                        closeBtn:false,
+                        closeClick: true,
+                        openEffect: 'fade',
+                        closeEffect: 'fade',
+                        href:url
+                    });
+
+                }
+            });
+        });
+
+
+
+        $(".table").tableDnD({
+            onDragClass: "warning",
+            dragHandle: ".dragHandle",
+            onDragStart: function(table, row) {
+                row = $(row).parent().get(0);
+                var id = row.id
+                var prev = null;
+                for(var i=1;i<table.rows.length;i++)
+                {
+                    var currRow = table.rows[i];
+                    if(currRow.id == id)  //找到移动行在表格中的当前位置
+                    {
+                        oldBeforeRow = prev;
+                    }
+                    if($(currRow).attr("pid") != $(row).attr("pid"))
+                    {
+                        $(currRow).addClass("nodrop");
+                    }
+                    prev = currRow;
+
+                }
+            },
+            onDrop: function(table, row) {
+                var pid = $(row).attr("pid")
+                var id = row.id
+                var prev = null;
+                var moveRows = [];
+                for(var i=1;i<table.rows.length;i++)
+                {
+                    var currRow = table.rows[i];
+                    if(currRow.id == id)  //找到移动行在表格中的当前位置
+                    {
+                        if(prev == null && pid != 0)  //子目录移到表格第一列
+                        {
+                            $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                            break;
+                        }
+                        else if(prev && pid != 0) //子目录移动到非第一列
+                        {
+                            if($(prev).attr("pid") == 0
+                                    && prev.id !=pid)  //子目录移到其它父目录下(父目录后面)
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                            else if($(prev).attr("pid") != 0
+                                    && $(prev).attr("pid") !=pid) //子目录移到其它父目录下（父目录的子目录后面）
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                        }
+                        else if(prev && pid == 0) //父目录移动到非第一列
+                        {
+                            var next = null; //找到移动行在表格中的下一行
+                            if(i + 1 < table.rows.length)
+                                next = table.rows[i+1]
+                            if(next && $(prev).attr("pid") == 0
+                                    && $(next).attr("pid") == prev.id)  //父目录移动到其它父目录和子目录之间
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                            else if(next && $(prev).attr("pid") != 0
+                                    && $(next).attr("pid") == $(prev).attr("pid"))//父目录移动到其它子目录和子目录之间
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                        }
+                    }
+
+                    if($(currRow).attr("pid") == id) //移动行的全部子目录一起跟着移动
+                    {
+                        moveRows.push(currRow);
+                    }
+                    prev = currRow;
+                }
+                for(var i=0;i<moveRows.length;i++)
+                {
+                    var currRow = moveRows[i];
+                    $(row).after(currRow);
+                }
+                var data = JSON.parse($.tableDnD.jsonize())
+                $.post(_json_url.url+"", $.tableDnD.serialize(), function (data) {
+                    //$(".alert").html(data)
+                });
+            }
+        });
+        $(document).on("mouseover", "tr", function () {
+            if(!$(this).hasClass("nodrop"))
+                $(this.cells[1]).filter(".dragHandle").addClass('showDragHandle');
+        });
+        $(document).on("mouseout", "tr", function () {
+            $(this.cells[1]).filter(".dragHandle").removeClass('showDragHandle');
+        });
+        /*
+        $(".table").find("tr[class!='nodrop']").hover(function() {
+            $(this.cells[1]).addClass('showDragHandle');
+        }, function() {
+            $(this.cells[1]).removeClass('showDragHandle');
+        });
+        */
+        $(".table").mouseup(function()
+        {
+            $(".nodrop").removeClass("nodrop");
+        })
+
+        $(".knob").knob();
+
+
+        $('.widget-container-span').sortable({
+            connectWith: '.widget-container-span',
+            items:'> .widget-box',
+            opacity:0.8,
+            revert:true,
+            forceHelperSize:true,
+            placeholder: 'widget-placeholder',
+            forcePlaceholderSize:true,
+            tolerance:'pointer',
+            stop:function(event,ui)
+            {
+                id = this.id;
+                list = $(this).sortable("toArray");
+                $.post(_json_url.url+"/setting_views_setgiftsort/", { gid: id,gifts:list },function(data){
+
+                },"json").error(function(data) { alert("网络错误，请重试！"); });
+            }
+        });
+    })
+</script>
+</body>
+</html>

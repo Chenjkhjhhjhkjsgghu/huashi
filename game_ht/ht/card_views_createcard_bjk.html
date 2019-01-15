@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>欢聚吧--多人视频后台管理系统</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- basic styles -->
+    <link href="css/bootstrap.min.css?v=1" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css?v=2" />
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="css/font-awesome-ie7.min.css?v=2" />
+    <![endif]-->
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="css/ace.min.css?v=2" />
+    <link rel="stylesheet" href="css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="css/ace-skins.min.css" />
+    <link rel="stylesheet" href="js/bootstrap-lightbox/bootstrap-lightbox.min.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="js/tablednd/tablednd.css" />
+    <link rel="stylesheet" href="css/chosen.css" />
+    <link rel="stylesheet" href="css/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="css/jquery-ui-1.12.1.min.css" />
+
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/ace-ie.min.css" />
+    <![endif]-->
+    <script src="js/ace-extra.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        if("ontouchend" in document) document.write("<script src='js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+
+        if (typeof Array.prototype.map != "function") {
+            Array.prototype.map = function (fn, context) {
+                var arr = [];
+                if (typeof fn === "function") {
+                    for (var k = 0, length = this.length; k < length; k++) {
+                        arr.push(fn.call(context, this[k], k, this));
+                    }
+                }
+                return arr;
+            };
+        }
+    </script>
+</head>
+<body xmlns="http://www.w3.org/1999/html">
+
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a id="myModal" href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">搬家卡发放</a>
+            </li>
+        </ul><!-- .breadcrumb -->
+    </div>
+    <div class="page-content">
+
+        <div class="page-header">
+            <h1>
+                搬家卡发放
+            </h1>
+
+        </div><!-- /.page-header -->
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+                <form class="form-horizontal" id="validation-form" method="post" enctype="multipart/form-data">
+                    <div>
+
+
+
+
+                        <div  class="form-group" id="form-group_agent"><label for="id_agent" class="control-label col-xs-12 col-sm-3 no-padding-right">搬家卡接收代理:</label><div class="col-xs-12 col-sm-9"><select id="id_agent" class="chosen-select" name="agent">
+                            <option value="5">100188</option>
+                            <option value="6">107777</option>
+                            <option value="7">100000</option>
+                            <option value="8">177777</option>
+                            <option value="11">198888</option>
+                            <option value="14">155555</option>
+                            <option value="15">100098</option>
+                            <option value="16">111000</option>
+                            <option value="17">111118</option>
+                            <option value="20">100005</option>
+                            <option value="21">118888</option>
+                            <option value="22">122222</option>
+                            <option value="23">123456</option>
+                            <option value="24">101111</option>
+                            <option value="25">102222</option>
+                            <option value="27">108888</option>
+                            <option value="28">100033</option>
+                            <option value="30">110088</option>
+                            <option value="32">188188</option>
+                            <option value="33">111116</option>
+                            <option value="34">100001</option>
+                            <option value="35">100916</option>
+                            <option value="36">100009</option>
+                            <option value="37">158888</option>
+                            <option value="38">111111</option>
+                            <option value="39">106888</option>
+                            <option value="40">100088</option>
+                            <option value="41">100008</option>
+                            <option value="43">128888</option>
+                            <option value="44">100888</option>
+                            <option value="45">109999</option>
+                            <option value="46">100999</option>
+                            <option value="47">199999</option>
+                            <option value="48">133333</option>
+                            <option value="49">100099</option>
+                            <option value="50">168888</option>
+                            <option value="51">166666</option>
+                            <option value="52">131418</option>
+                            <option value="53">100012</option>
+                            <option value="54">125888</option>
+                            <option value="55">100097</option>
+                            <option value="56">100266</option>
+                            <option value="57">100057</option>
+                            <option value="58">116666</option>
+                            <option value="59">111999</option>
+                            <option value="61">180000</option>
+                            <option value="64">100011</option>
+                            <option value="65">111222</option>
+                            <option value="66">115588</option>
+                            <option value="67">103321</option>
+                            <option value="68">101314</option>
+                            <option value="69">110099</option>
+                            <option value="71">100086</option>
+                            <option value="72">169999</option>
+                            <option value="73">117777</option>
+                            <option value="74">111666</option>
+                            <option value="77">100520</option>
+                            <option value="78">158158</option>
+                            <option value="80">100078</option>
+                            <option value="81">100066</option>
+                            <option value="82">100678</option>
+                            <option value="83">100777</option>
+                            <option value="84">100006</option>
+                            <option value="85">129999</option>
+                            <option value="87">105558</option>
+                            <option value="88">111520</option>
+                            <option value="89">189999</option>
+                            <option value="92">101112</option>
+                            <option value="93">111199</option>
+                            <option value="94">180888</option>
+                            <option value="95">181111</option>
+                            <option value="96">111119</option>
+                            <option value="97">110000</option>
+                            <option value="99">130000</option>
+                            <option value="100">181818</option>
+                            <option value="101">100600</option>
+                            <option value="102">101215</option>
+                            <option value="103">100666</option>
+                            <option value="105">103333</option>
+                            <option value="106">101010</option>
+                            <option value="107">106666</option>
+                            <option value="108">123333</option>
+                            <option value="111">118118</option>
+                            <option value="113">199888</option>
+                            <option value="114">105555</option>
+                            <option value="117">100555</option>
+                            <option value="118">199403</option>
+                            <option value="119">166668</option>
+                            <option value="120">119988</option>
+                            <option value="124">126666</option>
+                            <option value="125">100988</option>
+                            <option value="128">177771</option>
+                            <option value="130">190000</option>
+                            <option value="132">111115</option>
+                            <option value="134">700372</option>
+                            <option value="139">111177</option>
+                            <option value="142">100070</option>
+                            <option value="147">176666</option>
+                            <option value="150">141111</option>
+                            <option value="151">100003</option>
+                            <option value="154">192222</option>
+                            <option value="155">111555</option>
+                            <option value="157">100055</option>
+                            <option value="159">125800</option>
+                            <option value="160">100133</option>
+                            <option value="161">110520</option>
+                            <option value="162">121111</option>
+                            <option value="165">119999</option>
+                            <option value="166">111117</option>
+                            <option value="168">111166</option>
+                            <option value="169">100002</option>
+                            <option value="173">160000</option>
+                            <option value="174">167777</option>
+                            <option value="175">100668</option>
+                            <option value="177">111521</option>
+                            <option value="178">108008</option>
+                            <option value="179">125555</option>
+                            <option value="181">199000</option>
+                            <option value="185">111112</option>
+                            <option value="186">181688</option>
+                            <option value="187">100438</option>
+                            <option value="189">166888</option>
+                            <option value="191">126888</option>
+                            <option value="193">108088</option>
+                            <option value="194">100185</option>
+                            <option value="196">100020</option>
+                            <option value="197">100017</option>
+                            <option value="198">120000</option>
+                            <option value="200">100068</option>
+                            <option value="202">100518</option>
+                            <option value="203">118009</option>
+                            <option value="206">155888</option>
+                            <option value="211">113344</option>
+                            <option value="213">127777</option>
+                            <option value="214">123344</option>
+                            <option value="215">197777</option>
+                            <option value="218">116688</option>
+                            <option value="220">112222</option>
+                            <option value="221">100058</option>
+                            <option value="222">100166</option>
+                            <option value="223">185555</option>
+                            <option value="224">122888</option>
+                            <option value="225">100900</option>
+                            <option value="226">123000</option>
+                            <option value="233">100521</option>
+                            <option value="235">110066</option>
+                            <option value="236">100113</option>
+                            <option value="240">160160</option>
+                            <option value="245">100660</option>
+                            <option value="248">100788</option>
+                            <option value="251">123123</option>
+                            <option value="252">111188</option>
+                            <option value="253">191919</option>
+                            <option value="262">110110</option>
+                            <option value="263">100688</option>
+                            <option value="265">180929</option>
+                            <option value="268">111738</option>
+                            <option value="270">100100</option>
+                            <option value="274">111333</option>
+                            <option value="275">111108</option>
+                            <option value="280">199998</option>
+                            <option value="284">166166</option>
+                            <option value="285">155155</option>
+                            <option value="287">100800</option>
+                            <option value="288">111168</option>
+                            <option value="289">180521</option>
+                            <option value="290">180555</option>
+                            <option value="292">180999</option>
+                            <option value="294">100077</option>
+                            <option value="295">125999</option>
+                            <option value="298">100056</option>
+                            <option value="300">100018</option>
+                            <option value="302">111588</option>
+                            <option value="303">111122</option>
+                            <option value="306">138888</option>
+                            <option value="309">101188</option>
+                            <option value="310">100051</option>
+                            <option value="311">100052</option>
+                            <option value="320">110916</option>
+                            <option value="326">181888</option>
+                            <option value="327">100016</option>
+                            <option value="328">152033</option>
+                            <option value="329">100220</option>
+                            <option value="330">105520</option>
+                            <option value="331">105200</option>
+                            <option value="332">133330</option>
+                            <option value="333">120777</option>
+                            <option value="334">112345</option>
+                            <option value="335">100168</option>
+                            <option value="336">100079</option>
+                            <option value="337">112200</option>
+                            <option value="339">100089</option>
+                            <option value="340">156666</option>
+                            <option value="341">110666</option>
+                            <option value="343">100222</option>
+                            <option value="346">102000</option>
+                            <option value="347">108000</option>
+                            <option value="350">100090</option>
+                            <option value="355">118588</option>
+                            <option value="356">105888</option>
+                            <option value="360">146666</option>
+                            <option value="361">186666</option>
+                            <option value="362">118899</option>
+                            <option value="364">112233</option>
+                            <option value="369">188520</option>
+                            <option value="371">100333</option>
+                            <option value="372">110022</option>
+                            <option value="377">100111</option>
+                            <option value="379">199199</option>
+                            <option value="387">179999</option>
+                            <option value="388">188521</option>
+                            <option value="401">100998</option>
+                            <option value="402">100028</option>
+                            <option value="406">100319</option>
+                            <option value="407">100538</option>
+                            <option value="410">110008</option>
+                            <option value="421">11111</option>
+                            <option value="423">122221</option>
+                            <option value="429">192800</option>
+                            <option value="433">168168</option>
+                            <option value="438">188886</option>
+                            <option value="451">100015</option>
+                            <option value="453">125666</option>
+                            <option value="454">111528</option>
+                            <option value="465">131421</option>
+                            <option value="468">100558</option>
+                            <option value="470">100082</option>
+                            <option value="472">106688</option>
+                            <option value="473">100023</option>
+                            <option value="477">122122</option>
+                            <option value="478">103000</option>
+                            <option value="481">111777</option>
+                            <option value="482">193333</option>
+                            <option value="483">196666</option>
+                            <option value="484">188666</option>
+                            <option value="493">90000</option>
+                            <option value="504">131428</option>
+                            <option value="508">115888</option>
+                            <option value="512">100118</option>
+                            <option value="516">199991</option>
+                            <option value="517">166999</option>
+                            <option value="519">100770</option>
+                            <option value="520">150520</option>
+                            <option value="522">201666</option>
+                            <option value="525">111858</option>
+                            <option value="530">100468</option>
+                            <option value="542">111688</option>
+                            <option value="544">155558</option>
+                            <option value="548">109898</option>
+                        </select><div class="help-block"></div></div></div><div class="hr hr-dotted"></div>
+                        <div  class="form-group" id="form-group_money"><label for="id_money" class="control-label col-xs-12 col-sm-3 no-padding-right">金额（元/每张卡）:</label><div class="col-xs-12 col-sm-9"><div class="clearfix"><input type="text" name="money" value="100" id="id_money" /></div><div class="help-block"></div></div></div><div class="hr hr-dotted"></div>
+                        <div  class="form-group" id="form-group_num"><label for="id_num" class="control-label col-xs-12 col-sm-3 no-padding-right">数量:<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="right" data-content="每次最多30张" title="说明" data-original-title="说明">?</span></label><div class="col-xs-12 col-sm-9"><div class="clearfix"><input type="text" name="num" id="id_num" /></div><div class="help-block"></div></div></div><div class="hr hr-dotted"></div>
+                        <div  class="form-group" id="form-group_memo"><label for="id_memo" class="control-label col-xs-12 col-sm-3 no-padding-right">备注:<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="right" data-content=" (如：销售推广10卡)" title="说明" data-original-title="说明">?</span></label><div class="col-xs-12 col-sm-9"><div class="clearfix"><input id="id_memo" type="text" name="memo" value="搬家卡" maxlength="250" /></div><div class="help-block"></div></div></div><div class="hr hr-dotted"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="clearfix form-actions no-margin" >
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button class="btn btn-info" type="submit">
+                                        <i class="icon-ok bigger-110"></i>
+                                        保存
+                                    </button>
+
+                                    <a href="/system_views_bug_add/" data-rel="fancybox" class="btn btn-danger"><i class="icon-bug"></i> 意见建议Bug提交</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+
+
+
+<!-- basic scripts -->
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/typeahead-bs2.min.js"></script>
+<script src="js/bootbox.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="js/jquery.dataTables.min.js"></script>
+<!-- ace scripts -->
+<script src="js/ace-elements.min.js"></script>
+<script src="js/ace.min.js"></script>
+<script src="js/bootstrap-lightbox/bootstrap-lightbox.js"></script>
+<script type="text/javascript" src="js/fancybox/jquery.fancybox.js?v=2"></script>
+<script type="text/javascript" src="js/tablednd/jquery.tablednd.js"></script>
+<script src="js/chosen.jquery.min.js"></script>
+<script src="js/date-time/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
+<script src="js/jquery.knob.min.js"></script>
+<script src="js/jquery.autosize.min.js"></script>
+<script src="js/jquery.inputlimiter.1.3.1.min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script src="js/mkpasswd.js"></script>
+
+<script src="js/bootstrap-tag.min.js"></script>
+<script src="js/jquery-ui-1.12.1.min.js"></script>
+<script src="js/jquery.zclip.min.js"></script>
+<script src="js/fuelux/fuelux.spinner.min.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/underscore-min.js"></script>
+
+<!-- inline scripts related to this page -->
+
+
+<script type="text/javascript">
+    //判断访问终端
+    var browser = {
+        versions : function() {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {
+                trident : u.indexOf('Trident') > -1, //IE内核
+                presto : u.indexOf('Presto') > -1, //opera内核
+                webKit : u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                mobile : !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone : u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                iPad : u.indexOf('iPad') > -1, //是否iPad
+                webApp : u.indexOf('Safari') == -1
+                //是否web应该程序，没有头部与底部
+            };
+        }(),
+        language : (navigator.browserLanguage || navigator.language)
+            .toLowerCase()
+    };
+
+    var clip = null;
+    function CreatePwd(id,num)
+    {
+        var ruleSet = {
+            maxRepeat:	0,
+            minChars:	num,
+            maxChars:	num,
+            minUpper:	0,
+            minLower:	0,
+            minNums:	0,
+            minSpecials:0
+        };
+        var charSet = {
+            // For special character set, don't use backslashes, quotes, or backticks
+            specials:	"",
+            nums:		"0123456789",
+            uppers:		"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            lowers:		"abcdefghijklmnopqrstuvwxyz",
+            wholeSet:	""
+        };
+        pwd = mkPasswd(ruleSet, charSet)
+        $("#"+id).val(pwd);
+        return pwd;
+    }
+
+    function update_level(idx,level)
+    {
+        $("#update_level_"+idx).html("正在进行升降级，请稍等...");
+        $.post(_json_url.url+"/member_views_level_update_ajax/", { idx: idx,level:level },function(data){
+            $("#update_level_"+idx).html(data.msg);
+        },"json").error(function(data) { alert("网络错误，请重试！"); });
+    }
+
+    var oldBeforeRow = null;
+    jQuery(function($) {
+        /*
+         $("#mainTable").dataTable( {
+         "bPaginate":false,
+         "bInfo":false,
+         "bFilter":false,
+         "bSort":false
+         } )
+         */
+        var isChrome = window.chrome;
+        if(isChrome || browser.versions.mobile)
+        {
+            $("#chrome_tips").hide();
+        }
+        else
+        {
+            $("#chrome_tips").show();
+        }
+
+        $('[data-rel="copy"]').zclip({
+            path:'/static/js/ZeroClipboard_jq.swf?v=2012',
+            copy:function(){
+                pwd = eval($(this).attr("data-javascript"));
+                return pwd;
+            },
+            afterCopy:function(){
+                var e = this;
+                $(e).closest('.form-group').addClass('has-success');
+                $(e).next('.help-block').html("复制成功");
+            }
+        });
+
+
+        /*
+         ZeroClipboard.config({ swfPath: "/static/js/ZeroClipboard2.2.0.swf?v=2012" })
+         var client = new ZeroClipboard($(''));
+
+         client.on("copy", function (event) {
+         var target = event.target;
+         pwd = eval($(target).attr("data-javascript"));
+         var clipboard = event.clipboardData;
+         clipboard.setData( "text/plain", pwd );
+         });
+         client.on("aftercopy",function(event){
+         var e = event.target
+         $(e).closest('.form-group').addClass('has-success');
+         $(e).next('.help-block').html("复制成功");
+         })
+         client.on("error",function(event){
+         var e = event.target
+         $(e).closest('.form-group').addClass('has-error');
+         $(e).next('.help-block').html("复制失败");
+         });
+         */
+
+        $('.date').daterangepicker({
+            singleDatePicker: true,
+            format:"YYYY-MM-DD"
+        },function(start,end,label)
+        {
+            var elm = this.elements[0];
+            if(elm != undefined)
+            {
+
+            }
+        });
+        $('.datetime').daterangepicker({
+            singleDatePicker: true,
+            format:"YYYY-MM-DD HH:mm",
+            timePickerIncrement:5,
+            timePicker12Hour:false,
+            timePicker:true
+        },function(start, end, label) {
+
+        });
+
+
+
+
+
+        $(':file').ace_file_input({
+            style:'well',
+            no_file:'No File ...',
+            btn_choose:'点击选择图片',
+            onchange:null,
+            no_icon:'icon-cloud-upload',
+            droppable:false,
+            whitelist:'gif|png|jpg|jpeg',
+            thumbnail:'fit',
+            before_change:function(files, dropped) {
+                var allowed_files = [];
+                for(var i = 0 ; i < files.length; i++) {
+                    var file = files[i];
+                    if(typeof file === "string") {
+                        //IE8 and browsers that don't support File Object
+                        if(! (/\.(jpe?g|png|gif|bmp)$/i).test(file) ) return false;
+                    }
+                    else {
+                        var type = $.trim(file.type);
+                        if( ( type.length > 0 && ! (/^image\/(jpe?g|png|gif|bmp)$/i).test(type) )
+                            || ( type.length == 0 && ! (/\.(jpe?g|png|gif|bmp)$/i).test(file.name) )//for android's default browser which gives an empty string for file.type
+                        ) continue;
+                    }
+
+                    allowed_files.push(file);
+                }
+                if(allowed_files.length == 0) return false;
+
+                return allowed_files;
+            }
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        });
+
+        $(".chosen-select").chosen({
+            placeholder_text_multiple:"点击选择"
+        });
+        $('[data-rel=popover]').popover({container:'body'});
+
+        $('[data-rel="fancybox"][data-options!="confirm"],[data-modal="fancybox"][data-options!="confirm"]').fancybox({
+            type: 'iframe',
+            fitToView: true,
+            width: browser.versions.mobile ? "98%":'60%',
+            //height: '100%',
+            autoResize:true,
+            autoSize: true,
+            closeBtn:false,
+            closeClick: true,
+            openEffect: 'fade',
+            closeEffect: 'fade'
+        });
+
+
+        $('table th input:checkbox').on('click' , function(){
+            var that = this;
+            $(this).closest('table').find('tr > td:first-child input:checkbox')
+                .each(function(){
+                    this.checked = that.checked;
+                    if(this.checked)
+                        $(this).closest('tr').addClass('selected');
+                    else
+                        $(this).closest('tr').removeClass('selected');
+                });
+
+        });
+
+        $('tr > td:first-child input:checkbox').on('click',function(){
+            if(this.checked)
+                $(this).closest('tr').addClass('selected');
+            else
+                $(this).closest('tr').removeClass('selected');
+        });
+
+        $('[data-rel="select"]').click(function(){
+            var value = $(this).val();
+            var c = $('[data-group="select"]').closest('.form-group');
+            c.hide();
+            c.next(".hr").hide();
+            c = $('[data-group_idx="'+value+'"]').closest('.form-group');
+            c.show();
+            c.next(".hr").show();
+        })
+
+        $('[data-rel="select"]').first().click();
+
+        $('[data-rel="toggle"]').change(function(){
+            var c = $("#id_"+$(this).attr("data-options")).closest('.form-group');
+            c.toggle();
+            c.next(".hr").toggle();
+        });
+
+        $('[data-rel="toggle-widget"]').change(function(){
+            var c = $("#id_"+$(this).attr("data-options"))
+            c.toggle();
+        });
+
+        $('[data-rel="help_text"]').each(function(){
+            content = $(this).closest('.form-group').find(".help-button").attr("data-content")
+            help_block = $(this).parent().next('.help-block')
+            help_block.css("background-color",$(this).attr("data-color")).css("color","#000")
+            help_block.html(content);
+
+        });
+
+
+        $('[data-rel="ajax"]').change(function(){
+            if($(this).val().length > 0)
+            {
+                currVal = $(this).val();
+                url = $(this).attr("data-options");
+                fields = $(this).attr("data-fields");
+                if(fields == undefined)
+                    fields = {}
+                else
+                    fields = eval("(" + fields + ")")
+                e = this
+                $(this).after("<span>正在查询.....</span>")
+                $.post(_json_url.url+url, { data: currVal },function(data){
+                    if (data.success != 0){
+                        result = data.result;
+                        for(var key in result)
+                        {
+                            if(fields[key] != undefined)
+                                $("#id_"+fields[key]).val(result[key]);
+                            else
+                                $("#id_"+key).val(result[key]);
+                        }
+                        $(e).closest('.form-group').removeClass('has-error');
+                        $(e).parent().next('.help-block').html("");
+
+                    }
+                    else
+                    {
+                        $(":input").val("");
+                        $(e).closest('.form-group').addClass('has-error');
+                        $(e).parent().next('.help-block').html(data.msg);
+                        $(e).focus();
+
+                    }
+                    $(e).siblings("span").remove()
+                },"json").error(function(data) { alert("网络错误，请重试！"); });
+            }
+        });
+
+
+        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement,html:true});
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table,div')
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'left';
+        }
+
+        $('[data-ajax="ajax"]').click(function(){
+            currVal = $(this).attr("data-value");
+            url = $(this).attr("data-options");
+            fields = $(this).attr("data-fields");
+            if(fields == undefined)
+                fields = {}
+            else
+                fields = eval("(" + fields + ")")
+            e = this
+            for(var key in fields)
+            {
+                $("#"+fields[key]).html("正在查询...")
+            }
+            $.post(_json_url.url+url, { data: currVal },function(data){
+                if (data.success != 0){
+                    result = data.result;
+                    for(var key in result)
+                    {
+                        if(fields[key] != undefined)
+                            $("#"+fields[key]).html(result[key]);
+                        else
+                            $("#"+key).html(result[key]);
+                    }
+                }
+                else
+                {
+                    alert("查询失败，请重试！")
+                }
+            },"json").error(function(data) { alert("网络错误，请重试！"); });
+        });
+
+        $('[data-options="confirm"]').on(ace.click_event, function() {
+            url = $(this).attr("href");
+            bootbox.confirm($(this).attr("data-confirm-title"), function(result) {
+                if(result) {
+                    $.fancybox.open({
+                        type: 'iframe',
+                        fitToView: true,
+                        //width: "auto",
+                        //minWidth:335,
+                        //height: '100%',
+                        autoResize:true,
+                        //autoSize: false,
+                        closeBtn:false,
+                        closeClick: true,
+                        openEffect: 'fade',
+                        closeEffect: 'fade',
+                        href:url
+                    });
+
+                }
+            });
+        });
+
+
+
+        $(".table").tableDnD({
+            onDragClass: "warning",
+            dragHandle: ".dragHandle",
+            onDragStart: function(table, row) {
+                row = $(row).parent().get(0);
+                var id = row.id
+                var prev = null;
+                for(var i=1;i<table.rows.length;i++)
+                {
+                    var currRow = table.rows[i];
+                    if(currRow.id == id)  //找到移动行在表格中的当前位置
+                    {
+                        oldBeforeRow = prev;
+                    }
+                    if($(currRow).attr("pid") != $(row).attr("pid"))
+                    {
+                        $(currRow).addClass("nodrop");
+                    }
+                    prev = currRow;
+
+                }
+            },
+            onDrop: function(table, row) {
+                var pid = $(row).attr("pid")
+                var id = row.id
+                var prev = null;
+                var moveRows = [];
+                for(var i=1;i<table.rows.length;i++)
+                {
+                    var currRow = table.rows[i];
+                    if(currRow.id == id)  //找到移动行在表格中的当前位置
+                    {
+                        if(prev == null && pid != 0)  //子目录移到表格第一列
+                        {
+                            $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                            break;
+                        }
+                        else if(prev && pid != 0) //子目录移动到非第一列
+                        {
+                            if($(prev).attr("pid") == 0
+                                && prev.id !=pid)  //子目录移到其它父目录下(父目录后面)
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                            else if($(prev).attr("pid") != 0
+                                && $(prev).attr("pid") !=pid) //子目录移到其它父目录下（父目录的子目录后面）
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                        }
+                        else if(prev && pid == 0) //父目录移动到非第一列
+                        {
+                            var next = null; //找到移动行在表格中的下一行
+                            if(i + 1 < table.rows.length)
+                                next = table.rows[i+1]
+                            if(next && $(prev).attr("pid") == 0
+                                && $(next).attr("pid") == prev.id)  //父目录移动到其它父目录和子目录之间
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                            else if(next && $(prev).attr("pid") != 0
+                                && $(next).attr("pid") == $(prev).attr("pid"))//父目录移动到其它子目录和子目录之间
+                            {
+                                $(oldBeforeRow).after(row);  //子目录回退到原来的位置
+                                break;
+                            }
+                        }
+                    }
+
+                    if($(currRow).attr("pid") == id) //移动行的全部子目录一起跟着移动
+                    {
+                        moveRows.push(currRow);
+                    }
+                    prev = currRow;
+                }
+                for(var i=0;i<moveRows.length;i++)
+                {
+                    var currRow = moveRows[i];
+                    $(row).after(currRow);
+                }
+                var data = JSON.parse($.tableDnD.jsonize())
+                $.post(_json_url.url+"", $.tableDnD.serialize(), function (data) {
+                    //$(".alert").html(data)
+                });
+            }
+        });
+        $(document).on("mouseover", "tr", function () {
+            if(!$(this).hasClass("nodrop"))
+                $(this.cells[1]).filter(".dragHandle").addClass('showDragHandle');
+        });
+        $(document).on("mouseout", "tr", function () {
+            $(this.cells[1]).filter(".dragHandle").removeClass('showDragHandle');
+        });
+        /*
+         $(".table").find("tr[class!='nodrop']").hover(function() {
+         $(this.cells[1]).addClass('showDragHandle');
+         }, function() {
+         $(this.cells[1]).removeClass('showDragHandle');
+         });
+         */
+        $(".table").mouseup(function()
+        {
+            $(".nodrop").removeClass("nodrop");
+        })
+
+        $(".knob").knob();
+
+
+        $('.widget-container-span').sortable({
+            connectWith: '.widget-container-span',
+            items:'> .widget-box',
+            opacity:0.8,
+            revert:true,
+            forceHelperSize:true,
+            placeholder: 'widget-placeholder',
+            forcePlaceholderSize:true,
+            tolerance:'pointer',
+            stop:function(event,ui)
+            {
+                id = this.id;
+                list = $(this).sortable("toArray");
+                $.post(_json_url.url+"/setting_views_setgiftsort/", { gid: id,gifts:list },function(data){
+
+                },"json").error(function(data) { alert("网络错误，请重试！"); });
+            }
+        });
+    })
+</script>
+</body>
+</html>

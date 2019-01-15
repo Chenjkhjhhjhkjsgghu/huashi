@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title> --多人视频后台管理系统<</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+    <!-- basic styles -->
+ 
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+ 
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="css/font-awesome-ie7.min.css" />
+    <![endif]-->
+ 
+    <!-- page specific plugin styles -->
+ 
+    <!-- fonts -->
+ 
+    <!-- ace styles -->
+ 
+    <link rel="stylesheet" href="css/ace.min.css" />
+    <link rel="stylesheet" href="css/ace-rtl.min.css" />
+ 
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/ace-ie.min.css" />
+    <![endif]-->
+ 
+    <!-- inline styles related to this page -->
+ 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+ 
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+ 
+<body class="login-layout" style="background-color:#6fb3e0">
+<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container" style="width:500px;margin-top:100px">
+ 
+                    <div class="center">
+                        <h3 id="chrome_tips" style="display: none;" class="orange2"><i class="icon-warning-sign"></i><b><a class="text-warning orange2" href="http://pan.baidu.com/s/1ntA9RSX" target="_blank">为更好的使用本后台系统，我们推荐使用Chrome浏览器，立刻点击这里下载</a></b></h3>
+                        <h1>
+                            <img  class="login_" />
+                        </h1>
+                        <h1 class="white"></h1>
+                    </div>
+ 
+                    <div class="space-6"></div>
+ 
+                    <div class="position-relative" style="">
+                        <div id="login-box" class="login-box visible widget-box no-border " style="background-color:#b0ddfe">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger">
+                                        <i class="icon-coffee green"></i>
+                                        请登陆
+                                    </h4>
+ 
+                                    <div class="space"></div>
+ 
+                                    <form method="post" id='login'>
+                                        <fieldset>
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input name="user_login" type="text" class="form-control" placeholder="用户名" />
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                            </label>
+                                            <div class="space"></div>
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input name="user_pass" type="password" class="form-control" placeholder="密码" />
+                                                    <input type="hidden" id="sites" name="sites">
+                                                    <i class="icon-lock"></i>
+                                                </span>
+                                            </label>
+ 
+                                            <div class="space"></div>
+                                            <div class="space"></div>
+                                               
+                                            <div class="clearfix">
+                                                <label class="red" style="display: none;">
+                                                    用户或密码错误!
+                                                </label>
+ 
+                                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                    <i class="icon-key"></i>
+                                                    登陆
+                                                </button>
+                                            </div>
+ 
+                                            <div class="space-4"></div>
+                                        </fieldset>
+                                    </form>
+                                </div><!-- /widget-main -->
+ 
+ 
+                            </div><!-- /widget-body -->
+                        </div><!-- /login-box -->
+ 
+                    </div><!-- /position-relative -->
+ 
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div>
+</div><!-- /.main-container -->
+ 
+<!-- basic scripts -->
+ 
+<!--[if !IE]> -->
+ 
+<script type="text/javascript"> 
+    window.jQuery || document.write("<script src='js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+</script>
+ 
+<!-- <![endif]-->
+ 
+<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+ 
+<script type="text/javascript"> 
+    if("ontouchend" in document) document.write("<script src='js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    //判断访问终端
+    var browser = {
+        versions : function() {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {
+                trident : u.indexOf('Trident') > -1, //IE内核
+                presto : u.indexOf('Presto') > -1, //opera内核
+                webKit : u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                mobile : !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone : u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                iPad : u.indexOf('iPad') > -1, //是否iPad
+                webApp : u.indexOf('Safari') == -1
+                //是否web应该程序，没有头部与底部
+            };
+        }(),
+        language : (navigator.browserLanguage || navigator.language)
+                .toLowerCase()
+    };
+    jQuery(function($){
+        var isChrome = window.chrome;
+        if(isChrome || browser.versions.mobile)
+        {
+            $("#chrome_tips").hide();
+        }
+        else
+        {
+            $("#chrome_tips").show();
+        }
+    });
+</script>
+ 
+<!-- inline scripts related to this page -->
+<script src="js/global.js"></script>
+<script type="text/javascript">
+    _sites = getUrl().sites;
+   $(function(){
+      $(function(){
+       $.ajax({
+    url:'http://htc.shijie.fq98.com:82/get_sites',
+    data:{
+        sites:getUrl().sites
+    },
+    success:function(res){
+     sessionStorage._Url = JSON.stringify(res);
+     sessionStorage._sites = getUrl().sites;
+       $(document).attr('title',res.name+'--多人视频后台管理系统')
+        $('.login_').attr('src',"/img/"+getUrl().sites+"/logo.png")
+         $('.white').text(res.name)
+         $('#sites').val(getUrl().sites)
+          $('#login').on('submit', function() {
+        login(res.url)
+        return false
+    })
+    }
+})
+    })
+
+  
+    })
+    function getUrl()
+  {
+      var json = {}
+      var url = window.location.href;
+      if(url.match(/\?/gi)===null)
+      {
+          alert('找不到网站标识符')
+          return false;
+      }
+      var nUrl = url.split('?')[1].split('&');
+      for(var i = 0;i<nUrl.length;i++)
+      {
+        let arr = [];
+        arr = nUrl[i].split('=')
+        arr[1] = arr[1].split('#')[0]
+        json[arr[0]] = arr[1]
+      }
+     return json;
+  }
+
+function login(_json_url) {
+    var userName = $('input[name="user_login"]').val()
+    var userPass = $('input[name="user_pass"]').val()
+    var data = {
+        userName:userName,
+        userPass:userPass,
+        sites:getUrl().sites
+    }
+    $.ajax({
+        type: "post",
+        xhrFields:{
+        withCredentials:true
+        },
+        url: _json_url+'/login',
+        data: data,
+        dataType: "json",
+        success:function(res){
+            if(res.code===100)
+          {
+            
+            top.window.location.href = '/?sites='+_sites
+            
+            
+            return;
+          }  
+          if (res.error_code == 'SUCCESS') {
+                localStorage.setItem('nickname', res.result.nickname)
+                localStorage.setItem('headerImg', res.result.headerImg)
+                setTimeout(function() {
+                    window.location.href = '/index.html?sites='+_sites
+                }, 500)
+            } else {
+                $('.red').show()
+            }
+        }
+    })
+}
+</script>
+</body>
+</html>
+

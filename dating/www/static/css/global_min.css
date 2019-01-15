@@ -1,0 +1,26 @@
+sup{vertical-align:top;}.strong{font-weight:bold;}.fr{float:right;}.fl{float:left;}.tc{text-align:center;}.hide{display:none;}.clear{clear:both;}.ml10{margin-left:10px;}.mr10{margin-right:10px;}.mt10{margin-top:10px;}.mb10{margin-bottom:10px;}.lh18{height:18px;line-height:1.5}.lh22{height:22px;line-height:22px}.lh24{height:24px;line-height:2}.lh26{height:26px;line-height:26px}.lh28{height:28px;line-height:28px}.lh30{height:30px;line-height:30px}.lh32{height:32px;line-height:32px;}.lh34{height:34px;line-height:34px;}.lh36{height:36px;line-height:3;}.f_z14{font-size:14px;}.f_z16{font-size:16px;}.f_z18{font-size:18px;}.f_z20{font-size:20px;}.f_z22{font-size:22px;}.f_z24{font-size:24px;}
+body{color:#5c5c5c;font: 12px/1.5 Tahoma,Geneva,宋体,sans-serif;height:100%;position:relative; background:#fdfdfd}/*需要初始化，改完后删除此句*/
+.prominent {color: #FF4E00;}/*需要初始化，改完后删除此句*/
+.minor{color:#666666;}/*需要初始化，改完后删除此句*/
+.regulation {
+    float: left;
+    width: 185px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 0;
+    margin: 5px 0 0;
+}
+
+.regulation a {
+    color: #000;
+    font-family: '微软雅黑';
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.regulation a:hover {
+    text-decorator: none;
+    color: red;
+}
+

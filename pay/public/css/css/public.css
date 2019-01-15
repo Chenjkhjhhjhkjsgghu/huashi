@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0;padding:0; list-style:none;font-family:"宋体","微软雅黑"; _font-family:"宋体", Tahoma;}
+body{font-size:12px;background:#fff;}
+h1,h2,h3,h4,h5,h6{font-size:14px;line-height:20px;}
+a{color:#f50c43;text-decoration:none;}a:hover{text-decoration:underline;}
+a img{border:none;}
+.color_r{color:#f50c43;}
+.clear{clear:both;_overflow:hidden;}
+
+.main{width:960px;margin:0 auto;margin-bottom:30px;}
+
+.header{height:65px; background:url(/media/default/images/header_theme.jpg) no-repeat;}
+.logo{float:left;padding-top:8px;}
+.menus_top{float:right;padding-top:10px;color:#5c5c5c;}
+.menus_top a{color:#5c5c5c;}
+.menus_top span{padding:0 4px;}
+
+.nav{height:36px; background:url(/media/default/images/nav_bg.gif) repeat-x;}
+.nav ul li{float:left;height:36px;}
+.nav ul li a{display:block;color:#FFF;font-size:14px;line-height:35px;_line-height:37px;padding:0 15px;_float:left;font-weight:bold;}
+.nav ul li.on a{height:31px;line-height:28px;background: url(/media/default/images/nav_hover.gif) no-repeat top;color:#295bc2;font-weight:bold;padding:0 28px;margin:5px 0 0 0;}
+.nav ul li.on a:hover{ text-decoration:none;}
+.nav ul li.shu{ padding-top:10px;}
+.content{padding:10px 0; background:#FFF;_padding:0;}
+.imargin{ margin:0 10px;}
+
+/**----通用分页-------------------------**/
+.pageList{font-size:12px;height:30px;text-align:center; margin:0 auto; width:450px;}
+.pageList span,.pageList a{display:block;float:left; font-size:12px;height:20px;line-height:20px;}
+.pageList span{padding-right:18px;color:#7b99ed;}
+.pageList a{height:20px;line-height:20px;padding:0 5px;margin-right:2px;color:#7b99ed;}
+.pageList a.on{background:#cd2872;color:#FFF;padding:0 5px;}
+.pageList a:hover{padding:0 4px;color:#fff;text-decoration:none;background:#cd2872;padding:0 5px;}
+
+/**--页脚-------------------------**/
+.footer{height:125px;background:url(/media/default/images/foot.gif) repeat-x;}
+.footer *{color:#000;}
+.footContent{width:800px;margin:0 auto;padding:15px 0 0 0;}
+
+span.break{ padding: 0 5px;}
+p.tel{ line-height: 30px;_padding-bottom:5px;}
+.foot{ float:left; width: 750px;}
+.footer_left{ display: inline; float: left;  text-align: left; padding-right: 20px;}
+.footer_right{ display: inline; float: left; text-align:right}
+.footContent img{ margin-right: 10px;}
+.foot h2{float:left;font-family:'宋体'; font-size:12px; font-weight:lighter;text-align:center;padding:10px 0 15px 0;margin:0;width:300px; line-height:20px}
+
+
+/*LoginTop*/
+.all_top {
+	margin:0;
+	padding:0;
+}
+.all_top .area {
+	margin:0 auto;
+	padding:2px 0 0 0;
+	width:965px;
+	height:75px;
+	
+
+}
+.all_top .area img {
+	float:left;
+	margin:0;
+	padding-top:8px;
+	padding-left:8px;
+	border:0
+}
+.all_top .area h2 {
+	float:left;
+	margin:0;
+	padding:6px 0 0 2px;
+	text-align:left;
+	font-family:'宋体';
+	font-size:12px;
+	font-weight:lighter;
+	color:#738197;
+	
+
+}
+.all_top .area h2 a{ color:#00a5ff;}
+.all_top .area h3 {
+	float:right;
+	margin:0;
+	padding:5px 7px 0 3px;
+	text-align:right;
+	font-family:'宋体';
+	font-size:12px;
+	font-weight:lighter;
+	color:#738197;
+	width:400px;
+
+}
+.all_top .area h3 a{ color:#738197;}
+.all_top_fr h4 {
+	float:left;
+	margin:0;
+	padding:7px 0 0 5px;
+	text-align:left;
+	font-family:'宋体';
+	font-size:12px;
+	font-weight:lighter;
+	color:#333333;
+	width:130px
+}
+.all_top_fr h5 {
+	float:left;
+	margin:0;
+	padding:7px 0 0 0;
+	text-align:center;
+	font-family:'宋体';
+	font-size:12px;
+	font-weight:lighter;
+	color:#333333;
+	width:30px
+}
+.all_top_fr h6 {
+	float:left;
+	margin:0;
+	padding:7px 5px 0 0;
+	text-align:left;
+	font-family:'宋体';
+	font-size:12px;
+	font-weight:lighter;
+	color:#333333;
+}
+.all_top_fr h6 span {
+	color:#ff0000
+}
+.btn_top_login2 {
+	float:left;
+	margin:3px 0 0 0;
+	padding:0;
+	width:55px;
+	height:20px;
+	background:url(/media/default/images/main/btn_pl_login.gif) top left no-repeat;
+	cursor:pointer
+}
+.btn_top_logout2 {
+	float:left;
+	margin:3px 0 0 0;
+	padding:0;
+	width:55px;
+	height:20px;
+	background:url(/media/default/images/main/btn_pl_logout.gif) top left no-repeat;
+	cursor:pointer
+}
+.input_top2 {
+	float:left;
+	margin:3px 5px 0 0;
+	padding:2px 3px 0 3px;
+	width:70px;
+	height:16px;
+	font-family:'宋体';
+	font-size:12px;
+	font-weight:lighter;
+	border:1px #cccccc solid
+}
+
+

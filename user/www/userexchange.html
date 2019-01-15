@@ -1,0 +1,276 @@
+﻿
+<!DOCTYPE html>
+<title>用户中心</title>
+<meta charset="utf-8">
+<link rel="icon" href="tangrj_favicon.ico" mce_href="tangrj_favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="tangrj_favicon.ico" mce_href="tangrj_favicon.ico" type="image/x-icon" />
+<link href="/media/default/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/media/default/css/user.css?v=1" rel="stylesheet" type="text/css" />
+<link href="/media/default/css/foot.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.1.2.js"></script>
+<link href="/media/default/jQuery/css/smoothness/jquery.ui.custom.css" rel="stylesheet" type="text/css" />
+<script src="/media/default/jQuery/jquery.ui.custom.min.js" type="text/javascript"></script>
+<script src="/media/default/jQuery/jquery.ui.datepicker-zh-CN.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/user.js"></script>
+   <script type="text/javascript">
+       $(document).ready(function(){
+        $(".utp_menu_off").click(function() {
+                window.location.href = $(this).attr("rel");
+            });
+       })
+    </script>
+ 
+</head>
+<body>
+ 
+<div class="all_top">
+   <div class="area">
+      <img src="/images/logo.png" id='logo'/><h2></h2>
+	  <h3>  <a href="#">帮助中心</a></h3>
+   </div>
+</div>
+<div class="user_top">
+   <div class="banner"><img src="/media/default/images/banner/default_user_banner.jpg" /></div>
+</div>
+<div class="main">
+   <div class="area">
+  
+    <div class="user">
+       <div class="title"><h2>尊敬的用户<span class="level">258888(IDX:258888,等级：800)</span>欢迎回来，<a id='logout' href="https://api.fq98.com:81/logout"  >[注销退出]</a></h2></div>
+       <div class="tip"><h2>用户管理中心</h2></div>
+       <div class="user_body">
+          <div class="user_topmenu">
+             <ul>
+                <li class=" utp_menu_off "  rel="/user.html"><span>用户中心</span></li>
+                <li class=" utp_menu_off " rel="/userinfo.html"><span>个人资料</span></li>
+                <li class=" utp_menu_off " rel="/userprotection.html"><span>密保信息</span></li>
+                
+                <li class=" utp_menu_off " rel="/userpassword.html"><span>修改密码</span></li>
+                 <li class=" utp_menu_off " rel="/bankpassword.html"><span>修改银行密码</span></li>
+                 <li class=" utp_menu_off " rel="/bank.html"><span>银行</span></li>
+                
+                <li class=" utp_menu_off " rel="/userrecord_new.html"><span>交易记录</span></li>
+                <li class=" utp_menu_off " rel="/card.html"><span>消费卡查询</span></li>
+                 
+                <li class="utp_menu_on" rel="/userexchange.html"><span>积分兑换</span></li>
+                <li class="utp_menu_off" rel="/zhuchi_exchange.html"><span>兑换查询</span></li>
+  				
+                
+             </ul>
+          </div>
+          <div class="user_contain">
+          
+<style type="text/css">
+    .tu_k{ position:absolute; top:-65px; left:160px}/*left值要根据当前所用input宽度调整*/
+</style>
+ <form   id="from1" name="from1" action="./" method="post">
+<div class="changecode">
+                <div class="title"><span>主持人积分兑换</span></div>
+                <ul>
+                   <li><h2><span>真实姓名，银行卡开户地址，卡号有误请联系QQ:</span></h2></li>
+                   <li><h2><span>，<span class="id_x"></span>您目前共有积分<font class="jifen_x" color="#0099FF" style=" font-size:16px;"></font>，最多兑换的积分是：<font class="max_X" color="#0099FF" style=" font-size:16px;"></font></span></h2></li>
+                   <li>
+                      <h2>根据您的等级 每份积分为  <font color="#0099ff" style=" font-size:16px;" id="socre_part"></font> 
+                           每份兑换为<font color="#FF0000" style=" font-size:16px;" id="fenshu"></font>
+                       元 可兑换份数为<font color="#0099ff" style=" font-size:16px;" id="fenshu1"></font>
+                       份</h2>
+      
+                       <h3>兑换份数</h3><input id="score_box" name="score_box" type="text" class="umc_input" /><h4 style="color:#000000">最低起兑<font id="min_sore" style="color: #0099FF"></font>份</h4><h2>获取业绩提成人民币
+                           <font color="#FF0000" style=" font-size:16px;" id="money"></font>
+                       元</h2></li>
+                   <li><h3>姓名</h3><input  id="name" type="text"  value=""  class="umc_input" onmousedown="this.className='umc_input_on'" onmouseout="this.className='umc_input'"/><h4>银行卡开户姓名</h4></li>
+                   <li><h3>电话/手机</h3><input  id="phone"   value="" type="text" class="umc_input" onmousedown="this.className='umc_input_on'" onmouseout="this.className='umc_input'"/></li>
+                   <li><h3>开户银行</h3><input type="text" class="yinhang umc_input"></li>
+                   <li><h3>开户行地址</h3><input  id="bankaddress" value="" type="text" class="umc_input" onmousedown="this.className='umc_input_on'" onmouseout="this.className='umc_input'"/></li>
+                   <li><h3>开户行帐号</h3><input  id="bankid" type="text"   value="" class="umc_input" onmousedown="this.className='umc_input_on'" onmouseout="this.className='umc_input'"/></li>
+                    <li><h3>身份证</h3><input type="text" class="umc_input" id="id_card"></li>
+                     <li><h3>支付宝</h3><input type="text" class="umc_input" id="alipay"></li>
+                      <li><h3>备注</h3><textarea id="memo"> </textarea></li>
+                   <li><h2><span>如资料有误需修改，请联系客服</span></h2></li>
+                    <li><h3>兑换方式</h3>
+                        <input name="exchangetype" value="1" type="radio" checked="checked"><h6>普通兑换</h6>
+                        
+                        <b id="jifen_x_x"><input name="exchangetype" value="2" type="radio" ><h6>积分换卡<span class="room_id" style="color: #ff5500"></span></h6></b>
+                        
+                    </li>
+                   <li style="display: none"><h3>向</h3>
+                       <select id="ddlAgentId" name="ddlAgentId">
+                           <option value="jingli">站长</option>
+                       </select>
+                       <h3 style="text-align: left">申请兑换</h3></li>
+                   <li id="lblAgent" style="display: none"><h2><span>填写您所在房间的代理账号，填写后可选择向该代理申请兑换。如不清楚代理账号，请向代理询问。<br />说明：代理账号即用户向代理购卡时所要填写的代理名称</span></h2></li>
+                   <li><h3>&nbsp;</h3>
+                       <input ID="btnSave" Class="umcbtn_off" style="border:0px;" value="申请" 
+                          type="button"   />
+                        </li>
+                       
+                </ul>
+             </div>
+
+</form>
+ 
+
+          </div>
+       </div>
+       <div class="clear"></div>
+    </div>
+ </div>
+ <div class="clear"></div>
+</div>
+<div id="footer"><!--对于现阶段商业站改版基本上都用这个尾部，只要拷贝到html里面就行了-->
+<div class="area">
+      <div class="ialeft">
+         
+     </div>
+      <div class="iacenter">
+		
+			
+			 <h2 id="ceshi"> 警方提示防诈骗、远离黄赌毒<br>
+			  <br>
+			 <span>Copyright (C) 2018-2018 All Rights Reserved  版权所有</span></h2>
+			
+		
+      </div>
+      <div class="iaright">
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+    var max_X = '';
+    var jifen = ''
+    var ticheng = ''
+    var min_part = '';
+
+    Login(function(res){
+    var data = res.msg.output;
+    getScore()
+     $('.level').text(data.nickname+"(id:"+data.id+' 等级:'+ setlevel(data.level)+")")
+    }
+  )
+  
+  function getScore()
+  {
+     $.get({
+    url:_Url[getUrl().sites].url+'/user/socre_exchange',
+    dataType:'JSONP',
+    data:getUrl(),
+    success:function(res){
+     if(res.code===400)
+     {
+          $('body').css('display','none')
+          $('html').text(res.msg)
+         return;
+     }
+     var data1 = res.msg.score_config;
+     var data = res.msg.output;
+     jifen = data1['socre_part'];
+      max_X =  Math.floor(data.score/res.msg.score_config.socre_part);
+      ticheng = eval(eval("("+res.msg.score_config.rmb_ratio+")")[data.level]);
+      min_part = res.msg.score_config.min_part;
+     $('.id_x').text(data.id);
+     $('.jifen_x').text(data.score);
+      if(data1.open_exchange===false)
+      {
+         $('#jifen_x_x').css('display','none');
+      }
+     $('#name').val(data.name);
+     $('#phone').val(data.mobile);
+     $('#bankid').val(data.bank_card);
+     $('#fenshu1').text(max_X);
+     $('#score_box').attr('value',max_X);
+     $('#socre_part').text(jifen);
+     $('#bankaddress').val(data.bank_addr);
+     $('#fenshu').text(ticheng);
+     $('.max_X').text(Math.floor(data.score/res.msg.score_config.socre_part)*res.msg.score_config.socre_part);
+     $('#money').text(ticheng*1*max_X*1);
+     $('.yinhang').val(data.bank_name);
+     $('#id_card').val(data.idcard);
+     $('#alipay').val(data.alipay);
+     $('#min_sore').text(min_part);
+     $('.room_id').text("(您关联的房间号为【"+data.belong+"】，代理为【"+res.msg.agent+"】，如有问题请联系站务)");
+      $('#from1 input').each(function(){
+      if($(this).val()!='')
+      {
+        $(this).attr('disabled',true);
+      }
+      else{
+      $(this).attr('disabled',false);
+      }
+      if($(this).attr('name')==='score_box' ||$(this).attr('name')==='exchangetype')
+      {
+         $(this).attr('disabled',false);
+      }
+    })
+       $('#btnSave').attr('disabled',false)  
+    }
+  })
+  }
+   
+
+ $('#score_box').on('input propertychange',function(){
+     if($('#score_box').val()>max_X)
+     {
+       alert('您输入的金额超出可兑换份数');
+       $('#score_box').val('');
+       return;
+     }
+    $('#money').text($('#score_box').val()*ticheng);
+ })
+$('#btnSave').click(function(){
+  if($('#score_box').val()==='')
+  {
+    alert('积分不能为空');
+    return;
+  }
+  if($('#score_box').val()>max_X)
+  {
+    alert('超过兑换积分份数');
+    return;
+  }
+  var open = false;
+  $('#from1 input').each(function(){
+    if(!$(this).val())
+    {
+      open = true;
+      return;
+    }
+  })
+  if(open)
+  {
+    alert('请输入必填项');
+    return;
+  }
+     $.ajax({
+    url:_Url[getUrl().sites].url+'/user/socre_exchange_post',
+    dataType:'jsonp',
+    data:{
+      sites:getUrl().sites,
+      sid:getUrl().sid,
+      type:$("input[name='exchangetype']:checked").val(),
+      socre:$('#score_box').val()*jifen,
+      name: $('#name').val(),
+      mobile: $('#phone').val(),
+      bank_name:$('.yinhang').val(),
+      bank_addr:$('#bankaddress').val(),
+      bank_card: $('#bankid').val(),
+      id_card:$('#id_card').val(),
+      alipay: $('#alipay').val(),
+      memo:$('#memo').val()
+    },
+    success:function(data)
+    {
+       if(data.code===200)
+       {
+         alert('提交成功');
+         window.location.href = window.location.href;
+       }
+       else{
+         alert(data.msg);
+       }
+    }
+  })
+})
+   
+  </script>
+</body>
+</html> 

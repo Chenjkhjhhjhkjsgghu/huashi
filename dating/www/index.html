@@ -1,0 +1,467 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+.beauti_girl .bd ul{cursor:pointer;padding:0;float:left;width:100%}
+.beauti_girl .bd ul li{float:left;color:#646464;margin:0;width:25%;height:150px;padding:30px 0; border-bottom:1px #ccc solid}
+.beauti_girl .bd ul.stretch li{
+  float: none;
+  border-bottom: none;
+  cursor: pointer;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+</style> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/css/reset_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="../static/css/global_min.css?v=201703231518" media="all" />
+<link rel="stylesheet" type="text/css" href="../static/css/newindex.css?v=23" media="all" />
+<title>房间大厅</title>
+	<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/main.js"></script>
+	<script type="text/javascript" src="../static/js/Real.js"></script>
+	<script type="text/javascript">
+
+		$(function () {
+			$("#star").ImagesList({time:6000});
+		});
+	</script>
+	<script type="text/javascript">
+		$(function(){
+
+		
+		
+		$('.beauti_girl ul,.room_recommend ul,').hover(function(){
+			$(this).addClass('cur').siblings().removeClass('cur');
+		},function(){
+			$(this).removeClass('cur');
+		})
+
+        $('.rank_title ul li').click(function(){
+            $(this).addClass('on').siblings().removeClass('on');
+            var _index = $(this).parent().find('li').index(this);
+            $(this).parents('.beauti_girl, .rank').find('.rank_con').eq(_index).show().siblings('.rank_con').hide();
+        })
+		 
+		})
+	</script>
+    <script>
+	 function a(divID){
+		 
+		 document.getElementById(divID).style.display="block";
+		 
+	 }
+	 function b(divID){
+		 
+		 document.getElementById(divID).style.display="none";
+		 
+	 }
+	</script>
+    <script type="text/javascript">
+//x=0;
+
+
+function ff(){
+	var dwidth=document.getElementById('bbd').clientWidth;
+    var awidth=document.body.clientWidth;
+    // alert(dwidth)
+    if (835<dwidth)
+    {
+        $('.jqw').css('width','16.6%');
+    }
+    else if (705<dwidth)
+    {
+        $('.jqw').css('width','20%');
+    }
+    else if (dwidth<=705)
+    {
+        $('.jqw').css('width','25%');
+    }
+
+    if (awidth<1415)
+    {
+        document.getElementById('sider_c').style.display='none';
+    }
+    if (awidth>1415)
+    {
+        document.getElementById('sider_c').style.display='block';
+    }
+  
+  
+    var ewidth=(dwidth-600)/2;
+    if(ewidth <= 65)
+    {
+        $('.exl,.exp').hide();
+    }
+    else
+    {
+
+        $('.exl').css('width',ewidth+'px');
+        $('.exp').css('width',ewidth+'px');
+        $('.exl,.exp').show();
+    }
+
+}
+</script>
+<script type="text/javascript">
+    //x=0;
+    $(document).ready(function(){
+        reposition();
+        var timeoutID = fbdBoxInit();
+
+        $('#fbd-left').click(function() {
+            $('#fbd').removeClass('focus-right').toggleClass('focus-left');
+            $('#fbd-saved').hide().prev('#fbd-recent').toggle();
+
+            clearTimeout(timeoutID);
+        });
+        $('#fbd-right').click(function() {
+            $('#fbd').removeClass('focus-left').toggleClass('focus-right');
+            $('#fbd-recent').hide().next('#fbd-saved').toggle();
+
+            clearTimeout(timeoutID);
+        });
+
+        $('.fbd-close').click(function() {
+            fbdBoxClose();
+        });
+
+        $(window).resize(function() {
+            ff();
+            reposition();
+        });
+        $(window).scroll(function() {
+            reposition();
+        });
+    });
+
+    // 添加
+    function reposition() {
+        var win_height = $(window).height();
+        var check_bottom = $('#bbd').offset().top + $('#bbd').height() + 40 - $(window).scrollTop();
+        var set_w = $('#bbd').width();
+
+        if (check_bottom > win_height) {
+            $('#fbd').width(set_w).addClass('fixed');
+        } else {
+            $('#fbd').width(set_w).removeClass('fixed');
+        }
+    }
+
+    function fbdBoxInit() {
+        fbdBoxFocus('left');
+
+        var timeoutID = setTimeout(function() {
+            fbdBoxClose();
+        }, 5000);
+
+        return timeoutID;
+    }
+
+    function fbdBoxClose() {
+        $('.fbd-box').hide();
+        $('#fbd').removeClass('focus-left focus-right');
+    }
+
+    function fbdBoxFocus(box) {
+        var classname = 'focus-' + box;
+        var boxname = '#fbd-' + (box==='left' ? 'recent' : 'saved');
+
+        // init
+        $('.fbd-box').hide();
+        $('#fbd').removeClass('focus-left focus-right');
+
+        // set
+        $(boxname).show();
+        $('#fbd').addClass(classname);
+    }
+</script>
+ <script src="/static/js/browser.min.js"></script>
+ <!-- <script type="text/babel"  src="/static/js/siteInfo.js"></script>
+ <script type="text/babel"  src="/static/js/until.js"></script> -->
+ <script type="text/babel"  src="/static/js/index.js"></script>
+
+</head>
+
+<body onload="ff()">
+<div id="wrapper">
+		<div id="sider_l">
+			<div id="content">
+			<div class="first_bind">
+              <div class="exl" style="float: left">
+                  <div class="user_info">
+                      <div class="uhead" style=""></div>
+                      <h2 class="nickName"></h2>
+                  </div>
+                  <div class="user_level">
+                      <h2>您的当前等级为<span class="cred"></span></h2>
+                      <div class="user_load"><div class="on experience" style="width:0%"></div></div>
+                      
+                  </div>
+              </div>
+			  <div id="banner">
+			  	<div id="play">
+			  		<ul>
+				        <li id="playNum"><span style=""><a>1</a><a>2</a></span>
+                            
+                        </li>
+				        <li id="playShow" class="siteimg">
+                            
+                                <a href="#" target="_blank" class="pg1"><img src=""/></a>
+                                <a href="#" target="_blank" class="pg2"><img src=""/></a>
+                            
+				        </li>
+				    </ul>
+			  	</div>
+			  </div>
+              <div class="exp">
+                  <div class="tf_box tf_bc_b"><h2>今日消费</h2><h3>0</h3></div>
+                  <div class="tf_box tf_bc_g"><h2>今日积分</h2><h3>0</h3></div>
+              </div>
+			</div>
+            
+            <div class="beauti_girl">
+                <div class="hd">
+                    <img src="./static/images/icon_tt.gif" /><h2>推荐房间</h2>
+                    <div class="rank_title">
+                        <ul>
+                            <li class="on"><a href="javascript:;">热门</a></li>
+                            <li class="long"><a href="javascript:;">最近登录和收藏</a></li>
+                        </ul>
+                    </div>
+                </div>
+				<div class="bd" id="bbd">
+                    <div class="rank_con">
+					<ul class="roomList">
+                            <!-- <li onmouseover="a('onair37')" onmouseout="b('onair37')" class="jqw">
+                                    <div class="roomphoto" onclick="location.href='?roomid=119999&roompwd=0&visable=1&type=300&rtype=0&hstype=1&'">
+                                        <div id="onair37" class="photo_onair" style="display:none"></div><div class="photo_onroomid">房间ID：119999</div>
+                                        
+                                            <img src="../img/mo.gif" width="130px" height="100px" />
+                                        
+                                    </div>
+                                    <div class="roominfo"><h2 style="color:red">
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        119999</h2><h3><img src="../static/images/avater.gif" />0/300</h3><div class="btn_goys"><a href="?roomid=119999&roompwd=0&visable=1&type=300&rtype=0&hstype=1&"><img src="../static/images/enter.gif" /></a><a href="?roomid=119999&roompwd=0&visable=0&type=300&rtype=0&hstype=1&"><img src="../static/images/go.gif" /></a>
+                                    </div></div></li> -->
+
+
+                        
+
+					</ul>
+					</div>
+
+
+                    <div class="rank_con">
+                        
+                            <ul class="stretch NearRooms">
+                            </ul>
+                            <ul class="stretch FaveRooms">
+                            </ul>
+
+                        
+
+                        
+                    </div>
+				</div>
+                <!-- MARK FixedBar -->
+			</div>
+            </div>
+		</div>
+
+
+    
+         <div id="sider_r">
+			
+            <div class="mayor"><h2><a href="" title="点击查看往期市长" target="_blank">现任&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市长</a></h2><span  class='mayorInfo'></span></div>
+
+            
+            <div class="rank" style="height: 278px">
+				<div class="hd">
+					<img src="../static/images/icon_tt.gif" /><h2><a href="" title="点击查看完整排行" target="_blank">排行榜</a></h2>
+					<div class="rank_title">
+						<ul>
+							<li class="on"><a href="javascript:;">日消费</a></li>
+							<li><a href="javascript:;">日积分</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="bd">
+					<div class="rank_con">
+						<ul id="day_xiaofei">
+                            
+                                <li title="Idx:6013,昵称：6013,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num1.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:13000,昵称：●┊华视┊公主失恋了,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num2.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:11,昵称：黑  鬼,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num3.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:130000,昵称：◆┊华视┊公主,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num4.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:75,昵称：75,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num5.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:1010,昵称：yilin ,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num6.gif" /></div><div class="rbinfo2"><h2>1 </h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:10670853,昵称：hs,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num7.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:1300086,昵称：第一被干掉了气死了,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num8.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:3939,昵称：系统号,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num9.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+
+						</ul>
+					</div>
+					<div class="rank_con" style="display:none;">
+					    <ul id="day_jifen">
+                            
+                                <li title="Idx:128888,昵称：最强音上卡处,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num1.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:13000,昵称：●┊华视┊公主失恋了,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num2.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:166666,昵称：我的大表姐,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num3.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:276666,昵称：●┊火焰宝宝,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num4.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:720005,昵称：♬↝蓝 轩✿,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num5.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:130000,昵称：◆┊华视┊公主,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num6.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:741111,昵称：默依依,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num7.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:13333,昵称：俏佳人※緗緦荳~招收主持,站点：香格里拉"><div class="rankbox "><div class="num"><img src="../static/images/num8.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+                                <li title="Idx:105599,昵称：105599,站点：香格里拉"><div class="rankbox rlbg"><div class="num"><img src="../static/images/num9.gif" /></div><div class="rbinfo2"><h2>1</h2><h3>0</h3></div></div></li></li>
+                            
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+            
+            <div class="rank">
+				<div class="hd">
+					<img src="../static/images/icon_tt.gif" /><h2><a href="#" title="点击查看完整排行">每日之星</a></h2>
+					<div class="rank_title" style="display:none">
+						<ul>
+							<li class="on"><a href="javascript:;">1</a></li>
+							<li><a href="javascript:;">2</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="star" class="bd" style="height:140px; width:185px; overflow:hidden;position:relative; z-index:999">
+					<div class="rank_starcon" style="height:140px;width:185px; overflow:hidden">
+						<ul id="box_star">
+							<li>
+                                
+                                    
+                                    <div  class="ranksbox" title="Idx:720005,昵称：♬↝蓝 轩✿,站点：香格里拉"><div class="num"><img src="../static/images/props/000101s.bmp" alt="鲜花之星" title="鲜花之星"/></div><div class="rbinfo2"><h2>鲜花之星：1</h2><h3>0</h3></div></div>
+
+                                    <div class="ranksbox" title="Idx:772430,昵称：最强音の甜心,站点：香格里拉"><div class="num"><img src="../static/images/props/000102s.bmp" alt="香吻之星" title="香吻之星"/></div><div class="rbinfo2"><h2>香吻之星：1</h2><h3>0</h3></div></div>
+
+            
+                                    <div class="ranksbox" title="Idx:718718,昵称：┽ツ炫风◇美珏,站点：香格里拉"><div class="num"><img src="../static/images/props/000109s.bmp" alt="钻戒之星" title="钻戒之星"/></div><div class="rbinfo2"><h2>钻戒之星：1</h2><h3>0</h3></div></div>
+
+                                        </li>
+                                        <li>
+                                    
+                                    <div class="ranksbox" title="Idx:128888,昵称：最强音上卡处,站点：香格里拉"><div class="num"><img src="../static/images/props/000512s.bmp" alt="飞机之星" title="飞机之星"/></div><div class="rbinfo2"><h2>飞机之星：1</h2><h3>0</h3></div></div>
+
+                                
+                                    
+                                        
+                                    
+                                    <div class="ranksbox" title="Idx:10058,昵称：相约⌒小倩倩♡,站点：香格里拉"><div class="num"><img src="../static/images/props/000111s.bmp" alt="名车之星" title="名车之星"/></div><div class="rbinfo2"><h2>名车之星：1</h2><h3>0</h3></div></div>
+
+                                
+                                    
+                                        
+                                    
+                                    <div class="ranksbox" title="Idx:718718,昵称：┽ツ炫风◇美珏,站点：香格里拉"><div class="num"><img src="../static/images/props/000107s.bmp" alt="香水之星" title="香水之星"/></div><div class="rbinfo2"><h2>香水之星：1</h2><h3>0</h3></div></div>
+
+                                
+                            </li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+            
+            <div class="service">
+				<div class="hd">
+					<img src="../static/images/icon_tt.gif" /><h2>客服中心</h2>
+				</div>
+				<div class="bd">
+					<div class="serv_con">
+                    
+                        <ul>
+                            
+                                <li class="bdr"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1115190000&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1115190000:17" alt="在线咨询" title="在线咨询" onerror="this.onerror='';this.src= '../static/images/qq.gif'"></a><h3>在线客服</h3></li>
+                            
+                            
+                                <li class="bdr"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1115190000&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1115190000:17" alt="vip销售" title="vip销售" onerror="this.onerror='';this.src= '../static/images/qq.gif'"></a><h3>VIP销售</h3></li>
+                            
+                            <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=7733536&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:7733536:17" alt="软件版本" title="软件版本" onerror="this.onerror='';this.src= '../static/images/qq.gif'"></a><h3>软件版本</h3></li>
+                        </ul>
+                         
+                    
+                    </div>
+                </div>
+            </div>
+             <!--
+             <div class="regulation">
+                 <a href="http://jb.ccm.gov.cn/" target="_blank">12318全国文化市场举报</a>
+             </div>
+			-->
+			
+		</div>
+		<div id="sider_c">
+           
+        </div>	
+			<!---->
+</div>
+
+	<script type=text/javascript>
+		var t = n = 0, count = $("#playShow a").size();
+		$(function(){
+            $("#playShow a:not(:first-child)").hide();
+            $("#playNum a:first").css({"background":"#3fb0f2","border-color":"#df7aee"});
+            $("#playNum a").click(function() {
+               var i = $(this).text() - 1;
+               n = i;
+               if (i >= count) return;
+               $("#playShow a").filter(":visible").hide().parent().children().eq(i).fadeIn(1200);
+                $(this).css({"background": "#3fb0f2","border-color":"#df7aee"}).siblings().css({"background": "#f7f7f7","border-color":"#e5e5e5"});
+            });
+            t = setInterval("showAuto()", 5000);
+            $("#play").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 5000);});
+
+
+
+            $('.tui').zclip({
+                path:'/static/js/ZeroClipboard_jq.swf?v=2012',
+                copy:function(){
+                    url = $(this).attr("data-rel");
+                    return url;
+                },
+                afterCopy:function(){
+                    alert("复制成功")
+                }
+            });
+        });
+
+		function showAuto()
+		{
+            n = n >= (count - 1) ? 0 : ++n;
+            $("#playNum a").eq(n).trigger('click');
+		}
+	</script>
+    <script src="../static/js/jquery.zclip.min.js"></script>
+
+</body>
+</html>

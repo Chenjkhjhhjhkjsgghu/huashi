@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html >
+<meta charset="utf-8">
+<title>用户中心</title>
+<link rel="icon" href="tangrj_favicon.ico" mce_href="tangrj_favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="tangrj_favicon.ico" mce_href="tangrj_favicon.ico" type="image/x-icon" />
+<link href="/media/default/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/media/default/css/user.css?v=1" rel="stylesheet" type="text/css" />
+<link href="/media/default/css/foot.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.ui.css">
+<script type="text/javascript" src="js/jquery.1.2.js"></script>
+<script type="text/javascript" src="js/jquery.ui.js"></script>
+<script type="text/javascript" src="js/js1.js"></script>
+<script type="text/javascript" src="js/js3.js"></script>
+<script type="text/javascript" src="js/js4.js"></script>
+<script type="text/javascript" src="js/user.js"></script>
+   <script type="text/javascript">
+        $(function() {
+            $(".utp_menu_off").click(function() {
+                window.location.href = $(this).attr("rel");
+            });
+        });
+		
+    </script>
+ 
+</head>
+<body>
+ 
+<div class="all_top">
+   <div class="area">
+      <img src="/images/logo.png" id='logo'/><h2></h2>
+	  <h3>  <a href="#">帮助中心</a></h3>
+   </div>
+</div>
+<div class="user_top">
+   <div class="banner"><img src="/media/default/images/banner/default_user_banner.jpg" /></div>
+</div>
+<div class="main">
+   <div class="area">
+  
+    <div class="user">
+       <div class="title"><h2>尊敬的用户<span class="level">258888(IDX:258888,等级：800)</span>欢迎回来，<a id="logout" href="https://api.fq98.com:81/logout"  >[注销退出]</a></h2></div>
+       <div class="tip"><h2>用户管理中心</h2></div>
+       <div class="user_body">
+          <div class="user_topmenu">
+             <ul>
+                <li class=" utp_menu_off "  rel="/user.html"><span>用户中心</span></li>
+                <li class=" utp_menu_off " rel="/userinfo.html"><span>个人资料</span></li>
+                <li class=" utp_menu_off " rel="/userprotection.html"><span>密保信息</span></li>
+                
+                <li class=" utp_menu_off " rel="/userpassword.html"><span>修改密码</span></li>
+                 <li class=" utp_menu_off " rel="/bankpassword.html"><span>修改银行密码</span></li>
+                 <li class=" utp_menu_off " rel="/bank.html"><span>银行</span></li>
+                
+                <li class="utp_menu_off" rel="/userrecord_new.html"><span>交易记录</span></li>
+                <li class=" utp_menu_on " rel="/card.html"><span>消费卡查询</span></li>
+                 
+                <li class="utp_menu_off" rel="/userexchange.html"><span>积分兑换</span></li>
+                <li class="utp_menu_off" rel="/zhuchi_exchange.html"><span>兑换查询</span></li>
+  				
+                
+             </ul>
+          </div>
+          <div class="user_contain">
+            
+<div id="ucn6" class="usercard">
+                <div class="title" ><span >消费卡查询</span></div>
+    <div class="search">
+             <input type="text" class="umc_input" placeholder="开始时间" id="start">
+             <input type="text" class="umc_input" placeholder="结束时间" id="end">
+             <input  type="button" value="开始查询" style="border:0px;"  Class="umcbtn_off" id="search" />
+    </div>
+                <div class="datearea">
+                   <table width="100%" border="0" cellpadding="5" cellspacing="2" class="table_date"> 
+                      <tr class="tdstyle_co_tb">
+                         <td class="tdtext_center">卡号</td>
+                         <td class="tdtext_center">类型</td>
+                         <td class="tdtext_center">金额</td>
+                         <td class="tdtext_center">币值</td>
+                         <td class="tdtext_center">使用状态</td>
+                         <td class="tdtext_center">订单号</td>
+                         <td class="tdtext_center">所属代理</td>
+                         <td class="tdtext_center">创建时间</td>
+                         <td class="tdtext_center">使用时间</td>
+  
+                      </tr>
+                      
+                         
+                   </table>
+                </div>
+                <div class="bottom">
+
+                  <div class="page">
+                  <span style="color:#999">当前第<b>1/1</b>页</span>
+                  <a    style="color:#999;" class="ones"> 首页</a>
+                  <a   class="prev" > 上一页</a>
+                  <a class="next">下一页</a>
+                  <a  class="befor">尾页</a>
+                  </div>
+                   <div class="total"><h2>总共充值<span>0</span>张卡</h2></div>
+                </div>
+                             
+  </div>
+
+     <script type="text/javascript">
+       
+  </script>
+    
+ 
+
+          </div>
+       </div>
+       <div class="clear"></div>
+    </div>
+ </div>
+ <div class="clear"></div>
+</div>
+<div id="footer"><!--对于现阶段商业站改版基本上都用这个尾部，只要拷贝到html里面就行了-->
+<div class="area">
+      <div class="ialeft">
+         
+     </div>
+      <div class="iacenter">
+		
+			
+			 <h2> 警方提示防诈骗、远离黄赌毒<br>
+			  <br>
+			 <span>Copyright (C) 2018-2018 All Rights Reserved  版权所有</span></h2>
+			
+		
+      </div>
+      <div class="iaright">
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+
+     $( "#start" ).datepicker( {
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      changeMonth: true,
+      changeYear: true
+});
+      $( "#end" ).datepicker( {
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      changeMonth: true,
+      changeYear: true
+});
+
+      Login(function(res){
+var data = res.msg.output;
+$('.level').text(data.nickname+"(id:"+data.id+' 等级:'+ setlevel(data.level)+")");
+$('#nickname').text(data.nickname);
+$('#user_id').text(data.id);
+$('#userId').val(data.id)
+showDom(getUrl())
+}
+)   
+
+
+
+
+
+ $("#search").click(function () {
+      var json = getUrl();
+  json.start_time = $('#start').val();
+
+  json.end_time = $('#end').val();
+
+  json.current = 1;
+
+  showDom(json)
+             
+  });
+
+
+ function is_status(obj)
+ {
+     if(obj)
+     {
+       return '使用'
+     }
+     else{
+      return '未使用'
+     }
+ }
+
+   function showDom(data)
+ {   
+  var types = ['','代客直充','第三方充值','后台生成'];
+  $('.tdstyle_co_tbd').remove()
+      $.get({
+       url:_Url[getUrl().sites].url+"/user/get_point_card_log",
+       data:data,
+      dataType: "jsonp",
+      success:function(res){
+        var data = res.msg.output;
+        for(var i = 0;i<data.length;i++)
+        {
+          var str = $('<tr class="tdstyle_co_tbd"></tr>')
+          str.append('<td class="tdtext_center">'+data[i].card_number+'</td>')
+          str.append('<td class="tdtext_center">'+types[data[i].type]+'</td>')
+          str.append('<td class="tdtext_center">'+data[i].amount/100+'</td>')
+          str.append('<td class="tdtext_center">'+data[i].coin/100+'</td>')
+          str.append('<td class="tdtext_center">'+is_status(data[i].use_status) +'</td>')
+          str.append('<td class="tdtext_center">'+data[i].order_id+'</td>')
+          str.append('<td class="tdtext_center">'+data[i].agent+'</td>')
+          str.append('<td class="tdtext_center">'+data[i].create_time+'</td>')
+          str.append('<td class="tdtext_center">'+data[i].use_time+'</td>')
+          page = res.msg.page;
+          num = Math.ceil(res.msg.count/20)
+          $('.page b').text(page+'/'+num)
+          $('.table_date').append(str)
+        }     
+      }
+    })
+ }
+  $('.prev').click(function(){
+    var json = getUrl();
+    json.current = page;
+    if(json.current<=1)
+    {
+      alert('当前是第一页')
+    }
+    else{
+      json.current--;
+      showDom(json)
+    }
+ })
+ $('.ones').click(function(){
+     var json = getUrl();
+     json.current = 1;
+     showDom(json)
+ })
+ $('.befor').click(function(){
+     var json = getUrl();
+     json.current = num;
+     showDom(json)
+ })
+ $('.next').click(function(){
+    var json = getUrl();
+    json.current = page;
+    if(json.current>=num)
+    {
+      alert('当前已是最后一页')
+    }
+    else{
+      json.current++;
+      showDom(json)
+    }
+ })
+
+
+
+  </script>
+</body>
+</html> 

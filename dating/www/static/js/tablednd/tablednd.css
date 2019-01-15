@@ -1,0 +1,18 @@
+td.dragHandle {
+
+}
+
+td.showDragHandle {
+    background-image: url(../../images/updown2.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: move;
+}
+
+.table>thead>tr>td.nodrop,.table>tbody>tr>td.nodrop,.table>tfoot>tr>td.nodrop,.table>thead>tr>th.nodrop,.table>tbody>tr>th.nodrop,.table>tfoot>tr>th.nodrop,.table>thead>tr.nodrop>td,.table>tbody>tr.nodrop>td,.table>tfoot>tr.nodrop>td,.table>thead>tr.nodrop>th,.table>tbody>tr.nodrop>th,.table>tfoot>tr.nodrop>th {
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+    background-color: #ebcccc;
+    border-color: #e6c1c7;
+    cursor: not-allowed;
+}

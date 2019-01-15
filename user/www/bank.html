@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html >
+<meta charset="utf-8">
+<title>用户中心</title>
+<link rel="icon" href="tangrj_favicon.ico" mce_href="tangrj_favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="tangrj_favicon.ico" mce_href="tangrj_favicon.ico" type="image/x-icon" />
+<link href="/media/default/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/media/default/css/user.css?v=1" rel="stylesheet" type="text/css" />
+<link href="/media/default/css/foot.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.ui.css">
+<script type="text/javascript" src="js/jquery.1.2.js"></script>
+<script type="text/javascript" src="js/jquery.ui.js"></script>
+<script type="text/javascript" src="js/js1.js"></script>
+<script type="text/javascript" src="js/js3.js"></script>
+<script type="text/javascript" src="js/js4.js"></script>
+<script type="text/javascript" src="js/user.js"></script>
+   <script type="text/javascript">
+        $(function() {
+            $(".utp_menu_off").click(function() {
+                window.location.href = $(this).attr("rel");
+            });
+        });
+        
+          
+		
+    </script>
+ 
+</head>
+<body>
+ 
+<div class="all_top">
+   <div class="area">
+      <img src="/images/logo.png" id='logo'/><h2></h2>
+	  <h3>  <a href="#">帮助中心</a></h3>
+   </div>
+</div>
+<div class="user_top">
+   <div class="banner"><img src="/media/default/images/banner/default_user_banner.jpg" /></div>
+</div>
+<div class="main">
+   <div class="area">
+  
+    <div class="user">
+       <div class="title"><h2>尊敬的用户<span class="level">258888(IDX:258888,等级：800)</span>欢迎回来，<a id="logout" href="https://api.fq98.com:81/logout"  >[注销退出]</a></h2></div>
+       <div class="tip"><h2>用户管理中心</h2></div>
+       <div class="user_body">
+          <div class="user_topmenu">
+             <ul>
+                <li class=" utp_menu_off "  rel="/user.html"><span>用户中心</span></li>
+                <li class=" utp_menu_off " rel="/userinfo.html"><span>个人资料</span></li>
+                <li class=" utp_menu_off " rel="/userprotection.html"><span>密保信息</span></li>
+                
+                <li class=" utp_menu_off " rel="/userpassword.html"><span>修改密码</span></li>
+                 <li class=" utp_menu_off " rel="/bankpassword.html"><span>修改银行密码</span></li>
+                 <li class="utp_menu_on" rel="/bank.html"><span>银行</span></li>
+                
+                <li class=" utp_menu_off " rel="/userrecord_new.html"><span>交易记录</span></li>
+                <li class=" utp_menu_off " rel="/card.html"><span>消费卡查询</span></li>
+                 
+                <li class="utp_menu_off" rel="/userexchange.html"><span>积分兑换</span></li>
+                <li class="utp_menu_off" rel="/zhuchi_exchange.html"><span>兑换查询</span></li>
+  				
+                
+             </ul>
+          </div>
+          <div class="user_contain">
+          
+<form   action="./?" method="post">
+    <div class="userinfo">
+        <div class="title">
+            <span>银行</span></div>
+        <ul>
+            <li>
+                <h2>
+                    <span>当前账号信息</span></h2>
+            </li>
+            <li>
+                <h3>
+                    银行存款</h3>
+                <input id="question"  name="question" value="0" class="umc_input" onmousedown="this.className='umc_input_on'" onmouseout="this.className='umc_input'" readonly="readonly"/></li>
+            <li>
+                <h3>
+                    账户余额</h3>
+                <input id="answer"  name="answer"   class="umc_input" onmousedown="this.className='umc_input_on'"  onmouseout="this.className='umc_input'" readonly="readonly"/><h4>
+                账户余额不足？我要<a href="http://tangrj.pay.jhzhidu.com/?useridx=258888" target="_blank">充值</a></h4>
+            </li>
+            <li>
+                <h2>
+                    <span>存款</span></h2>
+            </li>
+            <li>
+                <h3>
+                    存款金额</h3>
+                <input id="ckmoney"  name="ckmoney"    class="umc_input" onmousedown="this.className='umc_input_on'"  onmouseout="this.className='umc_input'"/>
+            </li>
+            <li>
+                <h3>&nbsp;
+                </h3>
+                <input type='button' name="btnsave_Click" value="存款" id="btnsave_Click"   class="umcbtn_off" onmouseover="this.className=&#39;umcbtn_on&#39;" onmouseout="this.className=&#39;umcbtn_off&#39;" style="border:0px;" />
+            </li>
+            <li><h2><span>取款</span></h2>
+            </li>
+            <li>
+                <h3>
+                    取款金额</h3>
+                <input id="qkmoney"  name="qkmoney" class="umc_input"  onmousedown="this.className='umc_input_on'" onmouseout="this.className='umc_input'"/></li>
+            <li>
+                <h3>
+                    取款密码</h3>
+                <input id="qkpwd"  name="qkpwd" class="umc_input"  onmousedown="this.className='umc_input_on'" onmouseout="this.className='umc_input'" type="password"/></li>
+            <li>
+                <h3>&nbsp;
+                </h3>
+                <input type='button' name="btnsave_Click" value="取款" id="btnsave_Click1"   class="umcbtn_off" onmouseover="this.className=&#39;umcbtn_on&#39;" onmouseout="this.className=&#39;umcbtn_off&#39;" style="border:0px;" />
+            </li>
+        </ul>
+    </div>
+</form>
+<script type="text/javascript">
+    
+</script>
+
+
+          </div>
+       </div>
+       <div class="clear"></div>
+    </div>
+ </div>
+ <div class="clear"></div>
+</div>
+<div id="footer"><!--对于现阶段商业站改版基本上都用这个尾部，只要拷贝到html里面就行了-->
+<div class="area">
+      <div class="ialeft">
+         
+     </div>
+      <div class="iacenter">
+		
+			
+			 <h2> 警方提示防诈骗、远离黄赌毒<br>
+			  <br>
+			 <span>Copyright (C) 2018-2018 All Rights Reserved  版权所有</span></h2>
+			
+		
+      </div>
+      <div class="iaright">
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+    Login(function(res){
+var data = res.msg.output;
+$('.level').text(data.nickname+"(id:"+data.id+' 等级:'+ setlevel(data.level)+")");
+$('#nickname').text(data.nickname);
+$('#user_id').text(data.id);
+$('#userId').val(data.id)
+$('#question').val(data.coin_bank)
+$('#answer').val(data.coin)
+}
+)
+ $('#btnsave_Click').click(function(){
+      if($('#ckmoney').val()==='')
+      {
+        alert('金额不能为空')
+        return;
+      }
+       $.ajax({
+      url:_Url[getUrl().sites].url+"/user/access_user_bank_coin",
+      dataType: "jsonp",
+      data:{
+        sites:getUrl().sites,
+        sid:getUrl().sid,
+        coin:$('#ckmoney').val(),
+        type:1
+      },
+      success:function(res)
+      {
+          if(res.code===200)
+          {
+            alert('提交成功');
+            $('#ckmoney').val('')
+            window.location.href = window.location.href;
+          }else{
+            alert(res.msg)
+          }
+         
+      }
+    })
+    })
+    $('#btnsave_Click1').click(function(){
+      if($('#qkmoney').val()==='')
+      {
+        alert('金额不能为空')
+        return;
+      }
+       $.ajax({
+      url:_Url[getUrl().sites].url+"/user/access_user_bank_coin",
+      dataType: "jsonp",
+      data:{
+        sites:getUrl().sites,
+        sid:getUrl().sid,
+        coin:$('#qkmoney').val(),
+        password:$('#qkpwd').val(),
+        type:2
+      },
+      success:function(res)
+      {
+          if(res.code===200)
+          {
+            alert('提交成功');
+            $('#qkmoney').val('');
+            $('#qkpwd').val('')
+            window.location.href = window.location.href
+          }else{
+            alert(res.msg)
+          }
+         
+      }
+  })
+}) 
+
+  </script>
+</body>
+</html> 

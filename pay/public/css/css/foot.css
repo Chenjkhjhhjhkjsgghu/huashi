@@ -1,0 +1,44 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* foot
+.foot {margin:0 auto;padding:20px 0 0 300px;width:980px;color:#000; text-align:center;}
+.foot dl dt{height:80px; float:left; padding-right:10px;}
+.foot .msm{padding:25px 0 0 0; text-align:center;}
+.foot .msm a{color:#F00;}
+.foot img {float:left;margin:0;padding:0 0 15px 0;border:0}
+ */
+ 
+.foot {margin:0;padding:0;width:100%; }
+
+
+.foot .area .top {float:left;margin:0;padding:0;width:980px;}
+.foot .area .top h2 {float:left;font-family:'宋体'; font-size:12px; font-weight:lighter; color:#1f1f1f;text-align:center;padding:0 85px;margin:0 ;width:810px; line-height:16px}
+.foot .area .top h2 span {float:left;margin:0;padding:5px}
+.foot .area .top h2 img {float:left;margin:0 5px 0 0;padding:0; border:0}
+
+.foot .area .inside {margin:20px auto;width:900px;}
+.foot .area .inside .left {float:left;margin:0;padding:0;width:180px;}
+.foot .area .inside .left img {float:left;margin:0;padding:0; border:0}
+.foot .area .inside .right {float:left;margin:0;padding:0;width:180px;}
+.foot .area .inside .right img {float:right;margin:0;padding:0; border:0}
+
+.foot .contain {margin:0 auto;padding:0;width:900px;}
+.foot .contain h2 {font-family:'宋体'; font-size:12px; font-weight:lighter; color:#878787;width:900px; text-align:center;padding:0;margin:0 auto; line-height:22px}
+.foot .contain h2 a {color:#878787; text-decoration:none}
+.foot .contain h2 a:hover {color:#3c3c3c; text-decoration:underline}
+
+
+/*以下是参考5see尾部整理，仅供参考*/
+#footer {width: 100%; background:#fff; height:120px;}
+#footer .area {margin: 0 auto;padding: 10px 0 0 0;width: 940px; border-top:1px solid #cccccc;}
+#footer .area img {border: 0 none;float: left;margin: 0;padding: 0;}
+#footer .area .ialeft {float: left;width: 200px; padding-left:30px;}
+#footer .area .iacenter {float: left;width:450px;}
+#footer .area .iaright {float: left;text-align: right;}
+#footer .area .iacenter h2 {color: #000;float:left;font-family: '宋体'; font-size: 12px;font-weight: lighter;line-height: 20px;padding: 10px 0 15px 0;text-align: center;width: 450px;}
+#footer .area .iacenter h2 a {color: #000;}
+#footer .area .iacenter h2 a:hover {color: #FF5500;}
+#footer .area .iacenter h2 span {color: #000;}
+
+

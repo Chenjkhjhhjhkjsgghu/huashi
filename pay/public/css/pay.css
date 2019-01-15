@@ -1,0 +1,260 @@
+@charset "utf-8";
+/* CSS Document */
+body { margin:0; font:12px Tahoma; color:black; background:#fff}
+
+p,img,span,ul,ol,td,dd,dl,dt,table,form,button,input{margin:0px;padding:0px;list-style-type:none;}
+.clear{clear:both;}
+a{color:#fff;  text-decoration:none}
+a:hover{color:#fff; text-decoration:none}
+.textalign{ text-align:right;}
+.blank5{height:5px;}
+.blank10{height:10px;}
+.blank20{height:20px;}
+h1,h2,h3,h4,h5{margin:0px;padding:0px;}
+.yellow{color:#FF6600;}
+.yellow a{color:#FF6600;}
+.yellow a:hover{color:#FFC446;}
+.white{color:#FFFfff;}
+.red{color:#FF0000}
+.green {color:#009900}
+.blue {color:#0000CC}
+a.red {color:#FF0000;font-size:14px; font-weight:bold; font-family:'宋体'}
+a.red:hover{color:#FF0000; text-decoration:underline;font-size:14px; font-weight:bold; font-family:'宋体'}
+a.white {color:#FFFfff;}
+a.white:hover{color:#ffffff; text-decoration:underline}
+.black{color:#000000}
+a.black {color:#525050;}
+a.black:hover {color:#525050;text-decoration:underline}
+.input01{ background:#f8f8f8;border:1px solid #e2e2e2;}
+.txt_white{ color:#FFFFFF; font-size:14px; font-weight:bold; font-family:'宋体'}
+.txt_red{ color:#FF0000; font-size:14px; font-weight:bold; font-family:'宋体'; line-height:20px}
+.txt_black{ color:#000000; font-size:14px; font-weight:bold; font-family:'宋体'; line-height:20px}
+
+/*DIV*/
+
+#menu { margin: 0; padding: 0;left: 0; top: 0; list-style-type: none; z-index: 70;}
+/*#menu li { float: left; margin:0; font-size: 14px;}
+#menu a { float: left; padding: 10px 20px; background-color: #fff; color: #333; text-decoration: none;}
+#menu .active a { color: #fff; background-color: #333;}*/
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+.sc_bg1 {background:url(images/bg_sinfo.jpg) 50% 50% no-repeat}
+.sc_bg2 {background:url(images/im_ent_bg.jpg) 50% 50% no-repeat}
+.sc_bg3 {background:url(images/im_busi_bg.jpg) 50% 50% no-repeat}
+.sc_bg4 {background:url(images/im_edu_bg.jpg) 50% 50% no-repeat}
+.sc_bg5 {background:url(images/bg_joinnow.jpg) 50% 50% no-repeat}
+
+.sitemenu {background:#fff;width:100%;margin:0;padding:0;height:90px;}
+.sitemenu .smcontent {margin:0 auto;padding:0;width:1000px;height:60px;}
+.sitemenu .smcontent .logo {float:left;margin:0;padding:0;width:250px;height:60px;}
+.sitemenu .smcontent .logo img {float:left;margin:0;padding:0;border:0}
+.sitemenu .smcontent .mmenu {float:left;margin:0;padding:0 0 0 70px;width:400px;height:90px;}
+.sitemenu .smcontent .mmenu ul {margin:0;padding:0}
+.sitemenu .smcontent .mmenu ul li{float:left;margin:0;padding:0 10px 0 10px;height:90px;cursor:pointer}
+.sitemenu .smcontent .mmenu ul li.on h2 { background:#fe8619;height:60px;color:#fff}
+.sitemenu .smcontent .mmenu ul li h2 {float:left;color:#242424; text-decoration:none;font-size:18px; font-weight:lighter;text-align:center; font-family:Tahoma,'微软雅黑';padding:30px 30px 0 30px;}
+.sitemenu .smcontent .mmenu ul li h2 a {color:#242424}
+.sitemenu .smcontent .mmenu ul li h2 a:hover {color:#fe8619}
+
+.sitemenu .smcontent .mqmenu {float:right;margin:0;padding:32px 0 0 0;width:240px;height:40px;}
+.sitemenu .smcontent .mqmenu h2 {float:left;color:#5f5f5f; text-decoration:none;font-size:14px; font-weight:lighter;text-align:right; font-family:Tahoma,'微软雅黑';padding:0;width:240px}
+.sitemenu .smcontent .mqmenu h2 a {color:#5f5f5f;padding:0 10px}
+.sitemenu .smcontent .mqmenu h2 a:hover {color:#fe8619}
+
+
+
+
+.payment_frame {float:left;margin:0;padding:0 0 50px 0;width:100%; background:#f7f7f7;}
+.payment_frame .pf_content {margin:0 auto;padding:30px 0;width:1000px;}
+.payment_frame .pf_content .pay_client {float:left;margin:0 0 40px 0;padding:0;width:1000px;height:75px; background:#fff; border-bottom:5px #fe8619 solid}
+.payment_frame .pf_content .pay_client h2 {float:left;color:#000000; text-decoration:none;font-size:14px; font-weight: normal;text-align:left; font-family:Tahoma,'微软雅黑';padding:20px 0 0 20px;}
+.payment_frame .pf_content .pay_client h2 span{color:#fe8619}
+.payment_frame .pf_content .pay_client h3 {float:right;color:#000000; text-decoration:none;font-size:14px; font-weight: normal;text-align:right; font-family:Tahoma,'微软雅黑';padding:20px 20px 0 0;}
+.payment_frame .pf_content .pay_client h3 span{color:#ff0000; font-size:24px}
+
+.payment_frame .pf_content .pay_choose {float:left;margin:0;padding:28px;width:940px;border:2px #fe8619 solid; background:#fff}
+.payment_frame .pf_content .pay_choose .pay_way {float:left;margin:0;padding:0 0 20px 0;width:940px; }
+.payment_frame .pf_content .pay_choose .pay_way .title {float:left;margin:0;padding:0;width:940px;}
+.payment_frame .pf_content .pay_choose .pay_way .title h2 {float:left;color:#000000; text-decoration:none;font-size:14px; font-weight: normal;text-align:left; font-family:Tahoma,'微软雅黑';padding:0; line-height:16px}
+.payment_frame .pf_content .pay_choose .pay_way .content {float:left;margin:0;padding:30px 0 0 110px;width:830px;}
+.payment_frame .pf_content .pay_choose .pay_way .content ul {margin:0;padding:0}
+.payment_frame .pf_content .pay_choose .pay_way .content ul li {float:left;margin:0 20px 30px 0;padding:0;width:160px;height:60px; border:3px #efefef solid; border-radius:10px; background:#fff; cursor:pointer}
+.payment_frame .pf_content .pay_choose .pay_way .content ul li h2 {float:left;color:#000000; text-decoration:none;font-size:18px; font-weight: normal;text-align:left; font-family:Tahoma,'微软雅黑';padding:18px 0 0 0; width:100px}
+.payment_frame .pf_content .pay_choose .pay_way .content ul li.on {float:left;margin:0 20px 30px 0;padding:0;width:160px;height:60px; border:3px #fe8619 solid; border-radius:10px; background:#fff7f0;cursor:pointer}
+.payment_frame .pf_content .pay_choose .pay_way .content ul li.on h2 {float:left;color:#fe8619; text-decoration:none;font-size:18px; font-weight: normal;text-align:left; font-family:Tahoma,'微软雅黑';padding:18px 0 0 0; width:100px}
+
+.paypos { height:40px;width:40px; float:left;margin:10px 10px 0 10px;padding:0}
+.alipay { background:url(../images/alipay.png) top left no-repeat;}
+.weixinpay { background:url(../images/weixinpay.png) top left no-repeat;}
+.unionpay { background:url(../images/unionpay.png) top left no-repeat;}
+.yeepay { background:url(../images/yeepay.png) top left no-repeat;}
+.chargepay { background:url(../images/chargepay.png) top left no-repeat;}
+.gamepay { background:url(../images/gamepay.png) top left no-repeat;}
+.ecpsspay { background:url(../images/ecpsspay.png) top left no-repeat;}
+.ipspay { background:url(../images/ipspay.png) top left no-repeat;}
+.baofoopay { background:url(../images/baofoopay.png) top left no-repeat;}
+.piupay { background:url(../images/piupiupay.png) top left no-repeat;}
+
+.payment_frame .pf_content .pay_choose .pay_sedway {float:left;margin:0;padding:0 0 20px 0;width:940px;border-top:2px #efefef solid}
+.payment_frame .pf_content .pay_choose .pay_sedway .title {float:left;margin:0;padding:30px 0 0 110px;width:830px;}
+.payment_frame .pf_content .pay_choose .pay_sedway .title h2 {float:left;color:#000000; text-decoration:none;font-size:14px; font-weight: normal;text-align:left; font-family:Tahoma,'微软雅黑';padding:0;}
+.payment_frame .pf_content .pay_choose .pay_sedway .title h2 span {color:#fe8619; font-size:18px}
+.payment_frame .pf_content .pay_choose .pay_sedway .content {float:left;margin:0;padding:30px 0 0 110px;width:830px;}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul {margin:0;padding:0}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li {float:left;margin:0 20px 20px 0;padding:10px 0 0 0;width:150px;height:30px; border:1px #efefef solid; border-radius:5px; background:#fff; cursor:pointer}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li h2 {float:left;color:#000000; text-decoration:none;font-size:18px; font-weight: normal;text-align:left; font-family:Tahoma,'微软雅黑';padding:18px 0 0 0; width:100px}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li.on {float:left;margin:0 20px 20px 0;padding:10px 0 0 0;width:150px;height:30px; border:1px #1db92c solid; border-radius:5px;cursor:pointer;background:url(../images/rd_bg.png) no-repeat right bottom #f5fff6}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li.on h2 {float:left;color:#fe8619; text-decoration:none;font-size:18px; font-weight: normal;text-align:left; font-family:Tahoma,'微软雅黑';padding:18px 0 0 0; width:100px}
+
+
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li label{float:left;height:20px; line-height:20px;background:url(../images/rd_btn1.png) no-repeat 10px center;cursor:pointer; padding:0 20px 0 30px}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li label img {margin:0;padding:0}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li input{float:left; position:absolute; left:-9999px}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li.on {}
+.payment_frame .pf_content .pay_choose .pay_sedway .content ul li.on label{float:left;background-image:url(../images/rd_btn2.png);}
+#pay_bank label{ height:28px;_padding-right:0;_width:100px}
+
+
+.payment_frame .pf_content .pay_choose .pay_sedway .button {float:left;margin:0;padding:30px 320px 0 320px;width:300px;}
+.btn_submit {float:left;margin:0;padding:5px 0 0 0;width:300px;height:35px; background:#ffa13c; font-family:'微软雅黑';line-height:30px;font-size:20px; color:#fff; text-align:center; border:0; border-radius:5px; cursor:pointer;font-weight:normal}
+
+.disabled { background:#9b9b9b; }
+
+.payment_frame .pf_content .pay_choose .pay_error {float:left;margin:0;padding:30px 0 70px 0;width:940px;}
+.payment_frame .pf_content .pay_choose .pay_error .content {float:left;margin:0;padding:30px 0 0 0;width:940px; text-align:center}
+.payment_frame .pf_content .pay_choose .pay_error .content .error_icon {float:left;margin:0;padding:0;width:100%; text-align:center}
+.payment_frame .pf_content .pay_choose .pay_error .content h2 {float:left;color:#ff0000; text-decoration:none;font-size:30px; font-weight: normal;text-align:center; font-family:Tahoma,'微软雅黑';padding:10px 0 0 0; width:100%}
+.payment_frame .pf_content .pay_choose .pay_error .content h3 {float:left;color:#373737; text-decoration:none;font-size:24px; font-weight: normal;text-align:center; font-family:Tahoma,'微软雅黑';padding:20px 0 50px 0; width:100%}
+.payment_frame .pf_content .pay_choose .pay_error .button {float:left;margin:0;padding:30px 320px 0 320px;width:300px;}
+
+
+
+.payment_frame .pf_content .pay_choose .pay_ok {float:left;margin:0;padding:30px 0 70px 0;width:940px;}
+.payment_frame .pf_content .pay_choose .pay_ok .content {float:left;margin:0;padding:30px 0 0 0;width:940px; text-align:center}
+.payment_frame .pf_content .pay_choose .pay_ok .content .ok_icon {float:left;margin:0;padding:0;width:100%; text-align:center}
+.payment_frame .pf_content .pay_choose .pay_ok .content h2 {float:left;color:#1db92c; text-decoration:none;font-size:30px; font-weight: normal;text-align:center; font-family:Tahoma,'微软雅黑';padding:10px 0 0 0; width:100%}
+.payment_frame .pf_content .pay_choose .pay_ok .content h3 {float:left;color:#373737; text-decoration:none;font-size:24px; font-weight: normal;text-align:center; font-family:Tahoma,'微软雅黑';padding:20px 0 50px 0; width:100%}
+.payment_frame .pf_content .pay_choose .pay_ok .content h3 span {color:#fe8619}
+.payment_frame .pf_content .pay_choose .pay_ok .button {float:left;margin:0;padding:30px 320px 0 320px;width:300px;}
+
+
+.all_foot {float:left;margin:0;padding:30px 0 0 0;width:100%; background:#fff}
+.all_foot h2 {margin:0 auto;color:#2a2a2a; text-decoration:none;font-size:12px; font-weight:lighter;text-align:center; font-family:Tahoma,'微软雅黑';padding:20px 0 40px 0;width:1000px; line-height:20px; border-top:0px #888888 solid}
+
+
+.pay_choose .blue {
+    color: #02afff; }
+
+.pay_choose h2 {
+    color: #000;
+    font-family: Tahoma, '微软雅黑';
+    font-size: 18px;
+    font-weight: normal; }
+
+.pay_choose .summary {
+    border-bottom: 1px solid #efefef;
+    padding-left: 120px;
+    padding-bottom: 28px; }
+.pay_choose .summary h2 {
+    line-height: 40px; }
+
+.pay_choose .choose {
+    width: 940px;
+    margin-top: 30px;
+    clear: both;
+    overflow: auto; }
+.pay_choose .choose h2 {
+    line-height: 20px; }
+.pay_choose .choose .choose__score {
+    float: left;
+    width: 410px;
+    padding-left: 120px; }
+.pay_choose .choose .choose__score .form {
+    width: 320px;
+    margin-top: 20px;
+    margin-bottom: 120px; }
+.pay_choose .choose .choose__score .form .form__label {
+    display: block;
+    color: #000;
+    font-size: 14px;
+    line-height: 30px; }
+.pay_choose .choose .choose__score .form .form__label.form__label--disabled {
+    color: #7f7f7f; }
+.pay_choose .choose .choose__score .form .form__input {
+    width: 296px;
+    height: 16px;
+    color: #000;
+    font-size: 14px;
+    line-height: 16px;
+    border: 2px solid #efefef;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    outline: none; }
+.pay_choose .choose .choose__score .form .form__input[disabled] {
+    border-color: #f7f7f7; }
+.pay_choose .choose .choose__score .form .form__button {
+    color: white;
+    background-color: #fe8619;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; }
+.pay_choose .choose .choose__score .form .form__button[disabled] {
+    color: white;
+    background-color: #fec28c;
+    cursor: default; }
+.pay_choose .choose .choose__score .form .form__submit {
+    width: 320px;
+    height: 40px;
+    font-size: 18px; }
+.pay_choose .choose .choose__score .form .getcode {
+    visibility: hidden;
+    height: 30px;
+    margin-bottom: 10px;
+    clear: both; }
+.pay_choose .choose .choose__score .form .getcode.getcode--active {
+    visibility: visible; }
+.pay_choose .choose .choose__score .form .getcode .getcode__hint {
+    float: left;
+    color: #7f7f7f;
+    font-size: 14px;
+    line-height: 30px; }
+.pay_choose .choose .choose__score .form .getcode .getcode__button {
+    float: right;
+    width: 80px;
+    height: 30px;
+    font-size: 14px; }
+.pay_choose .choose .choose__score .form .wrapper {
+    position: relative; }
+.pay_choose .choose .choose__score .form .wrapper .cleanall {
+    display: none; }
+.pay_choose .choose .choose__score .form .wrapper .cleanall.cleanall--active {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    background: transparent url(../images/clean.png) left top no-repeat;
+    background-size: cover;
+    cursor: pointer; }
+.pay_choose .choose .choose__qr {
+    float: left;
+    width: 409px;
+    height: 300px;
+    border-left: 1px solid #efefef; }
+.pay_choose .choose .choose__qr h2 {
+    text-align: center; }
+.pay_choose .choose .choose__qr .qr {
+    display: block;
+    width: 170px;
+    height: 170px;
+    margin: 45px auto 5px; }
+.pay_choose .choose .choose__qr .captions {
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px; }
+.pay_choose .choose .choose__qr .captions .links {
+    color: red; }
+.pay_choose .choose .choose__qr .captions .links:hover {
+    text-decoration: underline; }

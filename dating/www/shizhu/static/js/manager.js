@@ -1,9 +1,9 @@
 
 var siteInfo = {
-        'shijie': {url:'http://rooms.fq98.com:83',name:'视界'},
-        '2019yl': {url:'http://rooms.fq98.com:83',name:'2019yl'},
-        'bycheng': {url:'http://rooms.fq98.com:83',name:'不夜城'},
-        'hjba':{url:'http://rooms.fq98.com:83',name:'欢聚吧'}
+        'shijie': {url:'http://api.fq98.com:84',name:'视界'},
+        '2019yl': {url:'http://api.fq98.com:84',name:'2019yl'},
+        'bycheng': {url:'http://api.fq98.com:84',name:'不夜城'},
+        'hjba':{url:'http://api.fq98.com:84',name:'欢聚吧'}
 }
     function getRequest()
     {

@@ -1,4 +1,11 @@
   $(function () {
+
+
+
+
+    $('input:checkbox').change(function(){
+      console.log($(this).val())
+    })
     var dataList = {
       page: 1,
       page_size: 10,

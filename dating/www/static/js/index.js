@@ -6,10 +6,10 @@ var siteInfo = {
 }
 
 var paihang = {
-    'shijie': {url:'https://api.fq98.com:88',name:'视界'},
-    '2019yl': {url:'https://api.fq98.com:88',name:'2019yl'},
-    'hjba': {url:'https://api.fq98.com:88',name:'2019yl'},
-    'bycheng': {url:'https://api.fq98.com:88',name:'2019yl'},
+    'shijie': {url:'https://api.fq98.com:8808',name:'视界'},
+    '2019yl': {url:'https://api.fq98.com:8808',name:'2019yl'},
+    'hjba': {url:'https://api.fq98.com:8808',name:'2019yl'},
+    'bycheng': {url:'https://api.fq98.com:8808',name:'2019yl'},
 }
 
 $(document).ready(function () {

@@ -29,8 +29,8 @@
       type: "get",
       xhrFields:{
         withCredentials:true
-        },
-        url: _json_url.url+'/game/one_betting_list',
+      },
+      url: _json_url.url+'/game/one_betting_list',
       data: data,
       dataType: "json",
       success:function(res){
@@ -38,11 +38,9 @@
           {
             
             top.window.location.href = '/?sites='+_sites
-            
-            
             return;
-          }  
-          if (res.error_code == 'SUCCESS') {
+          }
+       if (res.error_code == 'SUCCESS') {
         recordList(res.result.lists)
         $(".pagination").paging({
           pageNo: res.result.pageNo,
@@ -54,7 +52,8 @@
         })
         $('.allNum').html(res.result.allNum)
         $('.allPage').html(res.result.allPage)
-      }
+      }  
+        }
     })
     // console.log(dataList)
   }

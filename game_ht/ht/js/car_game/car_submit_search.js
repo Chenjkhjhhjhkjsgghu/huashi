@@ -61,10 +61,7 @@
       success:function(res){
         if(res.code===100)
           {
-            
             top.window.location.href = '/?sites='+_sites
-            
-            
             return;
           }  
           if (res.error_code == 'SUCCESS') {

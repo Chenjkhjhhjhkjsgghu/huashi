@@ -1,28 +1,15 @@
-import $ from 'jquery'
+import axios from 'axios'
+
+var Web =  {
+    "shijie":{"url":"https://api.fq98.com:8808","name":"视界","logo":"shijie.jpg"},
+    "hjba":{"url":"https://api.fq98.com:8808","name":"欢聚吧","logo":"hjba.jpg"},
+    "2019yl":{"url":"https://api.fq98.com:8808","name":"2019娱乐","logo":"2019yl.jpg"}
+  }
+
+  sessionStorage.Web = JSON.stringify(Web)
 
 
-let data = {};
-
-
-if(sessionStorage.getItem("data")!==null)
-{
-   data = JSON.parse(sessionStorage.getItem("data"));
-}
-else{
-    $.ajax({
-        url:'http://firebird.cc:3000/get_sites',
-        type:'get', //GET
-        async:false,   
-        timeout:5000,    
-        dataType:'json',   
-        success:function(res){
-            data = res;
-            sessionStorage.setItem('data',JSON.stringify(res))
-        }
-    })
-    
-}
-export default data
+export default Web;
 
 
 

@@ -92,6 +92,7 @@
   }
   // 渲染列表
   function recordList(lists) {
+    console.log(lists)
     var dom = $('#mainTable tbody')
     dom.empty()
     var list = lists

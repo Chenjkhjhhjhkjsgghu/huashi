@@ -37,7 +37,7 @@ function getUrl()
 var siteid = getUrl().sites;
 Vue.prototype.OPENURL = Vue.prototype.SITEINFO[siteid]
 console.log('siteInfo',Vue.prototype.SITEINFO)
-Vue.use(VueSocketio, Vue.prototype.SITEINFO[siteid])
+  Vue.use(VueSocketio, Vue.prototype.SITEINFO[siteid])
 
 // var fs = require('fs')
 // Vue.use(require('vue-svg'),{

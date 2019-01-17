@@ -250,7 +250,7 @@ class App extends React.Component{
                 <RangePicker format="YYYY-MM-DD  " onChange={this.setType2.bind(this)}  placeholder={['开始时间','结束时间']} name='time'/>
                 <Button onClick={this.searchBar.bind(this)} style={{marginLeft:'5px'}}><Icon type="search"/>搜索</Button>
                 </div>
-                <Alert style={{margin:'20px 0'}} message={`${this.state.params.start_time}至${this.state.params.end_time} 总共销售（代理加大厅）充卡 ${this.state.pagination.total} 张，总金额 ${this.state.sum===null?'0':this.state.sum} 元.`} type="info" />
+                <Alert style={{margin:'20px 0'}} message={`${this.state.params.start_time}至${this.state.params.end_time} 总共销售（代理加大厅）充卡 ${this.state.pagination.total} 张，总金额 ${this.state.sum===null?'0':this.state.sum/100} 元.`} type="info" />
                 <Table scroll={{x:true}} pagination={this.state.pagination} columns={columns} loading={this.state.loading} dataSource={this.state.data} bordered rowSelection={{onChange:this.changes.bind(this)}} size='small' onChange={this.current.bind(this)}/>
             </div>
         )

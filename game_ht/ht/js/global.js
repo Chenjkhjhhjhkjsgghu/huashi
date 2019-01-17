@@ -1,10 +1,5 @@
 
-   
-
   
-
-
-
     function getUrl()
   {
       var json = {}
@@ -22,6 +17,7 @@
         arr[1] = arr[1].split('#')[0]
         json[arr[0]] = arr[1]
       }
+      sessionStorage._sites = JSON.stringify(json)
      return json;
   }
 

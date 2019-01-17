@@ -6,10 +6,10 @@ var siteInfo = {
 }
 
 var paihang = {
-    'shijie': {url:'https://api.fq98.com:88',name:'视界'},
-    '2019yl': {url:'https://api.fq98.com:88',name:'2019yl'},
-    'hjba': {url:'https://api.fq98.com:88',name:'2019yl'},
-    'bycheng': {url:'https://api.fq98.com:88',name:'2019yl'},
+    'shijie': {url:'https://api.fq98.com:8808',name:'视界'},
+    '2019yl': {url:'https://api.fq98.com:8808',name:'2019yl'},
+    'hjba': {url:'https://api.fq98.com:8808',name:'2019yl'},
+    'bycheng': {url:'https://api.fq98.com:8808',name:'2019yl'},
 }
 var urlData = getRequest()
 var userMessage = ''
@@ -354,11 +354,11 @@ function setRank(datas,names,dom,Room_name)
     dom.empty()
     for(var i = 0;i<datas.length;i++)
     {
-        var data = datas[i].data===undefined?{user_id:'',sum:''}:datas[i].data[0];
+        var data = datas[i].data.length===0?{user_id:'',sum:0}:datas[i].data[0];
         var name = data.user_id===''?'':names[data.user_id];
         if (i===7)
          {
-            name = Room_name[data.room_id]
+            name = data.room_id===undefined?'': Room_name[data.room_id]
          }
         var rank_name = datas[i].name;
         var rank_img = datas[i].img;

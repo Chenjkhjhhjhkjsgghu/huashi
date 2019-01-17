@@ -36,7 +36,7 @@ function Login(callback)
 {
    $.ajax({
     async: false,
-    url:'https://api.fq98.com:88/get_sites_jsonp',
+    url:'https://api.fq98.com:8808/get_sites_jsonp',
     dataType:'jsonp',
     success:function(res){
       _Url = res;

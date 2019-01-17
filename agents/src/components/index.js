@@ -24,7 +24,7 @@ function getUrl()
 class App extends React.Component{
   redirect()
   {
-    let url = `https://pay.fq98.com:88/pay/agent.html?userid=${this.props.data.userId}&sites=${getUrl().sites}`;
+    let url = `https://pay.fq98.com:8808/pay/agent.html?userid=${this.props.data.userId}&sites=${getUrl().sites}`;
      this.refs['redict'].onclick=function(){
       window.open(url)
   }

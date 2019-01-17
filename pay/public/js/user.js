@@ -20,7 +20,7 @@ function Login(callback)
   if(_Url==='')
 {
   $.ajax({
-  url:'https://pay.fq98.com:90/get_sites',
+  url:'https://pay.fq98.com:8890/get_sites',
   dataType:'jsonp',
   async:false,
   data:{

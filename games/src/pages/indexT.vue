@@ -1002,7 +1002,8 @@ export default {
   mounted() {
     let that = this;
     // alert(this.OPENURL)
-    that.$socket.emit("connect");
+   that.$socket.emit("connect");
+
     // that.showLoadPage = true
     // that.isShowIndex = true
     // that.voice.voiceStatus = true
@@ -1184,8 +1185,9 @@ export default {
       } else {
         let that = this;
         that.islimit = true;
-        that.showTips.status = true;
-        that.showTips.text = msg.reason;
+        this.$set(this.showTips, 'status',true)
+        this.$set(this.showTips, 'text',msg.reason)
+        this.$forceUpdate();
       }
     },
     newGame: function(msg) {
@@ -1634,6 +1636,11 @@ export default {
   update_setMessage(msg){
       this.setMessage = msg
       this.shopQualified()
+  },
+  created:function()
+  { 
+    this.showTips.status = true;
+    this.showTips.text = "与服务器的连接断开，请重新打开本页面重连";
   },
   watch: {
     count(val, oldval) {

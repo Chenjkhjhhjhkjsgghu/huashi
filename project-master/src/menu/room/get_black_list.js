@@ -91,7 +91,7 @@ class App extends React.Component{
            i.key = index;
            i.todo = (
                <div>
-                   {Object.keys(authority.delete_black_list).length>0?<Popconfirm title={`确定要移除用户黑名单吗?`} onConfirm={this.confirms.bind(this)} onCancel={this.cancel.bind(this)} okText="是" cancelText="否">
+                   {Object.keys(authority.delete_black_list).length>0?<Popconfirm title={`确定要要将房间${i.room}内ID为${i.client}的用户移出黑名单吗?`} onConfirm={this.confirms.bind(this)} onCancel={this.cancel.bind(this)} okText="是" cancelText="否">
                    <Button style={{marginLeft:'5px'}} onClick={this.setId.bind(this)} name={index}>删除</Button>
                    </Popconfirm>:false}
                </div>

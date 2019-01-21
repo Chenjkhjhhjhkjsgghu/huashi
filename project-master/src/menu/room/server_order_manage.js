@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Icon ,Button , Input ,message , Alert ,Radio,Tag,Select} from 'antd';
+import { Table, Icon ,Button , Input ,message , Alert ,Radio,Tag,Select,Popconfirm} from 'antd';
 import axios from './../../axios'; 
 import Qrcode from 'qrcode.react';
 import { Route, Link } from 'react-router-dom';
@@ -108,7 +108,11 @@ const columns = [{
     render:(text)=>{
         return _status[text]
     }                           
-}];
+},{
+    title: '操作',
+    dataIndex: 'todo'
+}
+];
 
 class App extends React.Component{
     constructor(...args)
@@ -122,7 +126,8 @@ class App extends React.Component{
         current:1
         }
     }
-    state ={
+    state = {
+      order_id:'',
       loading:false,
       pagination: {},
       data:[],
@@ -156,6 +161,9 @@ class App extends React.Component{
         }
         res.output.forEach((i,index)=>{
            i.key = index;
+           i.todo = i.status!==3?<Popconfirm title={`是否对订单号(${i.order_id})进行对账?`} onConfirm={this.confirms.bind(this)} onCancel={this.cancel.bind(this)} okText="是" cancelText="否">
+           <Button type="primary" style={{marginLeft:'5px',height: '25px', fontSize: '13px'}} onClick={this.setId.bind(this)} name={i.order_id}>对账</Button>
+           </Popconfirm>:''
         })
         let pagination ={};
         pagination.total = res.count*1;
@@ -168,7 +176,23 @@ class App extends React.Component{
         })
     }).catch(error=>console.log(error))
    }
-   
+   confirms()
+   {
+       axios.get('/verify_server_order',{sites:getUrl().sites,order_id:this.state.order_id}).then(res=>{
+           message.info('对账成功')
+           this.searchBar()
+       }).catch(error=>console.log(error))
+   }
+   cancel()
+   {
+       message.error('取消对账')
+   }
+   setId(e)
+   {
+       this.setState({
+           order_id:e.target.name
+       })
+   }
    searchBar()
    {
        this.params.current = 1;

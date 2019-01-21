@@ -9,13 +9,14 @@ html,body,#root{
    background-color:#6fb3e0
  }
 .login_box{
-    width:500px;
-    height:350px;
-    margin-top:-175px;
+    width:470px;
+    height:285px;
+    margin-top:-150px;
+    border-radius: 10px;
     z-index: 999;
     top:400px;
     left:50%;
-    padding:30px 70px;
+    padding:30px 60px;
     margin-left:-250px;
     position:absolute;
     background: #fff;

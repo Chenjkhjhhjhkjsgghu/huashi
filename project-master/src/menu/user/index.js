@@ -143,24 +143,24 @@ class App extends React.Component {
   constructor(...args)
   {
     super(...args)
-    
+    console.log(this.props)
     this.id = '';
     this.state={
-      pagination: {
-        pageSize:20,
-        total:1
-      },
-      search:{
-        sites:getUrl().sites,
-        current:1,
-        id:'',
-        level:'',
-        roomId:'',
-        number:'',
-        nickName:'',
-        interval:'', 
-      },
-      loading:true,
+    pagination: {
+    pageSize:20,
+    total:1
+    },
+    search:{
+    sites:getUrl().sites,
+    current:1,
+    id:'',
+    level:'',
+    roomId:'',
+    number:'',
+    nickName:'',
+    interval:'', 
+    },
+    loading:true,
     }
     this.urls = {};
   }
@@ -293,7 +293,7 @@ onChange: this.onSelectChange,
         <Route path='/user_manage/set_ority/:name' component={this.Setority} />
         <SearchBar onSubmit={this.onSubmit.bind(this)}/>
         {aaa}
-        <Table scroll={{x:true}} rowSelection={rowSelection} columns={columns} dataSource={data} bordered size="small" onChange={this.current.bind(this)} loading={this.state.loading} pagination={this.state.pagination}/>
+        <Table scroll={{x:true}} rowSelection={rowSelection} columns={columns} dataSource={this.state.data} bordered size="small" onChange={this.current.bind(this)} loading={this.state.loading} pagination={this.state.pagination}/>
      </div>
     );
   }

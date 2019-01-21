@@ -568,11 +568,11 @@ export default {
       tabList: ["兑换欢乐豆",  "存欢乐豆", "取欢乐豆"],
       myBeanMessage: {}, // 豆值信息
       exchangeMessage: {
-        bean: "",
-        glod_coin: "",
-        saveBean: "",
-        getBean: "",
-        password: ""
+      bean: "",
+      glod_coin: "",
+      saveBean: "",
+      getBean: "",
+      password: ""
       },
       countdown: 0, //倒计时
       countdownimg: false,
@@ -996,17 +996,13 @@ export default {
       count: 0, // 预加载图片数量
       loadImgLength: 50,
       scrollTop: 0,
-      scrollLeft: 0
+      scrollLeft: 0,
     };
   },
   mounted() {
     let that = this;
     // alert(this.OPENURL)
    that.$socket.emit("connect");
-
-    // that.showLoadPage = true
-    // that.isShowIndex = true
-    // that.voice.voiceStatus = true
     // that.voiceImg()
     that.voiceImg();
     if (sessionStorage.getItem("onloadImg") !== "1") {
@@ -1035,9 +1031,20 @@ export default {
   sockets: {
     connect: function() {
       this.code = "";
+      this.asd='asdasdas'
       this.myMessage.sid = this.$route.query.sid;
       this.showTips.status = false;
       this.myMessage.siteidp = this.$route.query.sites;
+         setTimeout(()=>{
+        if(this.islimit===true)
+        {
+           this.showTips.text = "连接服务器失败！";
+        }
+         
+      },1000*10)
+          this.islimit = true;
+          this.showTips.status = true;
+          this.showTips.text = "正在连接服务器！";
       // alert(this.$route.query.sites)
       // alert('连接成功')
       // this.$socket.emit('login', {sid: this.$route.query.sid})
@@ -1045,7 +1052,7 @@ export default {
         this.$socket.emit("login", {
           sid: this.$route.query.sid,
           siteid: this.$route.query.sites
-        });
+        })
         this.isLogin = false;
       }
     },
@@ -1056,8 +1063,11 @@ export default {
     //   ,
     setTime: function(msg) {
       clearInterval(this.countdownimg);
+      
       this.countdownimg = "";
       console.log("收到消息");
+      this.islimit = false;
+      this.showTips.status =false;
       var that = this;
       this.gameStatus = msg.gameStatus;
       that.countdown = msg.bettingTime;
@@ -1086,13 +1096,8 @@ export default {
       }
     },
     login: function(msg) {
-      // let that = this
-      //   setInterval(()=>{console.log('newgame');
-      //  that.$socket.emit("newGame");
-      // },100)
-      console.log("msg", msg);
-      if (msg.error_code === "SUCCESS") {
-        console.log(msg);
+      
+        if (msg.error_code === "SUCCESS") {
         this.gamesNumber = msg.result.gameNum;
         this.gameStatus = msg.result.gameStatus;
         this.isApply = msg.result.is_banker;
@@ -1608,6 +1613,7 @@ export default {
       //socket断线
       this.isLogin = true;
       if (this.showTips.status == false) {
+        this.islimit = true;
         this.showTips.status = true;
         this.showTips.text = "与服务器的连接断开，请重新打开本页面重连";
       }
@@ -1639,8 +1645,7 @@ export default {
   },
   created:function()
   { 
-    this.showTips.status = true;
-    this.showTips.text = "与服务器的连接断开，请重新打开本页面重连";
+  
   },
   watch: {
     count(val, oldval) {
@@ -1659,6 +1664,7 @@ export default {
     }
   },
   methods: {
+    
     loadImg() {
       let that = this;
       let imgs = document.querySelectorAll("img.loadimg");

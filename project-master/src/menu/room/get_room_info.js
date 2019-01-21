@@ -245,7 +245,7 @@ class App extends React.Component{
                 <Button onClick={this.searchBar.bind(this)} style={{marginLeft:'5px'}}><Icon type="search"/>搜索</Button>
                 <Link to="/get_room_info/add" ><Button style={{margin:'0 20px'}}><Icon type="plus" />新开房间</Button></Link>
                 </div>
-                <Table scroll={{x:true}} columns={columns} dataSource={this.state.data} bordered  size='small' loading={this.state.loading}  onChange={this.current.bind(this)}/>
+                <Table scroll={{x:true}} pagination={this.state.pagination} columns={columns} dataSource={this.state.data} bordered  size='small' loading={this.state.loading}  onChange={this.current.bind(this)}/>
             </div>
         )
     }

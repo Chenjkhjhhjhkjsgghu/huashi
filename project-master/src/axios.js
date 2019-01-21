@@ -30,7 +30,7 @@ const Axios = {
     web:Web,
     get:(urls,data)=>{
       return new Promise((resolve,reject)=>{
-        axios({url:urls,params:data,baseURL:Web[getUrl().sites].url}).then(function(res){
+        axios({url:urls,params:data,baseURL:Web[getUrl().sites].url,timeout: 1000 * 30}).then(function(res){
             if(res.data.code===100)
             {
                 message.error('您的登陆信息已过期，请重新登陆')
@@ -46,7 +46,7 @@ const Axios = {
             }
             if(res.data.code===400)
             {
-                message.error('用户已存在')
+                message.error(res.data.msg)
                 reject(res.data.msg)
                 return false;
             }
@@ -55,7 +55,7 @@ const Axios = {
                 resolve(res.data.msg);
                 return ;
             }
-        })
+        }).catch(()=>{message.error('请求超时，请检查网络！')})
      
       })
     },
@@ -66,7 +66,7 @@ const Axios = {
             message.error('请填写必填项')
             reject()
         } 
-        axios({method: 'post',url:urls,data:datas,baseURL:Web[getUrl().sites].url}).then(function(res){
+        axios({method: 'post',url:urls,data:datas,baseURL:Web[getUrl().sites].url,timeout: 1000 * 30}).then(function(res){
             if(res.data.code===200)
             {
                 resolve(res.data.msg);
@@ -85,7 +85,7 @@ const Axios = {
                 reject(res.data.msg)
                 return
             }
-        })
+        }).catch(()=>{message.error('请求超时，请检查网络！')})
        })
     },
     all:([],callback)=>{

@@ -48,6 +48,20 @@ function ser_dengji(str)
   })
 }
 
+function unique(arr)
+{
+    var nArr = [];
+
+    for(var i = 0;i<arr.length;i++)
+    {
+        if (nArr.indexOf(arr[i])===-1)
+         {
+             nArr.push(arr[i])
+         }
+    }
+    return nArr;
+}
+
 function getUrl()
   {
       var json = {}
@@ -226,7 +240,7 @@ class App extends React.Component {
             if(res.data.code===300)
             {
             arrs.push(values)
-            arrs = Array.from(new Set(arrs))
+            arrs = unique(arrs)
             this.setState({
             idList: arrs
              })

@@ -1,6 +1,17 @@
 $(function() {
   console.log(11111)
   get_gamecar_setting()
+
+$('#id_is_close').change(function(){
+   if ($(this).val()!='0')
+    {
+       $('#on_off').css('display','none')
+    }
+    else{
+      $('#on_off').css('display','block')
+    }
+})
+   
   $('#validation-form').on('submit',function() {
     var data = {}
     if ($('#id_bankerup').val() == '') {
@@ -85,6 +96,7 @@ $(function() {
     data.system_user_id = $('#id_system_user').val()
     data.system_user_siteId = $('#id_system_user1').val()
     data.system_max_win = $('#id_system_max_win').val()
+    data.is_close = parseInt($('#id_is_close').val())
     data.system_max_lost = $('#id_system_max_lost').val()
     var chip_list = $('#id_chip').val()
 
@@ -116,10 +128,7 @@ $(function() {
         console.log(res)
         if(res.code===100)
           {
-            
             top.window.location.href = '/?sites='+_sites
-            
-            
             return;
           }  
           if (res.error_code == 'SUCCESS') {
@@ -166,12 +175,20 @@ function setting_message(data) {
         else{
             $('#select_id').css('display','block')
         }
+        if (data.is_close===0)
+         {
+            $('#on_off').css('display','block')
+         }
+         else{
+            $('#on_off').css('display','none')
+         }
   $('#id_system_user').val(data.system_user.split('@')[0])
   $('#id_system_user1').val(data.system_user.split('@')[1])
   $('#id_system_max_lost').val(data.system_max_lost)
   $('#id_system_max_win').val(data.system_max_win)
   $('#id_bankerup').val(data.bankerup)
   $('#id_bankerdown').val(data.bankerdown)
+  $('#id_is_close').val(data.is_close)
   $('#id_persglmax').val(data.persglmax)
   $('#id_perwinmax').val(data.perwinmax)
   $('#id_allowstar').val(data.allowstar)

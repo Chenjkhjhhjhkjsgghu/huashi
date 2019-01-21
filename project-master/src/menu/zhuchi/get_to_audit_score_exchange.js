@@ -322,7 +322,7 @@ class App extends React.Component{
                 </Popconfirm>
                 </div>
                 <Alert style={{margin:'20px 0'}} message={`总计待审核主持兑点清单金额:${this.state.num/100}`} type='success'/>
-                <Table scroll={{x:true}} columns={columns} dataSource={this.state.data} bordered loading={this.state.loading} rowSelection={{selectedRowKeys:this.state.selectedRowKeys,onChange:this.changes.bind(this)}} size='small' pagination={this.state.pagination} onChange={this.current.bind(this)}/>
+                <Table scroll={{x:true}}  size='small' columns={columns} dataSource={this.state.data} bordered loading={this.state.loading} rowSelection={{selectedRowKeys:this.state.selectedRowKeys,onChange:this.changes.bind(this)}} size='small' pagination={this.state.pagination} onChange={this.current.bind(this)}/>
             </div>
         )
     }

@@ -81,17 +81,9 @@ class NormalLoginForm extends React.Component {
           )}
         </FormItem>
         <FormItem>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true,
-          })(
-            <Checkbox>勾选</Checkbox>
-          )}
-          <a className="login-form-forgot">记住密码</a>
           <Button type="primary" htmlType="submit" className="login-form-button">
             登陆
           </Button>
-          或<a>重置！</a>
         </FormItem>
       </Form>
           </div> 

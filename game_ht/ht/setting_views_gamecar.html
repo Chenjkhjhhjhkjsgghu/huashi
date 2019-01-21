@@ -99,13 +99,15 @@
         </div><!-- /.page-header -->
 
         <div class="row">
+             
             <div class="col-xs-12">
                 <!-- PAGE CONTENT BEGINS -->
                 <form class="form-horizontal" id="validation-form" method="post" enctype="multipart/form-data">
-                    <div>
-
-
-
+                         <div style="margin:20px 0" class="form-group" id="form-group_is_close"><label for="id_is_close" class="control-label col-xs-12 col-sm-3 no-padding-right">游戏开关:</label><div class="col-xs-12 col-sm-9"><select name="is_close" id="id_is_close">
+                            <option value='0' selected="selected">开启</option>
+                            <option value='1'>关闭</option>
+                        </select><div class="help-block"></div></div></div>
+                    <div id="on_off">
 
                         <div  class="form-group" id="form-group_bankerup"><label for="id_bankerup" class="control-label col-xs-12 col-sm-3 no-padding-right">用户上庄要求:<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="right" data-content="单位：（豆）" title="说明" data-original-title="说明">?</span></label><div class="col-xs-12 col-sm-9"><div class="clearfix"><input type="text" name="bankerup" value="" id="id_bankerup" /></div><div class="help-block"></div></div></div><div class="hr hr-dotted"></div>
                         <div  class="form-group" id="form-group_bankerdown"><label for="id_bankerdown" class="control-label col-xs-12 col-sm-3 no-padding-right">用户下庄要求:<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="right" data-content="单位：（豆）" title="说明" data-original-title="说明">?</span></label><div class="col-xs-12 col-sm-9"><div class="clearfix"><input type="text" name="bankerdown" value="" id="id_bankerdown" /></div><div class="help-block"></div></div></div><div class="hr hr-dotted"></div>

@@ -109,8 +109,10 @@
             <div class="row">
 
                 <div class="well infobox-blue infobox-dark widget-main padding-14">
+                    
                     <div>
                         <form id="form_search" method="get">
+                            
                             <input type="hidden" name="page" value="1"/>
                             <input type="hidden" name="pagesize" value="20"/>
                         <label>状态:<select id="search_status" class="input-sm" name="status">
@@ -131,8 +133,13 @@
                                 <i class="icon-search icon-on-right bigger-110"></i>
                             </button>
                         </form>
+                        
                     </div>
                 </div>
+                <button class="btn btn-sm btn-danger" id="delete_bt" style="margin:10px 0">
+                        批量删除
+                        <i class="icon-trash bigger-120"></i>
+                    </button>
                 <!--列表模板-->
                 <script type="text/x-tmpl" id="table_list">
                     {% for(var i=0;i < o.length;i++){ %}

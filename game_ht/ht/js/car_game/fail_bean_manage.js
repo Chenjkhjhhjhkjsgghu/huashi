@@ -1,11 +1,4 @@
   $(function () {
-
-
-
-
-    $('input:checkbox').change(function(){
-      console.log($(this).val())
-    })
     var dataList = {
       page: 1,
       page_size: 10,
@@ -14,6 +7,41 @@
       type:""
     }
     getRecord(dataList)
+   $('#delete_bt').click(function(){
+    var arrs = '';
+    var hint ='请确认批量重试操作！';
+    bootbox.confirm(hint, function (result) {
+      if(result)
+      {
+        $.each($('[name=chk]:checked'),function(){
+          if(this.checked){
+             arrs+=$(this).val()+','
+          }
+      });
+        $.ajax({
+          type:'post',
+          xhrFields:{
+            withCredentials:true
+            },
+            url: _json_url.url+'/game/operation_fail_bean',
+          data:{
+            id_lists:arrs.slice(0,-1)
+          },
+          dataType: "json",
+          success:function(res)
+          {
+             if(res.error_code ==='SUCCESS')
+             {
+              bootbox.alert('操作成功的ID'+res.success_array,function(){
+                getRecord(dataList)
+              })
+             }
+          }
+        })
+      }
+    })
+   })
+   
     $('#form_search').on('submit',function() {
       formSubmit()
       return false
